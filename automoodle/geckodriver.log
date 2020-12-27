@@ -1,0 +1,1591 @@
+1604212113712	geckodriver	INFO	Listening on 127.0.0.1:2049
+1604212175074	geckodriver	INFO	Listening on 127.0.0.1:2372
+1604212178521	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileeo2Cic"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604212183072	Marionette	INFO	Listening on port 2398
+1604212183509	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604212225102	Marionette	INFO	Stopped listening on port 2398
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604212361491	geckodriver	INFO	Listening on 127.0.0.1:3508
+1604212364910	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilefJEXUv"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604212369149	Marionette	INFO	Listening on port 3541
+1604212369292	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604212410158	Marionette	INFO	Stopped listening on port 3541
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+"-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilexskG3M"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604212412220	Marionette	INFO	Listening on port 3824
+1604212412364	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604212417166	Marionette	INFO	Stopped listening on port 3824
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604212580603	geckodriver	INFO	Listening on 127.0.0.1:4843
+1604212584092	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileQlE10R"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604212588360	Marionette	INFO	Listening on port 4865
+1604212588452	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604212592672	Marionette	INFO	Stopped listening on port 4865
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604212603569	geckodriver	INFO	Listening on 127.0.0.1:5016
+1604212607037	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileX74Vxm"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604212611165	Marionette	INFO	Listening on port 5039
+1604212611390	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex
+1604212613363	Marionette	INFO	Stopped listening on port 5039
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604212657831	geckodriver	INFO	Listening on 127.0.0.1:5372
+1604212661300	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileD7oyLc"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604212665537	Marionette	INFO	Listening on port 5400
+1604212665659	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex
+1604212668405	Marionette	INFO	Stopped listening on port 5400
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604213434711	geckodriver	INFO	Listening on 127.0.0.1:9282
+1604213438419	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilejRcWrE"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604213443836	Marionette	INFO	Listening on port 9294
+1604213443895	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1604213455055	Marionette	INFO	Stopped listening on port 9294
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604213620119	geckodriver	INFO	Listening on 127.0.0.1:9964
+1604213623815	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilef5OUrz"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604213628481	Marionette	INFO	Listening on port 9985
+1604213628803	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 6176, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1604213638789	Marionette	INFO	Stopped listening on port 9985
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604213652280	geckodriver	INFO	Listening on 127.0.0.1:10150
+1604213655736	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilej3Li5S"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604213660388	Marionette	INFO	Listening on port 10163
+1604213660720	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604213673139	Marionette	INFO	Stopped listening on port 10163
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604213698124	geckodriver	INFO	Listening on 127.0.0.1:10415
+1604213701601	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileVtTTn8"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604213706179	Marionette	INFO	Listening on port 10425
+1604213706565	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "jquery", needed by: core/first
+http://requirejs.org/docs/errors.html#scripterror
+1604213718831	Marionette	INFO	Stopped listening on port 10425
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604213729880	geckodriver	INFO	Listening on 127.0.0.1:10598
+1604213733329	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileZyc7ZE"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604213737891	Marionette	INFO	Listening on port 10626
+1604213738302	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1604213750590	Marionette	INFO	Stopped listening on port 10626
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604213943479	geckodriver	INFO	Listening on 127.0.0.1:11686
+1604213946932	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileKMKSFC"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604213951530	Marionette	INFO	Listening on port 11708
+1604213951892	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604213964283	Marionette	INFO	Stopped listening on port 11708
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604213995774	geckodriver	INFO	Listening on 127.0.0.1:11972
+1604213999222	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileAKc2GK"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604214003829	Marionette	INFO	Listening on port 11991
+1604214004194	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 6852, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1604214065644	Marionette	INFO	Stopped listening on port 11991
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604214078556	geckodriver	INFO	Listening on 127.0.0.1:12403
+1604214082150	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileyKdqlh"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604214086654	Marionette	INFO	Listening on port 12420
+1604214087123	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604214103746	Marionette	INFO	Stopped listening on port 12420
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604214135954	geckodriver	INFO	Listening on 127.0.0.1:12697
+1604214139396	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile51yk6P"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604214143994	Marionette	INFO	Listening on port 12727
+1604214144361	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1604214156699	Marionette	INFO	Stopped listening on port 12727
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604214209135	geckodriver	INFO	Listening on 127.0.0.1:13074
+1604214212587	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile8IiDNi"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604214217163	Marionette	INFO	Listening on port 13110
+1604214217545	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604214230250	Marionette	INFO	Stopped listening on port 13110
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604214265431	geckodriver	INFO	Listening on 127.0.0.1:13374
+1604214268875	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileFbWAd2"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604214273478	Marionette	INFO	Listening on port 13398
+1604214273841	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1604214286530	Marionette	INFO	Stopped listening on port 13398
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604214343512	geckodriver	INFO	Listening on 127.0.0.1:13737
+1604214347277	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileJWgDOo"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604214351866	Marionette	INFO	Listening on port 13752
+1604214352242	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1604214406728	Marionette	INFO	Stopped listening on port 13752
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604312720681	geckodriver	INFO	Listening on 127.0.0.1:2611
+1604312724141	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilevdaioC"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604312730085	Marionette	INFO	Listening on port 2619
+1604312730235	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604312745155	Marionette	INFO	Stopped listening on port 2619
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604313067578	geckodriver	INFO	Listening on 127.0.0.1:2746
+1604313071863	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilex4gKaG"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604313077233	Marionette	INFO	Listening on port 2755
+1604313077323	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604313090312	Marionette	INFO	Stopped listening on port 2755
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604313123398	geckodriver	INFO	Listening on 127.0.0.1:2806
+1604313127320	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilepUgLTs"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604313131560	Marionette	INFO	Listening on port 2814
+1604313131922	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604313242231	Marionette	INFO	Stopped listening on port 2814
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604313469721	geckodriver	INFO	Listening on 127.0.0.1:2885
+1604313473838	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileUzmBm8"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604313478681	Marionette	INFO	Listening on port 2893
+1604313478746	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1604313494969	Marionette	INFO	Stopped listening on port 2893
+[Parent 3188, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604313558249	geckodriver	INFO	Listening on 127.0.0.1:3023
+1604313562168	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilejQiIZL"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604313566931	Marionette	INFO	Listening on port 3031
+1604313567142	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604313580201	Marionette	INFO	Stopped listening on port 3031
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604314205886	geckodriver	INFO	Listening on 127.0.0.1:3218
+1604314209785	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile2jp0fM"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604314214830	Marionette	INFO	Listening on port 3226
+1604314215262	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604314404603	Marionette	INFO	Stopped listening on port 3226
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604314409193	geckodriver	INFO	Listening on 127.0.0.1:3277
+1604314413355	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileunRsfe"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604314418286	Marionette	INFO	Listening on port 3286
+1604314418859	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604314444359	Marionette	INFO	Stopped listening on port 3286
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604314470074	geckodriver	INFO	Listening on 127.0.0.1:3339
+1604314474023	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileQBeEJj"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604314479121	Marionette	INFO	Listening on port 3347
+1604314479494	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604314680369	Marionette	INFO	Stopped listening on port 3347
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604314703820	geckodriver	INFO	Listening on 127.0.0.1:3408
+1604314711160	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileAw4qwt"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604314723977	Marionette	INFO	Listening on port 3416
+1604314724080	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604314735620	Marionette	INFO	Stopped listening on port 3416
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604314747782	geckodriver	INFO	Listening on 127.0.0.1:3470
+1604314752106	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilemGZHSD"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604314757143	Marionette	INFO	Listening on port 3478
+1604314757563	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1604315573457	Marionette	INFO	Stopped listening on port 3478
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604375328577	geckodriver	INFO	Listening on 127.0.0.1:2454
+1604375332501	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileu1wSwR"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604375338708	Marionette	INFO	Listening on port 2462
+1604375339220	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1604375348862	Marionette	INFO	Stopped listening on port 2462
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604375383838	geckodriver	INFO	Listening on 127.0.0.1:2540
+1604375387759	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile3fn5c1"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604375392999	Marionette	INFO	Listening on port 2548
+1604375393244	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1604375732768	geckodriver	INFO	Listening on 127.0.0.1:2624
+1604375736704	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilexUGy80"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604375741167	Marionette	INFO	Listening on port 2632
+1604375741674	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604375806201	geckodriver	INFO	Listening on 127.0.0.1:2692
+1604375810464	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilenykKJU"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604375814329	Marionette	INFO	Listening on port 2700
+1604375814860	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604375877892	geckodriver	INFO	Listening on 127.0.0.1:2746
+1604375881837	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilee3iXcO"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604375886380	Marionette	INFO	Listening on port 2754
+1604375886804	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604376036600	geckodriver	INFO	Listening on 127.0.0.1:2811
+1604376040829	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileafi3rH"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604376045292	Marionette	INFO	Listening on port 2820
+1604376045797	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604376286294	Marionette	INFO	Stopped listening on port 2820
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1604376295276	geckodriver	INFO	Listening on 127.0.0.1:2887
+1604376299466	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileYmWvxo"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604376304244	Marionette	INFO	Listening on port 2896
+1604376304448	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+[Child 6108, MediaDecoderStateMachine #1] WARNING: Decoder=25fe5e1b800 state=DECODING_METADATA Decode metadata failed, shutting down decoder: file /builds/worker/checkouts/gecko/dom/media/MediaDecoderStateMachine.cpp, line 376
+[Child 6108, MediaDecoderStateMachine #1] WARNING: Decoder=25fe5e1b800 Decode error: NS_ERROR_DOM_MEDIA_METADATA_ERR (0x806e0006): file /builds/worker/checkouts/gecko/dom/media/MediaDecoderStateMachine.cpp, line 3471
+[Child 6108, MediaDecoderStateMachine #1] WARNING: Decoder=25ff3b5a800 state=DECODING_METADATA Decode metadata failed, shutting down decoder: file /builds/worker/checkouts/gecko/dom/media/MediaDecoderStateMachine.cpp, line 376
+[Child 6108, MediaDecoderStateMachine #1] WARNING: Decoder=25ff3b5a800 Decode error: NS_ERROR_DOM_MEDIA_METADATA_ERR (0x806e0006): file /builds/worker/checkouts/gecko/dom/media/MediaDecoderStateMachine.cpp, line 3471
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1604377064213	geckodriver	INFO	Listening on 127.0.0.1:3221
+1604377068142	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileGilJqD"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604377072567	Marionette	INFO	Listening on port 3229
+1604377072615	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1604377398971	geckodriver	INFO	Listening on 127.0.0.1:3289
+1604377403172	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileFjT3HS"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604377407324	Marionette	INFO	Listening on port 3298
+1604377407541	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604377462718	geckodriver	INFO	Listening on 127.0.0.1:3391
+1604377466635	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileZ2Xrfe"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604377470870	Marionette	INFO	Listening on port 3399
+1604377471014	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604377645329	geckodriver	INFO	Listening on 127.0.0.1:3448
+1604377649500	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileTUD723"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604377653680	Marionette	INFO	Listening on port 3457
+1604377653867	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?m/1603802524/atto_clear/button/button-min.js&m/1603802524/atto_undo/button/button-min.js&m/1603802524/atto_accessibilitychecker/button/button-min.js&m/1603802524/atto_accessibilityhelper/button/button-min.js&m/1603802524/atto_wiris/button/button-min.js&m/1603802524/atto_html/button/button-min.js, line 5: ReferenceError: WirisPlugin is not defined
+1604377744573	geckodriver	INFO	Listening on 127.0.0.1:3518
+1604377748758	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile90Swk0"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1604377753006	Marionette	INFO	Listening on port 3527
+1604377753136	Marionette	WARN	TLS certificate errors will be ignored for this session
+1604378289147	Marionette	INFO	Stopped listening on port 3527
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609062927447	geckodriver	INFO	Listening on 127.0.0.1:11212
+1609062931652	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile0GdQiA"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609062936583	Marionette	INFO	Listening on port 11221
+1609062936640	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1609064220444	geckodriver	INFO	Listening on 127.0.0.1:11690
+1609064224384	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile6Dcw9A"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064228480	Marionette	INFO	Listening on port 11698
+1609064228748	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609064234788	Marionette	INFO	Stopped listening on port 11698
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064235849	geckodriver	INFO	Listening on 127.0.0.1:11758
+1609064240261	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile6jfPQ0"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064244331	Marionette	INFO	Listening on port 11766
+1609064244639	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064251042	Marionette	INFO	Stopped listening on port 11766
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064252177	geckodriver	INFO	Listening on 127.0.0.1:11824
+1609064256601	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilen4zVvT"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064260526	Marionette	INFO	Listening on port 11832
+1609064260981	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064267373	Marionette	INFO	Stopped listening on port 11832
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064268560	geckodriver	INFO	Listening on 127.0.0.1:11891
+1609064272425	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileMbSXqM"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064276474	Marionette	INFO	Listening on port 11899
+1609064276810	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064283306	Marionette	INFO	Stopped listening on port 11899
+[Parent 6548, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:166
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064284455	geckodriver	INFO	Listening on 127.0.0.1:11960
+1609064288402	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileGvlTRt"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064292427	Marionette	INFO	Listening on port 11970
+1609064292767	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064299855	Marionette	INFO	Stopped listening on port 11970
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064301087	geckodriver	INFO	Listening on 127.0.0.1:12029
+1609064305006	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileboKY8N"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064308989	Marionette	INFO	Listening on port 12037
+1609064309358	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609064315671	Marionette	INFO	Stopped listening on port 12037
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x870001,name=PRemoteSpellcheckEngine::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064316820	geckodriver	INFO	Listening on 127.0.0.1:12096
+1609064320767	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile5zeckI"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064324923	Marionette	INFO	Listening on port 12104
+1609064325148	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064332113	Marionette	INFO	Stopped listening on port 12104
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064333367	geckodriver	INFO	Listening on 127.0.0.1:12166
+1609064338655	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilem2pwCl"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064342635	Marionette	INFO	Listening on port 12174
+1609064343011	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064349285	Marionette	INFO	Stopped listening on port 12174
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064350528	geckodriver	INFO	Listening on 127.0.0.1:12235
+1609064354447	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofiletacGz6"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064358505	Marionette	INFO	Listening on port 12243
+1609064358817	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064365386	Marionette	INFO	Stopped listening on port 12243
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609064366623	geckodriver	INFO	Listening on 127.0.0.1:12303
+1609064370706	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileBHcqqK"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609064374831	Marionette	INFO	Listening on port 12311
+1609064375065	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609064382188	Marionette	INFO	Stopped listening on port 12311
+[Child 5108, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:545
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609065369740	geckodriver	INFO	Listening on 127.0.0.1:12575
+1609065373983	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilembefaC"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609065378099	Marionette	INFO	Listening on port 12584
+1609065378348	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/mod/assign/view.php?id=1330756, line 911: TypeError: M.core_comment is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609065390216	Marionette	INFO	Stopped listening on port 12584
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609065391312	geckodriver	INFO	Listening on 127.0.0.1:12662
+1609065395232	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilet4cnNQ"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609065399264	Marionette	INFO	Listening on port 12671
+1609065399591	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609065413513	Marionette	INFO	Stopped listening on port 12671
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609065414501	geckodriver	INFO	Listening on 127.0.0.1:12742
+1609065555169	geckodriver	INFO	Listening on 127.0.0.1:12870
+1609065559140	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileEvhMqw"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609065563405	Marionette	INFO	Listening on port 12878
+1609065563502	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+1609065670754	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:235:19
+TimedPromise@chrome://marionette/content/sync.js:220:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:418:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609065767692	Marionette	INFO	Stopped listening on port 12878
+1609065768526	geckodriver	INFO	Listening on 127.0.0.1:12977
+1609065772547	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileAtEgZ7"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609065776691	Marionette	INFO	Listening on port 12985
+1609065776906	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+1609065994740	Marionette	INFO	Stopped listening on port 12985
+1609065995592	geckodriver	INFO	Listening on 127.0.0.1:13086
+1609065999772	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilebVCJUX"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609066003989	Marionette	INFO	Listening on port 13095
+1609066004136	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+1609066187280	geckodriver	INFO	Listening on 127.0.0.1:13182
+1609066191201	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileGVU6fU"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609066195353	Marionette	INFO	Listening on port 13190
+1609066195574	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609066360668	geckodriver	INFO	Listening on 127.0.0.1:13332
+1609066364837	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilemYMupA"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609066369097	Marionette	INFO	Listening on port 13340
+1609066369210	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609066423565	Marionette	INFO	Stopped listening on port 13340
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609066578560	geckodriver	INFO	Listening on 127.0.0.1:13483
+1609066582574	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilezhHCMT"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609066586587	Marionette	INFO	Listening on port 13491
+1609066586949	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+1609067022134	geckodriver	INFO	Listening on 127.0.0.1:13716
+1609067026125	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilew4No6D"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067030209	Marionette	INFO	Listening on port 13724
+1609067030491	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js, line 9: Error: Неверная строка JSON:
+
+1609067130066	geckodriver	INFO	Listening on 127.0.0.1:13795
+1609067134340	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileY8gfUi"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067138397	Marionette	INFO	Listening on port 13804
+1609067138701	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609067342838	Marionette	INFO	Stopped listening on port 13804
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5B000E,name=PHttpChannel::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609067343656	geckodriver	INFO	Listening on 127.0.0.1:13901
+1609067348014	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileQDVx4A"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067352034	Marionette	INFO	Listening on port 13910
+1609067352372	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609067887965	geckodriver	INFO	Listening on 127.0.0.1:14164
+1609067891869	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilecThwYR"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067895819	Marionette	INFO	Listening on port 14173
+1609067896242	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609067910943	Marionette	INFO	Stopped listening on port 14173
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609067912065	geckodriver	INFO	Listening on 127.0.0.1:14243
+1609067916004	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile4STC8e"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067919845	Marionette	INFO	Listening on port 14251
+1609067920369	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609067933974	Marionette	INFO	Stopped listening on port 14251
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609067935067	geckodriver	INFO	Listening on 127.0.0.1:14321
+1609067939008	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile93vl1T"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067942886	Marionette	INFO	Listening on port 14329
+1609067943379	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609067956310	Marionette	INFO	Stopped listening on port 14329
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609067957308	geckodriver	INFO	Listening on 127.0.0.1:14406
+1609067961237	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileeNdTeq"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067965024	Marionette	INFO	Listening on port 14414
+1609067965098	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609067979137	Marionette	INFO	Stopped listening on port 14414
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609067980118	geckodriver	INFO	Listening on 127.0.0.1:14483
+1609067984112	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile2fbDqK"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609067987908	Marionette	INFO	Listening on port 14491
+1609067987971	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609068000885	Marionette	INFO	Stopped listening on port 14491
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068001878	geckodriver	INFO	Listening on 127.0.0.1:14558
+1609068005794	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileEo3RZL"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068009668	Marionette	INFO	Listening on port 14566
+1609068010158	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609068023420	Marionette	INFO	Stopped listening on port 14566
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068024617	geckodriver	INFO	Listening on 127.0.0.1:14632
+1609068028507	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileUMU5HP"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068032329	Marionette	INFO	Listening on port 14640
+1609068032387	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068045441	Marionette	INFO	Stopped listening on port 14640
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5B000E,name=PHttpChannel::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068046507	geckodriver	INFO	Listening on 127.0.0.1:14707
+1609068050427	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilepGlFkp"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068054334	Marionette	INFO	Listening on port 14715
+1609068054799	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609068067726	Marionette	INFO	Stopped listening on port 14715
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068068835	geckodriver	INFO	Listening on 127.0.0.1:14783
+1609068072862	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilePQK2cG"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068076704	Marionette	INFO	Listening on port 14791
+1609068077214	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609068089676	Marionette	INFO	Stopped listening on port 14791
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068090681	geckodriver	INFO	Listening on 127.0.0.1:14867
+1609068507673	geckodriver	INFO	Listening on 127.0.0.1:1100
+1609068511845	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileuajsJj"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068516904	Marionette	INFO	Listening on port 1109
+1609068517319	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068530654	Marionette	INFO	Stopped listening on port 1109
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068531616	geckodriver	INFO	Listening on 127.0.0.1:1187
+1609068535482	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile9JGmdP"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068539417	Marionette	INFO	Listening on port 1195
+1609068539853	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068563145	Marionette	INFO	Stopped listening on port 1195
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068564245	geckodriver	INFO	Listening on 127.0.0.1:1269
+1609068568161	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileN8DUsU"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068571949	Marionette	INFO	Listening on port 1277
+1609068572030	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/mod/assign/view.php?id=1330757, line 913: TypeError: M.core_comment is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068584933	Marionette	INFO	Stopped listening on port 1277
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068585920	geckodriver	INFO	Listening on 127.0.0.1:1353
+1609068589877	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileNcrOr7"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068593637	Marionette	INFO	Listening on port 1361
+1609068593732	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609068607273	Marionette	INFO	Stopped listening on port 1361
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068608264	geckodriver	INFO	Listening on 127.0.0.1:1429
+1609068612245	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileGmkQJL"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068615989	Marionette	INFO	Listening on port 1437
+1609068616115	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068661600	Marionette	INFO	Stopped listening on port 1437
+1609068662671	geckodriver	INFO	Listening on 127.0.0.1:1508
+1609068667795	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileR7yrdA"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068671609	Marionette	INFO	Listening on port 1517
+1609068671656	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068721816	Marionette	INFO	Stopped listening on port 1517
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068722805	geckodriver	INFO	Listening on 127.0.0.1:1586
+1609068727660	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileZZPVdI"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068731481	Marionette	INFO	Listening on port 1594
+1609068731523	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068754822	Marionette	INFO	Stopped listening on port 1594
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068756055	geckodriver	INFO	Listening on 127.0.0.1:1664
+1609068760037	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileazfkty"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068763920	Marionette	INFO	Listening on port 1672
+1609068764401	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/javascript-static.js, line 33: ReferenceError: YUI is not defined
+JavaScript error: https://rsdo.oblcit.ru/login/index.php, line 237: ReferenceError: Y is not defined
+JavaScript error: https://rsdo.oblcit.ru/lib/requirejs.php/1603802524/core/first.js, line 30: ReferenceError: Y is not defined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068828999	Marionette	INFO	Stopped listening on port 1672
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068830126	geckodriver	INFO	Listening on 127.0.0.1:1748
+1609068834051	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilebTrq9f"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068837864	Marionette	INFO	Listening on port 1756
+1609068837928	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068870048	Marionette	INFO	Stopped listening on port 1756
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068871264	geckodriver	INFO	Listening on 127.0.0.1:1832
+1609068875216	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile01JcTz"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068878889	Marionette	INFO	Listening on port 1840
+1609068879081	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609068892714	Marionette	INFO	Stopped listening on port 1840
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068893834	geckodriver	INFO	Listening on 127.0.0.1:1908
+1609068898368	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilefEHPT6"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068902245	Marionette	INFO	Listening on port 1916
+1609068902732	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609068916001	Marionette	INFO	Stopped listening on port 1916
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068917152	geckodriver	INFO	Listening on 127.0.0.1:1994
+1609068921085	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileUMGX6E"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068924892	Marionette	INFO	Listening on port 2002
+1609068924941	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609068948384	Marionette	INFO	Stopped listening on port 2002
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068949371	geckodriver	INFO	Listening on 127.0.0.1:2071
+1609068953345	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileO2UmkE"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068957106	Marionette	INFO	Listening on port 2079
+1609068957227	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/mod/assign/view.php?id=1330757, line 913: TypeError: M.core_comment is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+1609068970391	Marionette	INFO	Stopped listening on port 2079
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068971551	geckodriver	INFO	Listening on 127.0.0.1:2154
+1609068975477	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileVNmAVY"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609068979294	Marionette	INFO	Listening on port 2162
+1609068979346	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609068993113	Marionette	INFO	Stopped listening on port 2162
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609068994346	geckodriver	INFO	Listening on 127.0.0.1:2231
+1609068998299	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileZQ04Ms"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069002104	Marionette	INFO	Listening on port 2241
+1609069002198	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/mod/assign/view.php?id=1330765, line 905: TypeError: M.core_comment is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069107419	Marionette	INFO	Stopped listening on port 2241
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069108540	geckodriver	INFO	Listening on 127.0.0.1:2318
+1609069112726	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilerB2Jds"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069116524	Marionette	INFO	Listening on port 2327
+1609069116587	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069162148	Marionette	INFO	Stopped listening on port 2327
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069163140	geckodriver	INFO	Listening on 127.0.0.1:2402
+1609069167080	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilefrDwpw"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069170894	Marionette	INFO	Listening on port 2410
+1609069170947	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609069185705	Marionette	INFO	Stopped listening on port 2410
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069186919	geckodriver	INFO	Listening on 127.0.0.1:2476
+1609069191996	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileFfoCDU"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069195848	Marionette	INFO	Listening on port 2485
+1609069196367	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609069211254	Marionette	INFO	Stopped listening on port 2485
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069212386	geckodriver	INFO	Listening on 127.0.0.1:2555
+1609069216313	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileArdyLb"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069220120	Marionette	INFO	Listening on port 2563
+1609069220196	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069403554	Marionette	INFO	Stopped listening on port 2563
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069404346	geckodriver	INFO	Listening on 127.0.0.1:2649
+1609069408513	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilecMwRnX"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069412310	Marionette	INFO	Listening on port 2658
+1609069412373	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069519517	Marionette	INFO	Stopped listening on port 2658
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069520775	geckodriver	INFO	Listening on 127.0.0.1:2738
+1609069524939	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilesvV2Yf"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069528782	Marionette	INFO	Listening on port 2747
+1609069529306	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069564739	Marionette	INFO	Stopped listening on port 2747
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069565973	geckodriver	INFO	Listening on 127.0.0.1:2822
+1609069569897	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofile7xqPor"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069573727	Marionette	INFO	Listening on port 2830
+1609069573767	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069618409	Marionette	INFO	Stopped listening on port 2830
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069619511	geckodriver	INFO	Listening on 127.0.0.1:2905
+1609069623755	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileEryEQL"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069627541	Marionette	INFO	Listening on port 2913
+1609069627647	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069671936	Marionette	INFO	Stopped listening on port 2913
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069672923	geckodriver	INFO	Listening on 127.0.0.1:2982
+1609069677960	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofileOqLKSF"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069681880	Marionette	INFO	Listening on port 2991
+1609069682338	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: Script error for "core/first"
+http://requirejs.org/docs/errors.html#scripterror
+1609069718615	Marionette	INFO	Stopped listening on port 2991
+JavaScript error: https://rsdo.oblcit.ru/theme/yui_combo.php?3.17.2/json-stringify/json-stringify-min.js&2in3/2.9.0/build/yui2-animation/yui2-animation-min.js, line 17: TypeError: YAHOO is undefined
+JavaScript error: https://rsdo.oblcit.ru/lib/javascript.php/1603802524/lib/requirejs/require.min.js, line 1: Error: No define call for core/first
+http://requirejs.org/docs/errors.html#nodefine
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609069719839	geckodriver	INFO	Listening on 127.0.0.1:3066
+1609069723793	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Vladimir\\AppData\\Local\\Temp\\rust_mozprofilecwxOic"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1609069727561	Marionette	INFO	Listening on port 3074
+1609069727658	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609069741802	Marionette	INFO	Stopped listening on port 3074
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
