@@ -10,3 +10,5 @@ for i in range(100, 1000):
     if p == n:
         print(i)
         break
+total = 0
+total
