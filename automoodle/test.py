@@ -52,10 +52,10 @@ def post_answer(user, tasks):
 
 conn = sqlite3.connect("kurs2020.db")
 cursor = conn.cursor()
-sql = "SELECT name, pass FROM users WHERE id > 1"
+sql = "SELECT name, pass FROM users WHERE id < 30"
 cursor.execute(sql)
 users = cursor.fetchall()
-sql = "SELECT link, file FROM tasks WHERE id < 18"
+sql = "SELECT link, file FROM tasks WHERE id > 400"
 cursor.execute(sql)
 tasks = cursor.fetchall()
 conn.close()
