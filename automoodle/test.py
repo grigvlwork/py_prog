@@ -55,7 +55,7 @@ cursor = conn.cursor()
 sql = "SELECT name, pass FROM users WHERE id < 30"
 cursor.execute(sql)
 users = cursor.fetchall()
-sql = "SELECT link, file FROM tasks WHERE id > 400"
+sql = "SELECT link, file FROM tasks WHERE id > 600"
 cursor.execute(sql)
 tasks = cursor.fetchall()
 conn.close()
