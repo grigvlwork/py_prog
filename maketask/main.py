@@ -63,6 +63,9 @@ class mainwindow(QtWidgets.QMainWindow):
             section_tree.import_data(self.section_list, 0, 2, 3)
             self.ui.section_tv.model = QStandardItemModel()
             self.ui.section_tv.setModel(section_tree.model)
+            self.ui.section_tv.header().resizeSection(0, 250)
+            self.ui.section_tv.header().setText('0', 'Название раздела')
+            self.ui.section_tv.header().resizeSection(1, 1)
             self.ui.section_tv.expandAll()
         else:
             self.error_dialog.showMessage('Не выбран предмет')
