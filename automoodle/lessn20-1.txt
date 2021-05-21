@@ -1,0 +1,111 @@
+Ур.20-1
+
+Уровень 1
+
+1) var r:integer; begin writeln('Введите радиус'); read(r); writeln('Длина окружности = ',2*pi*r); writeln('Площадь круга = ',pi*sqr(r)); end.
+
+2) Program Rastoyanie; var x1,x2,y1,y2,S:real; begin write('введите координаты'); readln(x1,x2,y1,y2); S:=sqrt(sqr(x2-x1)+sqr(y2-y1)); writeln(s); readln; end.
+
+3) program z_3;
+
+var a, S_gr, S_poln, V: real;
+
+begin
+
+write('Введите ребро куба: ');
+
+read(a);
+
+S_gr := a * a;
+
+S_poln := 6 * S_gr;
+
+V := a * a * a;
+
+writeln('Площадь грани: ', S_gr);
+
+writeln('Площадь полной поверхности: ', S_poln);
+
+writeln('Объем: ', V);
+
+end.
+
+4) program z_4;
+
+var R1, R2, R3, R: real;
+
+begin
+
+write('Введите R1: '); read(R1);
+
+write('Введите R2: '); read(R2);
+
+write('Введите R3: '); read(R3);
+
+R := (R1 * R2 * R3)/(R1 * R2 + R2 * R3 + R3 * R1);
+
+writeln('R = ', R);
+
+end.
+
+5) program z_5;
+
+var a1, d, n, Sn: real;
+
+begin
+
+write('Введите первый член: '); read(a1);
+
+write('Введите разность: '); read(d);
+
+write('Введите число членов: '); read(n);
+
+Sn := ((2*a1+d*(n-1))/2)*n;
+
+writeln('Сумма членов: ', Sn);
+
+end.
+
+6) program z_6;
+
+var a, b, c, D, x1, x2: real;
+
+begin
+
+write('a = '); read(a);
+
+write('b = '); read(b);
+
+write('c = '); read(c);
+
+D:=b*b-4*a*c;
+
+x1:=(-b + sqrt(D))/(2*a);
+
+x2:=(-b - sqrt(D))/(2*a);
+
+writeln('x1 = ', x1);
+
+writeln('x2 = ', x2);
+
+end.
+
+7) program z_7;
+
+var a, b, alpha, S: real;
+
+begin
+
+write('a = '); read(a);
+
+write('b = '); read(b);
+
+write('alpha = '); read(alpha);
+
+alpha:=(alpha*pi)/180;
+
+S:=(1/2)*(sqr(b)-sqr(a))*tan(alpha);
+
+writeln('S = ', S);
+
+end.

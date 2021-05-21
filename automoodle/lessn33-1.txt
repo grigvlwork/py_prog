@@ -1,0 +1,47 @@
+”р.33-1
+1. Program n9;
+var d: char;
+begin
+readln(d);
+if (d = С1Т) or (d = С2Т) or (d = С3Т) or (d = С4Т) or (d = С5Т) or (d = С6Т) or (d = С7Т) or (d = С8Т) or (d = С9Т) or (d = С0Т) then
+writeln (СsuccessfillyТ)
+else
+writeln (СnoТ)
+end.
+2. Ќе знаю
+3. Ќе знаю
+4. Ќе знаю
+5. Ќе знаю
+6. Ќе знаю
+7. Program n9;
+Begin var a:=ReadString; Write('¬ывожу:Pascal') Println (80 ,65 ,83 ,67 ,65 ,76) end.
+8. 1) истина, 2) ложь, 3) истина, 4) ложь
+9. Program n9;
+Var c: char;
+Begin
+Readln (d);
+If (d = СsТ) or (d = СqТ) then
+Writeln (СsuccessfullyТ)
+Else
+Writeln (СnoТ);
+End.
+10. 1) (+), 2) (c), 3) (,), 4) (d), 5) (*), 6) (b), 7) (+), 8) (c)
+11. Program n9;
+Var c: char;
+Begin
+For c: = СaТ to СzТ do
+Write (c);
+Writeln (С Т);
+For c: = СAТ to СZТ do
+Write (c);
+Writeln (СabcdefghijklmnopqrstuvwxyzТ);
+Writeln (СјаЅб¬в√гƒд≈е®Є∆ж«з»и…й кЋлћмЌнќоѕп–р—с“т‘ф’х÷ц„чЎшўщъџыьЁэёюя€Т);
+Writeln (СzyxwvutsrqponmlkjihgfedcbaТ);
+Writeln (Сz y x w v u t s r q p o n m l k j i h g f e d c b aТ);
+Writeln (С0123456789Т);
+Writeln (С0123456789ABCDEFТ)
+End.
+12. Program Z1; Var st:string; i,j,k:integer; Begin k:=ord('A'); For i:=1 to 26 do begin For j:=1 to i do begin write(chr(k)); end; k:=k+1; end; end.
+13. var cifra: set of char = ['0'..'9']; s: string; i: byte; begin writeln ('¬ведите последовательность символов: '); readln (s); for i:=1 to length (s) do if s[i] in cifra then begin write ('Ќа ', i, ' месте стоит цифра ', s[i]); exit; end; write ('¬ строке нет цифр'); end.
+14. Ќе знаю
+

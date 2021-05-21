@@ -1,0 +1,141 @@
+Ур.28-1
+1. var a,b,p : real;
+     nod,nok : real;
+ begin
+   clrscr;
+   write('a=');readln(a);
+   write('b=');readln(b);
+   p:=a*b;
+   while a<>b do
+    if a>b then a:=a-b
+           else b:=b-a;
+   nod:=a;
+   nok:=p/nod;
+   writeln('НОД:',a);
+   write('НОК:',nok);
+   readln;
+ end.
+2.
+var a:real;
+ function s(a:real):real;
+begin
+ s:=a*a*sqrt(3)/4;
+end;
+ 
+begin
+ clrscr;
+ write('A -> ');
+ readln(a);
+ writeln('S=',6*s(a):0:5);
+ readln;
+end.
+3.
+var n, m, a, b, c, d, e, f, g:integer;
+Function Nod (m, n: integer): integer;
+Begin
+    While m<>n do
+       If m>n then m:=m-n
+                   Else n:=n-m;
+       Nod:=m
+End;
+Begin
+     Write('Ведите числители и знаменатели дробей: ');
+     Read(a,b,c,d);
+     e:=a*d;
+     f:=b*c;
+     if e=0 then writeln(e)
+        else
+            begin
+                 g := nod(abs(e),abs(f));
+                 e := e div g;
+                 f:= f div  g;
+                 writeln(e,'/',f);
+            end;
+end.
+4.
+uses
+  crt;
+function NOD(a,b:integer):integer;
+begin
+    while (a<>0) and (b<>0) do
+        if a >= b then
+           a:=a mod b
+        else
+           b:=b mod a;
+    if a<>0 then NOD:=a
+    else NOD:=b;    
+end;
+ 
+procedure myprocedure(a, b, c, d: integer);
+var
+  e, f, z: integer;
+begin
+  e := a * c;
+  f := b * d;
+  z:=NOD(e,f);
+  writeln('полученная дробь = ', e div z, '/', f div z);
+end;
+ 
+begin
+  myprocedure(1, 2, 4, 8);
+  readln;
+end.
+5.
+uses crt;
+var a,b,c,d,e,f,k:longint;
+ 
+function nod(a,b:longint):longint;
+begin
+ if a=b then nod:=a else if a>b then nod:=nod(a-b,b) else nod:=nod(b-a,a);
+end;
+ 
+begin
+ clrscr;
+ write('A/B C/D -> ');
+ readln(a,b,c,d);
+ e:=a*d-b*c;
+ f:=b*d;
+ k:=nod(e,f);
+ e:=e div k;
+ f:=f div k;
+ writeln(a,'/',b,' - ',c,'/',d,' = ',e,'/',f);
+ readln;
+end.
+6.
+function sum(n:integer):real;
+var s:real;
+begin
+  s:=1/n;
+  if n>1 then s:=s+sum(n-1);
+  sum:=s;
+end;
+var n:integer;
+begin
+  readln(n);
+  write('S = ',sum(n):0:3);
+end.
+7.
+function pl_pr(x,y:real):real;
+begin
+pl_pr:=x*y/2;
+end;
+function pl_tr(x,y,z:real):real;
+var p:real;
+begin
+p:=(x+y+z)/2;
+pl_tr:=sqrt(p*(p-x)*(p-y)*(p-z));
+end;
+var x,y,z,t,d,s:real;
+begin
+repeat
+writeln('Введите длины сторон x,y>0');
+readln(x,y);
+until(x>0)and(y>0);
+d:=sqrt(x*x+y*y);
+repeat
+writeln('Введите длины других двух сторон >0 и z+t>',d:0:2);
+readln(z,t);
+until(z>0)and(t>0)and(z+t>d);
+s:=pl_pr(x,y)+pl_tr(z,t,d);
+write('Площадь четырехугольника=',s:0:2)
+end.

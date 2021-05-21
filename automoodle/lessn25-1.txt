@@ -1,0 +1,47 @@
+Ур.25-1
+
+1 уровень
+
+1.
+
+var a1,a,e:real;
+
+n:integer;
+
+begin
+
+repeat
+
+write('Введите малую величину 0<e<1 e=');
+
+readln(e);
+
+until(e>0)and(e<1);
+
+a1:=2;
+
+a:=(2+a1*a1)/(2*a1);
+
+writeln('n=1 a=',a1:0:5);
+
+writeln('n=2 a=',a:0:5);
+
+n:=2;
+
+while abs(a1-a)>=e do
+
+begin
+
+a1:=a;
+
+n:=n+1;
+
+a:=(2+a1*a1)/(2*a1);
+
+writeln('n=',n,' a=',a:0:5);
+
+end;
+
+write('n=',n);
+
+end

@@ -1,0 +1,60 @@
+”р.21-1
+1) program u_1;
+var a,b,c:real;
+begin
+write('¬ведите стороны треугольника через пробел: ');
+read(a, b, c);
+if ((a=b) and (b=c)) then write('“реугольник равносторонний')
+  else write('“реугольник неравносторонний');
+end.
+
+2) program u_2;
+var N:integer;
+begin
+write('¬ведите число: ');
+read(N);
+if ((N mod 2 = 0) and ((N>9) and (N<100))) then write('„исло четное, двузначное')
+  else write('„исло не подходит');
+end.
+
+3) program u_3;
+var a,b,c:real;
+begin
+write('¬ведите стороны треугольника через пробел: ');
+read(a, b, c);
+if ((a=b) or (b=c) or (a=c)) then write('“реугольник равнобедренный')
+  else write('“реугольник неравнобедренный');
+end.
+
+4) label t;
+var a,b,c: integer;
+begin
+readln(a,b,c);
+if a<>b then if abs(a)=abs(b) then goto t;
+if a<>c then if abs(a)=abs(c) then goto t;
+if b<>c then if abs(b)=abs(c) then goto t;
+writeln('нет');
+t:
+writeln('есть');
+end. 
+5) var x, y : real; 
+begin 
+write('x = '); readln(x); 
+write('y = '); readln(y); 
+if (x > 0) and (y > 0) then writeln('x и y в первой четверти') 
+else writeln('x и y где-то в другом месте') 
+end. 
+6) var a,c,d:integer; 
+begin 
+writeln('¬ведите целые числа a,c,d'); 
+readln(a,c,d); 
+if(c=a*a)and(d=a*a*a) then write('„исла c,d €вл€ютс€ квадратом и кубом числа а') 
+else write('„исла c,d не €вл€ютс€ квадратом и кубом числа а') 
+end. 
+7) Var
+N,K:integer;
+Begin
+Write('N = ');Read(N);
+Write('K = ');Read(K);
+Write((N>9)and(N<100)and(N mod K = 0));
+End.

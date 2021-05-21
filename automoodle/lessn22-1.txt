@@ -1,0 +1,146 @@
+Ур.22-1
+1) 
+var
+    a, b: integer;
+
+begin
+    readln(a, b);
+    if a + b >= 180 then
+        writeln('Такой треугольник не может существовать')
+    else if (a = 90) or (b = 90) or (a + b = 90) then
+        writeln('Это прямоугольный треугольник')
+    else
+        writeln('Это треугольник')
+end.
+2)
+uses crt;
+var x,y:real;
+begin
+writeln('Введите координаты точки:');
+read(x,y);
+if(x=0)and(y=0) then write('В начале координат')
+else if(x=0)and(y<>0) then write('На оси Y')
+else if(x<>0)and(y=0) then write('На оси X')
+else if(x>0)and(y>0)then write('I четверть')
+else if(x<0)and(y>0)then write('II четверть')
+else if(x<0)and(y<0)then write('III четверть')
+else write('IV четверть');
+end.
+3)
+const     
+v1 = 5; //Скорость грузовика     
+v2 = 10;//Скорость легкового автомобиля     
+t = 5;  //Задержка между выездом      
+
+var   
+t1 : integer; //Время, от выезда легкового авто  
+
+begin 
+readln (t1);   
+if v1 * (t +t1) <= v2 * t1 then   
+writeln ('Догонит')   
+else    writeln ('Не догонит'); 
+end.   
+
+{ Уравнение зависимости координаты от времени 
+x = xo + vt 
+x0 = 0  
+
+xg(t) = v1*(t+t1) 
+xl(t) = v2*t1  
+
+xl(t) >= xg(t) }
+4) 
+
+Написать программу нахождения суммы большего и меньшего из 3 чисел.
+ спросил 18 Дек, 18 от cevka в категории школьный раздел
+
+
+
+ 
+
+решение вопроса
++7
+var a,b,c: integer;
+min, max, s: integer;
+begin
+writeln('Введите числа');
+readln(a,b,c);
+if (a>b)  then max:=a else max:=b;
+if (c>max) then max:=c;
+if (a<b)then min:=a else min:=b;
+if (c<min)then min:=c;
+s:=max+min;
+writeln('Сумма максимального и минимального числа =', s);
+end.
+5)
+//искать угол будем по теореме косинусов
+Program n1;
+var x,y,z:real;
+function arccos(x : real) : real; {это понадобится для теор. кос.}
+begin
+arccos := 2 * arctan(sqrt((1 - x) / (1 + x)));
+end;
+procedure ygl( a,b,c: real); {процедура для удобства}
+var ga: real;
+begin
+ga:=arccos((sqr(a) + sqr(b) - sqr(c))/(2 * a* b)) * 180 / pi; {сама теор. кос.}
+writeln('угол С= ',ga:5:2);
+end;
+begin
+write('введите сторону а: ');
+readln(x);
+write('введите сторону b: ');
+readln(y);
+write('введите сторону c: ');
+readln(z);
+if(x>=y+z)or(y>=x+z)or(z>=x+y)then writeln('Это не треугольник')
+else if x*x+y*y=z*z then {теорема пифагора}
+writeln('Это прямоугольный треугольник')
+else if (x*x+y*y>z*z)and(x*x+z*z>y*y)and(z*z+y*y>x*x)
+then
+begin
+writeln('Это остроугольный треугольник');
+ygl(x,y,z); {вызываем процедуру}
+end
+else
+begin
+writeln('Это тупоугольный треугольник');
+ygl(x,y,z);
+end;
+end.
+6)
+var a,b,c,d,min1,min2,max:integer;
+begin
+write('a = '); readln(a);
+write('b = '); readln(b);
+write('c = '); readln(c);
+write('d = '); readln(d);
+if a<b then min1:=a else min1:=b;
+if c<d then min2:=c else min2:=d;
+if min1>min2 then max:=min1 else max:=min2;
+writeln('max = ',max);
+end.
+
+Пример:
+a = 5
+b = 2
+c = 1
+d = 4
+max = 2
+7)
+var
+    c: integer;
+    n: real;
+
+begin
+    write('Перевод в градусы (1) или в радины (2) ? ');
+    readln(c);
+    write('Переводимая величина = ');
+    readln(n);
+    
+    if c = 1 then
+        writeln(n, ' radian = ', n * 180 / pi, ' gradus')
+    else
+        writeln(n, ' gradus = ', n * pi / 180, ' radian')
+end.

@@ -1,0 +1,67 @@
+Ур.27-1
+1. Составить программу нахождения наибольшего общего делителя (НОД) и наименьшего общего кратного (НОК) двух натуральных чисел. Использовать подпрограмму алгоритма Евклида для определения НОД.
+var a,b : longint
+function nod(a, b : longint) : longint;
+begin
+if a = b then
+nod :=a
+else if a > b then
+nod := nod(b,a - b)
+else
+nod := nod(a,b – a)
+end;
+function nok(a,b : longint) : longint;
+nok := (a * b) div nod(a,b);
+end;
+begin
+while TRUE do begin
+write(‘A = ‘);
+readln(a);
+if a < q then
+break;
+write(‘B =’); 
+readln(b);
+if b < 1 then
+break;
+writeln(‘NOD: ‘, nod(a,b), ‘; NOK: ‘, nok(a,b));
+end
+end. 
+2. Вычислить площадь правильного шестиугольника со стороной а, используя подпрограмму вычисления площади треугольника.
+uses crt;
+var a:real;
+function s(a:real):real;
+begin
+s:=a*a*sqrt(3)/4;
+end;
+begin
+clrscr;
+write('A -> ');
+readln(a);
+writeln('S=',6*s(a):0:5);
+readln;
+end.
+
+3. Даны две дроби и (А, В, С, D — натуральные числа). Составить программу деления дроби на дробь. Ответ должен быть несократимой дробью. Использовать подпрограмму алгоритма Евклида для определения НОД.
+var n, m, a, b, c, d, e, f, g:integer;
+Function Nod (m, n: integer): integer;
+Begin
+While m<>n do
+If m>n then m:=m-n
+Else n:=n-m;
+Nod:=m
+End;
+Begin
+Write('Ведите числители и знаменатели дробей: ');
+Read(a,b,c,d);
+e:=a*d;
+f:=b*c;
+if e=0 then writeln(e)
+else
+begin
+g := nod(abs(e),abs(f));
+e := e div g;
+f:= f div g;
+writeln(e,'/',f);
+end;
+end.
+

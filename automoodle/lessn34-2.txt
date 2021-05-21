@@ -1,0 +1,119 @@
+Ур.34-2
+1. Как в программе обозначается строковая константа, как определяется строковая переменная?
+
+• Строковая константа записывается как последовательность символов, заключенная в апострофы. Строковая переменная описывается в разделе описания переменных следующим образом: var <идентификатор>: string [<максимальная длина строки>]
+
+2. Какой может быть максимальная длина строки?
+
+• 255
+
+3. Составьте программу получения из слова «дисковод» слова «воск», используя операцию сцепления и функцию Сору.
+
+Program test; 
+var s: string;
+tp_l,tp_2: string; 
+begin 
+s:='дисковод'; 
+tp_l :=copy(s,6,2); 
+tp_2:=copy(s,3,2); 
+s := tp_l + tp_2; 
+writeln(s); 
+end.
+
+4. Составьте программу получения слова «правило» из слова «операция», используя процедуры Delete, Insert.
+
+Program test; 
+var s: string; 
+begin
+s:='onepaция'; 
+delete(s, 1 ,length(s)); 
+insert('npaвило',s, 1); 
+writeln(s); 
+end.
+
+5
+var text:string;
+begin
+write('введите слово');
+readln(text);
+text[1]:='*'
+text[length(text)]:='*'
+writeln(text);
+readln;
+end.
+
+6. В данном слове произведите обмен первого и последнего символов.
+
+Program test; 
+var
+А, С: string; 
+b: integer; 
+begin 
+read (A);
+С := A;
+b := length(A);
+A[1] := A[b];
+A[b] := C[1]; 
+write (A); 
+end.
+
+7. К данному слову присоедините столько символов '!', сколько в нем имеется букв (например, из строки 'УРА' надо получить 'УРА!!!').
+Program test; 
+var
+s:string;
+i:byte;
+begin
+write('Введите строку: ’);
+readln(s);
+For i:=l to Length(s) do 
+s:=s+'!';
+writeln(s); 
+readln; 
+end.
+
+8.
+var
+s:string;
+i:byte;
+begin
+readln(s);
+for i:=length(s) downto 1 do
+insert(' ',s,i+1)
+writeln(s);
+end.
+
+9. Переверните введенную строку (например, из 'ДИСК' должно получиться 'КСИД').
+Program test; 
+var
+s: String; 
+i: Byte; 
+begin
+writeln('Введите строку:');
+Readln(s);
+For i:=Length(s) downto 1 do 
+Write(s[i]); 
+end.
+
+10. В данной строке удалите все пробелы.
+Program test; 
+var s:string;
+i: integer; 
+begin
+writeln('Введите строку'); 
+readln(s);
+for i:=l to length(s) do 
+begin
+if s[i]='' then delete(s,i,l); 
+end; 
+writeln(s); 
+end. 
+
+11.
+var
+s:string;
+n,k:byte;
+begin
+readln(s);
+val(s,n,k);
+writeln(n);
+end.

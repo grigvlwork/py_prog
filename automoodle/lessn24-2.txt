@@ -1,0 +1,90 @@
+Ур.24-2
+Задача 1. 
+
+var a:array [1..100] of integer;
+
+n,i:integer;
+
+begin
+
+for i:=10 to 99 do begin
+
+a[i]:=i;
+
+if (a[i] mod n=0) then writeln(a[i]);
+
+end;
+
+end.
+
+Задача 2. 
+
+var a:array [1..100] of integer;
+
+n,k,i,x,y,z: integer;
+
+begin
+
+readln(n,k);
+
+for i:=n to k do begin
+
+a[i]:=i;
+
+x:=a[i] mod 10;
+
+y:=a[i] div 10;
+
+z:=y mod 10;
+
+y:=y div 10;
+
+if (x=y) or (x=z) or (y=z) then writeln(a[i]);
+
+end;
+
+end.
+
+Задача 3. 
+
+var a,n,an,na: integer;
+
+begin
+
+readln(a,n);
+
+if (a>0) and (b>0) then begin
+
+an:=a*10+n;
+
+na:=n*10+a else writeln('Введены неверные числа!');
+
+end;
+
+end.
+
+Дополнительно: Задача 4*. 
+
+uses crt;
+
+var q,i,j:integer;
+
+begin
+
+clrscr;
+
+write('q=');
+
+readln(q);
+
+for i:=1 to round(sqrt(q)) do
+
+for j:=i to q div i do
+
+if i*j=q then
+
+writeln(i,'*',j,'=',q);
+
+readln
+
+end.

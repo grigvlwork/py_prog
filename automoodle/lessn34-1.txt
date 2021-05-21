@@ -1,0 +1,180 @@
+Ур.34-1
+1) program stroki;
+var s:string;
+    k,i:integer;
+begin write('Vvedite stroku:');
+      readln(s);
+      s:=' '+s;
+      for i:=1 to length(s) do
+        if s[i]=' ' then k:=k+1;
+      writeln(k);
+end.
+2) program string_8;
+var s:string;
+i,k:integer;
+begin write('введите строку:');
+readln(s);
+s:=' '+s;k:=0;
+for i:=1 to length(s) do
+if (s[i]=' ') and (s[i+1]='b') then k:=k+1;
+writeln(k);
+Readln;
+end.
+3) var
+s: string;
+i : integer;
+begin
+Write('Введите сроку: ');
+Readln(s);
+for i :=1 to Length(s) do
+if s = ':' then 
+s := ';';
+writeln(s);
+end.
+
+uses crt;
+var st:string;
+  i:byte;
+  what2look,replacement:char;
+begin
+write(' Строка: '); readln(st);
+what2look:=':';
+replacement:=';';
+i:=pos(what2look,st);
+while (i>0) do
+  begin
+  st[i]:=replacement;
+  i:=pos(what2look,st);
+  end;
+writeln(' Вывод строки:',st);
+end.
+4) var
+  str: string;
+  i,n: byte;
+begin
+  write('Введите строку: ');
+  readln(str);
+  n:=length(str);
+  for i:=1 to n do
+  begin
+    if (i<n div 2)and(str[i]=':') then str[i]:='*';
+    if (i>n div 2)and(str[i]='!') then str[i]:='.';
+  end;
+  writeln(str);
+  readln;
+end.
+5) program p19;
+uses crt;
+var s,s1:string;
+    t,t1:integer;
+begin
+ readln(s);
+ t1:=0;
+ s1:=' ';
+ for t:=1 to length(s) do
+  if (s[t]=':') then t1:=t1+1
+                else s1:=s1+s[t];
+  writeln(s1);
+  writeln('dvoetohcii:',t1);
+ readln
+ end.
+6) var s:string;
+    i:byte;
+begin
+ readln(s);
+ for i:=1 to length(s) do
+  if s[i]='(' then break;
+ inc(i);
+ while s[i]<>')' do
+ begin
+  write(s[i]);
+  inc(i);
+ end;
+ writeln;
+end.
+7) Var
+  s:string;
+  max,min,i,k:integer;
+begin
+write('Введите строку: ');
+readln(s);
+s:=s+' ';
+for i:=1 to length(s) do
+  begin
+  if s[i]=' ' then
+     begin
+     if k>max then max:=k;
+     if (k<min) or (min=0) then min:=k;
+     k:=-1;
+     end;
+  k:=k+1;
+  end;
+writeln('Самое короткое: ',min,'; самое длиное: ',max);
+end.
+8) program str;
+uses crt;
+var
+   s: string;
+   n,nsl,ksl,kol,i:byte;
+begin
+  writeln('Введите строку: ');
+  readln(s);
+  s:=' '+s;
+  n:=length(s);
+ 
+  for i:=1 to n do
+  begin
+      if (s[i]=' ') and (s[i+1]<>' ') and (s[i+1]<>'.') then
+         nsl:=i+1;
+ 
+      if (s[i]<>' ') and (s[i]<>'.') and ((s[i+1]='.') or (s[i+1]=' ')) then
+      begin
+         ksl:=i;
+         if ((ksl-nsl)+1=3) then kol:=kol+1;
+      end; 
+  end;
+  
+  writeln('Слов из 3-х букв ',kol);
+ 
+end.
+9) uses crt;
+var s: string;
+    i: byte;
+begin
+write('s=');
+readln(s);
+for i:=length(s) downto 1 do
+    if s[i]='*' then delete(s,i,1)
+       else insert(s[i],s,i);
+write('s=',s);
+end.
+10) var s : string;
+   k, kol, i : integer;
+begin
+  Write('Введите строку : ');
+  ReadLn(s);
+    for i:=1 to length(s) do
+if s[i]=' ' then k:=i;
+for i:=k+1 to length(s) do
+if s[i]='k' then inc(kol);
+  WriteLn('В последнем слове буква "k" встречается ',kol,' раз.');
+  ReadLn;
+end.
+11) uses crt;
+var s,sl,sc: string;
+    i,k: integer;
+begin
+write('Введите текст ');
+readln(s);
+write('Введите слово ');
+readln(sl); s:=' '+s+' ';
+sl:=' '+sl+' ';
+for i:=1 to length(s)-length(sl)+1 do
+    begin
+    sc:=copy(s,i,length(sl));
+    if sc=sl then inc(k);
+    end;
+if k=0 then writeln('Не встречается')
+   else writeln('Встречается ',k,' раз');
+readkey
+end.

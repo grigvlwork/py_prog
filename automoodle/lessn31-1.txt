@@ -1,0 +1,109 @@
+Ур.31-1
+1. Объявить в программе файловую переменную с типом Text; 
+Связать файловую переменную с файлом внешней памяти, содержащим исходные данные, с помощью оператора Assign; 
+Открыть файл для чтения с помощью процедуры Reset; 
+Осуществить чтение из файла с помощью операторов Read или Readln; 
+Закрыть файл с помощью оператора Close.
+
+2. Объявить в программе файловую переменную с типом Text; 
+Связать файловую переменную с файлом внешней памяти, содержащим исходные данные, с помощью оператора Assign; 
+Открыть файл для записи с помощью процедуры Rewrite; 
+Осуществить запись в файл с помощью операторов Write или Writeln; 
+Закрыть файл с помощью оператора Close.
+
+3. 
+Program RSDO01;
+Uses crt;
+Var a, b, c, d, x1, x2: real;
+    G: text;
+Begin
+    Assign (G,'kvur.txt');
+    Reset(G);
+    Readln (G,a,b,c);
+    Close(G);
+    d:=sqr(b)-4*a*c;
+        if d > 0 then
+        begin
+             x1:=(-b+sqrt(d))/(2*a);
+             x2:=(-b-sqrt(d))/(2*a);
+             Assign (G,'korni.txt ');
+             Rewrite (G);
+             Writeln (G,'2 корня ', x1:7:2, x2:7:2);
+             Close(G);
+             Writeln ('2 корня ', x1:7:2, x2:7:2)
+        end
+else if d = 0 then
+             begin
+               x1:=-b/(2*a);
+               Assign (G,'korni.txt ');
+               Rewrite (G);
+               Writeln (G,'1 корень ', x1:7:2);
+               Close(G);
+               Writeln ('1 корень ', x1:7:2)
+             end
+               else
+                 begin
+                    Assign (G,'korni.txt ');
+                    Rewrite (G);
+                    Writeln (G,‘нет корней');
+                    Close(G);
+                    Write (‘нет корней')
+                 end;
+    Readkey
+End.
+
+4. 
+const
+  n = 6;
+  m = 8;  
+type mas = array[1..n,1..m] of integer;
+var
+  a : mas;
+  i, j : integer;
+  f, g : text;
+ 
+procedure change(var z : mas);
+var i, j, k, t : integer;
+begin
+  k := n div 2;
+  for i := 1 to k do
+    for j := 1 to m do
+    begin
+      t := a[n-i+1, j];
+      a[n-i+1, j] := a[i,j];
+      a[i,j] := t      
+    end;
+end;
+ 
+begin
+  assign(f, 'mtrx.txt');
+  assign(g, 'mtrx1.txt');
+  reset(f);
+  writeln('матрица:');
+  for i := 1 to n do
+  begin
+    for j := 1 to m do
+    begin
+      read(f, a[i,j]);
+      write(a[i,j]:4)
+    end;
+    writeln
+  end;
+  close(f);
+  rewrite(g);
+  change(a);
+  writeln('новая матрица:');
+  for i := 1 to n do
+  begin
+    for j := 1 to m do
+    begin
+      write(a[i,j]:4);
+      write(g, a[i,j]:4)
+    end;
+    writeln;
+    writeln(g)
+  end;
+  close(g);
+  writeln('копия новой матрицы сохранена а файл!');
+  readln    
+end.

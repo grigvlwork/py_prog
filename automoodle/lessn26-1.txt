@@ -1,0 +1,144 @@
+Ур.26-1
+1) var n,a,b,c,d:integer;
+begin
+readln(n);
+for a:=1 to n-1 do
+ for b:=a to n-1 do
+  begin
+  d:=a*a+b*b;
+  c:=1;
+  while c*c<d do c:=c+1;
+  if (d=c*c)and(c<n) then writeln(a,' ',b,' ',c);
+  end;
+end.
+2) program f1cda001;
+var a, b, c, min, max: Integer;
+begin
+writeln('Введите число:');
+readln(b);
+min:=9;
+max:=0;
+repeat
+begin
+c:=b mod 10;
+b:=b div 10;
+If c<min Then min:=c;
+If c>max Then max:=c;
+end;
+until b<=0;
+writeln('Наибольшее значение:',max);
+writeln('Наименьшее значение:',min);
+end.
+3) Var
+N,A,k:integer;
+P,S:real;
+Begin
+Write('N = ');ReadLn(N);
+k:=0;
+For N:= 1 to N-1 do
+    Begin
+    A:=N;
+    S:=0;
+    While A>0 do
+       Begin
+       S:=S+(A mod 10);
+       A:=A div 10;
+       End;
+    A:=N;
+    P:=1;
+    While A>0 do
+       Begin
+       P:=P*(A mod 10);
+       A:=A div 10;
+       End;
+    if S=P then
+       Begin
+       WriteLn(N);
+       k:=k+1;
+       End;
+    End;
+if k=0 then WriteLn('Нет');
+End.
+4) Var
+N,A,k:integer;
+P,S:real;
+Begin
+Write('N = ');ReadLn(N);
+k:=0;
+For N:= 1 to N-1 do
+    Begin
+    A:=N;
+    S:=0;
+    While A>0 do
+       Begin
+       S:=S+(A mod 10);
+       A:=A div 10;
+       End;
+    A:=N;
+    P:=1;
+    While A>0 do
+       Begin
+       P:=P*(A mod 10);
+       A:=A div 10;
+       End;
+    if S=P then
+       Begin
+       WriteLn(N);
+       k:=k+1;
+       End;
+    End;
+if k=0 then WriteLn('Нет');
+End.
+5) var N,i:integer;
+begin
+readln(n);
+while (n mod 10=0) do begin inc(i); n:=n div 10; end;
+writeln(i);
+end.
+6) var n,i:integer;
+function f(a:integer):boolean;
+var k,m:integer; b:boolean;
+begin
+b:=true;
+k:=a;
+while k>0 do
+ begin
+ m:=k mod 10;
+ if (m=0)or(a mod m <> 0) then b:=false;
+ k:=k div 10;
+ end;
+f:=b;
+end;
+begin
+write('n = ');
+readln(n);
+for i:=1 to n do
+ if f(i) then write(i,' ');
+end.
+7) var i,max: Integer;
+n,m: String;
+begin
+max:=0;
+readln(n);
+for i:=1 to length(n) do
+begin
+if max<n[i] then max:=n[i];
+end;
+m:=n;
+m[length(m)]:=max;
+writeln(m);
+end.
+8) var i,max: Integer;
+n,m: String;
+begin
+max:=0;
+readln(n);
+for i:=1 to length(n) do
+begin
+if max<n[i] then max:=n[i];
+end;
+m:=n;
+m[length(m)]:=max;
+writeln(m);
+end.
+

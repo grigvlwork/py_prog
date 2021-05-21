@@ -1,0 +1,131 @@
+Ур.20-2
+1. Да, использовать можно только для комментариев, символьных и текстовых константах.
+
+2. Простые типы — это числа. Структурные — массивы, строки, файлы и т.д
+
+3. 1) Чтобы не было переполнения.
+s=a+b;
+Если s будет объявлена как integer, а a и b - как long integer (и значения a и b будут превышать диапазон integer), то ячейка s переполнится и s будет равно не пойми чему.
+
+2) Для корректной работы
+s=a+b;
+s - integer; a,b - double - некорректно.
+
+3) Чтобы не было неиспользуемой памяти.
+Если i изменяется от 1 до 10, а для переменной объявлен тип double, то при выполнении программы будут "висеть" незаполненные ячейки памяти, выделенные под этот тип.
+
+4. Инструкция объявления переменной выглядит так: ИмяПеременной : Тип;
+Можно описывать несколько переменных одного типа в одной строке, разделив запятыми; Например: Var i, j, k : integer;
+Объявление констант начинается словом Const;
+Инструкция объявления константы выглядит так: ИмяКонстанты = Значение;
+
+5. program Pr42;
+var
+  x ,y : real;
+  s, p : real;
+begin
+  readln(x, y);
+  s := (x + y) / 2;
+  p := 2 * x * y;
+  if (x < y) then
+  begin
+    x := s;
+    y := p;
+  end
+  else
+  begin
+    x := p;
+    y := s;
+  end;
+  writeln(x : 5 : 2);
+  writeln(y : 5 : 2);
+  readln;
+end.
+
+6. program Pr43;
+var
+  a, b, c, x1, x2, discriminant : real;
+begin
+  write('a = ');
+  readln(a);
+  write('b = ');
+  readln(b);
+  write('c = ');
+  readln(c);
+  
+  discriminant := sqr(b) - 4 * a * c;  
+
+  if discriminant < 0 then
+    writeln('Квадратное уравнение не имеет корней')
+  else
+    begin
+      if discriminant = 0 then
+        begin
+          {квадратное уравнение имеет два одинаковых корня}
+          x1 := -b / (2 * a);
+          x2 := x1;
+        end
+       else
+         begin
+           {уравнение имеет два разных корня}
+           x1 := (-b + sqrt(discriminant)) / (2 * a);
+           x2 := (-b - sqrt(discriminant)) / (2 * a);
+         end;
+       
+       {вывод корней уравнения}
+       writeln('x1 = ', x1:8:3);
+       writeln('x2 = ', x2:8:3);
+     end;
+  writeln('Press Enter to Exit...');
+  readln;
+end.
+
+7. program Pr 44;
+var
+  a, b, c, min3: real;
+
+begin
+  writeln('Введите три числа:');
+  readln(a, b, c); { <-- Вводим три числа }
+  if a < b then
+    if a < c then min3 := a { a<b a<c }
+    else min3 := c { c?a<b }
+  else
+    if b < c then min3 := b { b?a b<c }
+    else min3 := c; { c?b?a }
+  writeln('Наименьшее из чисел: ', min3);
+  readln
+end.
+
+8. program Pr 45;
+var x,y,z: real; 
+begin
+  x:=StrToFloat (edit1.Text); 
+  y:=StrToFloat (edit2.Text);
+  z:=StrToFloat (edit3.Text);
+  if ((x+y+z)<1) then      
+  begin
+    if ((x<y) and (x<z)) then 
+      x:=(y+z)/2
+    else      // если
+      begin
+        if ((y<x) and (y<z)) then 
+                                            y:=(x+z)/2
+        else       // если
+          z:=(y+x)/2;
+      end;
+  end
+else
+  begin
+    if (x<y) then
+      x:=(y+z)/2
+    else
+      y:=(x+z)/2;
+  end;
+  Memo1.Lines.Add ('x=' + FloatToStr(x) + #13 + 'y=' +FloatToStr(y));
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+ Memo1.Clear;
+end.

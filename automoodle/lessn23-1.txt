@@ -1,0 +1,136 @@
+Ур.23-1
+1.var n:integer;
+begin;
+readln(n);
+case n of
+0:writeln('zero');
+1:writeln('one');
+2:writeln('two');
+3:writeln('three');
+4:writeln('five');
+6:writeln('six');
+7:writeln('seven');
+8:writeln('eight');
+9:writeln('nine');
+else writeln('Some number');
+end;
+end.
+
+2. var n:integer;
+begin;
+readln(n);
+case n of
+1:writeln('January');
+2:writeln('February');
+3:writeln('March');
+4:writeln('April');
+5:writeln('May');
+6:writeln('June');
+7:writeln('July');
+8:writeln('August');
+9:writeln('September');
+10:writeln('October');
+11:writeln('November');
+12:writeln('December');
+else writeln('Some number');
+end;
+end.
+3.
+program privet;
+var k:integer;
+begin
+writeln('введите класс ');readln(k);
+if k=1 then ('Привет,первоклассник');
+ if k=2 then ('Привет,второклассник'); 
+ if k=3 then ('Привет,третеклассник'); 
+ if k=4 then ('Привет,четвероклассник'); 
+ if k=5 then ('Привет,пятиклассник'); 
+ if k=6 then ('Привет,шестиклассник'); 
+ if k=7 then ('Привет,семиклассник'); 
+ if k=8 then ('Привет,восьмиклассник'); 
+ if k=9 then ('Привет,девятиклассник');
+ if k=10 then ('Привет,десятиклассник');
+ if k=11 then ('Привет,одинадцатиклассник'); 
+end.
+4.var mark: integer;
+begin
+  write('Оценка: ');
+  readln(mark);
+  case mark of
+    1: writeln ('Плохо');
+    2: writeln ('Не удовлетворительно');
+    3: writeln ('Удовлетворительно');
+    4: writeln ('Хорошо');
+    5: writeln ('Отлично!');
+  end;
+  readln;
+end.
+5.var
+  c:integer;
+  L,Lm:real;
+begin
+  Writeln('Укажите код единицы измерения');
+  Write('(1- дм, 2- км, 3- м, 4- мм, 5- см): ');
+  Read(c);
+  Write('Укажите длину в выбранных единицах: ');
+  Read(L);
+  case c of
+  1:Lm:=L/10;
+  2:Lm:=L*1000;
+  3:Lm:=L;
+  4:Lm:=L/1000;
+  5:Lm:=L/100
+  end;
+  Writeln('Это составляет ',Lm,'м')
+end.
+
+Пример работы программы
+Укажите код единицы измерения
+(1- дм, 2- км, 3- м, 4- мм, 5- см): 4
+Укажите длину в выбранных единицах: 126
+Это составляет 0.126м
+6.program massa;
+var m, a: real; 
+begin       writeln('Введите массу.');
+readln(m);       
+writeln('Введите единицу измерения массы. 1 - килограмм, 2 - миллиграмм, 3 - грамм, 4 - тонна, 5 - центнер.');       
+readln(a);       
+writeln('Введённое вами значение равно ');        
+if a=1 then write(m, ' килограмм.');        
+if a=2 then write(m/1000000, ' килограмм.');        
+if a=3 then write(m/1000, ' килограмм.');        
+if a=4 then write(m*1000, ' килограмм.');        
+if a=5 then write(m*100, ' килограмм.');    
+end.
+7.program arifmetika;
+var x,y:real;
+k:integer;
+begin
+writeln('Введите х и у');
+readln(x,y);
+writeln('Выберите операцию');
+writeln('1 — сложение');
+writeln('2 — вычитание');
+writeln('3 — умножение');
+writeln('4 — деление');
+readln(k);
+case k of
+1: writeln(x+y);
+2: writeln(x-y);
+3: writeln(x*y);
+4: writeln(x/y);
+else writeln('Нет такой операции');
+end;
+end.
+8.begin
+  readln(a);
+  case a of
+    1: writeln('В понедельник у меня русяз, русяз, геом,геом,литр,литр,мхк,мхк');
+    2: writeln('Во вторник у меня  аняз,ист,ист,общ,иняз,геогр');
+    3: writeln('В среду у меня ист, экон, геогр,аняз,иняз');
+    4: writeln('В четверг у меня русяз, алг, право,лит,лит,фра');
+    5: writeln('В пятницу у меня фил, астр, обж, общ,общ, алг ');
+    6: writeln('В в субботу у меня фил, аняз,фра,техпер, алг, инф');
+    7: writeln('В воскресенье нет уроков');
+  end;
+end.

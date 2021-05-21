@@ -1,0 +1,26 @@
+Ур.22-2
+Программа решения биквадратного уравнения
+Вид биквадратного уравнения: ax^4+bx^2+c=0
+var
+  a,b,c,d,z1,z2:real;
+begin
+  Writeln(x^4 and x^2);
+  Read(a,b,c);
+  d:=b*b-4*a*c;
+  if d<0 then Writeln('Нет корней')
+  else begin
+    d:=sqrt(d);
+    z1:=(-b-d)/(2*a);
+    z2:=(-b+d)/(2*a);
+    if z1<0 then begin
+      z1:=z2;
+      if z1<0 then Writeln('Нет корней')
+      else Writeln(-sqrt(z1),' ',sqrt(z1))
+      end
+    else begin
+      Write(-sqrt(z1),' ',sqrt(z1),' ');
+      if z2>=0 then Writeln(-sqrt(z2),' ',sqrt(z2));
+      Writeln
+      end
+    end
+end.

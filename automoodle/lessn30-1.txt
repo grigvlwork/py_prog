@@ -1,0 +1,100 @@
+Ур.30-1
+1.Program a10;
+var a,b:Array [1..100,1..100] of integer;
+k,i,n,j,s:integer;
+Begin
+read(n);
+For i:=1 to n do
+begin
+For j:=1 to n do
+begin
+read(a[i,j]);
+end;
+end;
+i:=0;j:=0;s:=0;k:=0;
+while i<=n do
+begin
+i:=i+1;j:=j+1;
+if(a[i,j]>0)then k:=k+1;
+s:=s+a[i,j];
+end;
+writeln(k,' ',s);
+end.
+2.const n=5;
+var a:array[1..n,1..n] of integer;
+i,j,s1,s2:integer;
+b:boolean;
+begin
+for i:=1 to n do
+for j:=1 to n do read(a[i,j]);b:=true;
+s1:=0;
+for j:=1 to n do s1:=s1+a[1,j];
+for i:=1 to n do
+begin
+s2:=0;
+for j:=1 to n do s2:=s2+a[i,j];
+if s1<>s2 then b:=false;
+s2:=0;
+for j:=1 to n do s2:=s2+a[j,i];
+if s1<>s2 then b:=false;
+end;
+if b then writeln('Матрица - магический квадрат')
+else writeln('Матрица не является магическим квадратом');
+end.
+3.type mas=array[1...100,1...100] of integer;
+var i,j,n,s : integer;
+var a,b : mas;
+begin
+clrscr;
+write('n=');
+readln(n);
+for i;=1 to n do begin
+for j:=1 to n do begin
+readln(a[i,j]);
+end;
+end;
+for i;=1 to n do begin
+for j:=1 to n do begin
+b[j,i]:=a[i;j];
+write(b[j,i]);
+end;
+END;
+s:=0;
+i:=j;
+for i;=1 to n do begin
+for j:=1 to n do begin
+if a[j,i]<>b[j,i] then s:=s+1;
+end;
+end;
+if s>0 then write ('НЕТ')else write ('ДА, является симметричной);
+end
+4.const n=4;
+var
+a:array[1..n,1..n] of integer;
+max:array[1..n] of integer;
+i,j,t, index,index1:integer;
+begin
+randomize;for i:=1 to n do
+for j:=1 to n do
+a[i,j]:=random(100);
+max[1]:=a[1,1];
+for i:=1 to n do begin
+for j:=1 to n do
+if a[i,j]> max[i] then
+begin
+max[i]:=a[i,j];
+index:=i; index1:=j;
+end;
+t:=a[i,i];
+a[i,i]:=max[i];
+a[index,index1]:=t;
+end;
+for i:=1 to n do
+writeln(max[i]);
+for i:=1 to n do
+begin for j:=1 to n do
+write(a[i,j]:4);
+writeln;
+end;
+readln;
+end.

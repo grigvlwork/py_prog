@@ -1,0 +1,52 @@
+1) Первоначальные значения переменных будут a:=1, b:=2, а сумма a+b =3, что позволит циклу выполняться.
+При первом прохождении сумма увеличится на 3:
+а = 1 + 1 = 2;
+b = 2 + 2 = 4;
+s = 6.
+При втором прохождении цикла:
+a = 2 + 1 = 3;
+b = 4 + 2 = 6;
+s = 9.
+Дальнейшее выполнение цикла невозможно,потому что 9>8.
+Ответ: а= 3, b=6, s= 9; цикл будет выполнен два раза. 
+2) k:= 1; 
+f:= 0; 
+while k < n do;
+f:= f * k; 
+k:= k + 1; 
+3) program ABC;
+var num,count:integer;
+ 
+begin
+readln(num);
+while num<>0  do
+begin
+    if (num mod 3) = 3 then
+          count:=count+1
+end;
+writeln(count)
+end.
+
+4) var num,prev:integer;
+begin
+readln(num);
+while num>0 do begin
+  prev:=num;
+  num:=num div 10;
+end;
+writeln(prev);
+end. 
+5) program ABC;
+var num,sum:integer;
+ 
+begin
+readln(num);
+while num<>0  do
+begin
+    if (num mod 10) < 5 then
+          sum:=sum+num mod 10;
+    num:= num div 10
+end;
+writeln(sum)
+end.
+

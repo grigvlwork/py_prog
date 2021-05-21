@@ -1,0 +1,100 @@
+Ур.35-2
+1. комбинированный тип данных-это структурный тип, состоящий из фиксированного числа компонентов (полей) разных типов, а регулярный это упорядоченный набор данных одинакового типа, у каждого из которых есть свой порядковый номер.
+
+
+2. Запись — агрегатный тип данных, инкапсулирующий без сокрытия набор значений различных типов.
+
+
+3.Комбинированный тип объявляется в программе в разделе типов. 
+
+
+type
+  dan = record
+    Surname: string[30];
+    Name: string[30];
+    Year: integer;
+    Growth: real;
+    Weight: real;
+  end;
+begin
+end.
+4. Витя Дурочкин 2005 160 69
+ Петя Петров 2003 170 70
+Афанасий Фролкин 2004 171 56,6
+Фома Аквинский 2004 180 59
+Акакий Иванов 2005 153 70,3
+
+
+5.
+Program Examen;
+Type results = record
+Fam: string[15];
+Rus: 2..5;
+Alg: 2..5;
+Phiz: 2..5
+End;
+Var list: array[1..30] of results;
+i: integer; F1, F2: text;
+Begin
+Assign(F1, '10_a.txt');
+Assign(F2, 'Best.txt');
+Reset(F1);
+Rewrite(F2);
+Readln(F1); Readln(F1);
+For i:=1 To 30 Do
+Readln(F1,list[i].Fam,list[i].Rus,list[i].Alg,list[i].Phiz);
+For i:=1 To 30 Do
+If (list[i].rus=5) and (list[i].alg=5) and
+(list[i].phiz=5)
+Then
+Begin
+Writeln(list[i].fam);
+Writeln(F2, list[i].fam)
+End;
+Close(F1); Close(F2)
+End.
+6.
+• Program Test;
+begin
+var a:=ReadLines('infile.txt').ToArray;
+var n:=a.Length;
+Writeln(*** Исходная информация ***");
+/ фамилия, имя, возраст, рост, вес
+a.PrintLn(NewLine);
+Writeln(*** 3aдание 1 ***');
+var sves:real:=03;
+var srost:real:=0;
+foreach var s in a do begin
+srost+=StrToFloat(s.ToWords.ElementAt(3));
+sves+=StrToFloat(s.ToWords.ElementAt(4))
+end;
+Writeln(Cредний рост равен ',srost/n:5:1)3;
+WritelnSpедний вес равен ,sves/n:4:1
+sros/=n, sves/=n;
+Writeln('***Задание 2 ***')
+var f2:=OpenWrite('rost.txt');
+foreach var s in a do begin
+var ss:=s.ToWords;
+var rost:=StrToFloat(ss.ElementAt(3));
+if rost>srost then begin
+var s0:=ss.Take(3).ToArray;
+var sl:=s0[0]+' '+s0[1]+', '+s0[2];
+Writeln(s1);
+Writeln(f2,s1)
+end
+end;
+f2.Close;
+Writeln(*** 3anaHne 3 ***');
+f2:=OpenWrite('ves.txt');
+foreach var s in a do begin
+var ss:=s.ToWords;
+var ves:=StrToFloat(ss.ElementAt(4));
+if ves<sves then begin
+var s0:=ss.Take(3).ToArray;
+var s1:=s0[0]+' '+s0[1]+', '+s0[2];
+Writeln(s1);
+Writeln (f2,s1)
+end
+end, 
+f2. Close
+end
