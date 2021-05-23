@@ -1,4 +1,4 @@
-from PyQt5 import QtGui
+from PyQt5 import QtGui, Qt
 from PyQt5.Qt import QStandardItemModel
 from collections import deque
 
@@ -57,7 +57,7 @@ class Section(Table):
 
 class Task(Table):
     def __init__(self, cur):
-        super().__init__("subject", ['id', 'name'], cur)
+        super().__init__("task", ['id', 'section_id', 'name', 'condition'], cur)
 
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('section_id', id_rec))
@@ -65,6 +65,21 @@ class Task(Table):
 
 
 class TreeItem(QtGui.QStandardItem):
+    def __init__(self, txt='', font_size=10, set_bold=False, color=QtGui.QColor(0, 0, 0), dbid=0):
+        super().__init__()
+        self.db_id = dbid
+        fnt = QtGui.QFont('Arial', font_size)
+        fnt.setBold(set_bold)
+        self.setEditable(False)
+        self.setForeground(color)
+        self.setFont(fnt)
+        self.setText(txt)
+
+    def get_id(self):
+        return self.db_id
+
+
+class TaskListItem(QtGui.QStandardItem):
     def __init__(self, txt='', font_size=10, set_bold=False, color=QtGui.QColor(0, 0, 0), dbid=0):
         super().__init__()
         self.db_id = dbid
@@ -101,3 +116,13 @@ class Tree:
             db_id = node[id_index]
             parent.appendRow(TreeItem(txt=node[name_index], dbid=db_id))
             seen[db_id] = parent.child(parent.rowCount() - 1)
+
+
+class List:
+    def __init__(self):
+        self.model = QStandardItemModel()
+
+    def import_data(self, data, id_index, name_index):
+        self.model.setRowCount(0)
+        for item in data:
+            self.model.appendRow(TaskListItem(txt=item[name_index], dbid=item[id_index]))

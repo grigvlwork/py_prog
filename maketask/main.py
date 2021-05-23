@@ -5,7 +5,7 @@ from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog
 from mainwindow import Ui_MainWindow
 from about import Ui_aboutdialog
-from dataclasses import Subject, Tree, Section
+from dataclasses import Subject, Tree, Section, List, Task
 
 
 class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
@@ -29,6 +29,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.task_list = None
         self.current_subject = None
         self.current_section = None
+        self.con = None
+        self.cur = None
 
         # Инициализация интерфейса
         super(MainWindow, self).__init__()
@@ -45,9 +47,14 @@ class MainWindow(QtWidgets.QMainWindow):
             # self.statusBar().showMessage(str(index.model().itemFromIndex(index).get_id()))
             self.current_section = index.model().itemFromIndex(index).get_id()
             self.task_list = None
-            section_table = Section(self.cursor())
-            self.task_list = section_table.select_detail(self.current_section)
-
+            task_table = Task(self.cur)
+            self.task_list = task_table.select_detail(self.current_section)
+            self.ui.task_list_view.model = QStandardItemModel()
+            task_list = List()
+            if self.task_list:
+                task_list.import_data(self.task_list, 0, 2)
+            self.ui.task_list_view.setModel(task_list.model)
+            self.ui.task_list_view.show()
 
     def exit_action(self):
         exit(0)
@@ -56,10 +63,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.about.show()
 
     def load_data(self):
-        con = sqlite3.connect(self.db_file)
-        cur = con.cursor()
+        self.con = sqlite3.connect(self.db_file)
+        self.cur = self.con.cursor()
         # Загрузка предметов и инициализация комбобокса с выбором предметов
-        subject_table = Subject(cur)
+        subject_table = Subject(self.cur)
         self.subject_list = subject_table.select_all()
         self.ui.subject_cb.clear()
         if self.subject_list:
@@ -68,7 +75,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.current_subject = self.subject_list[0][0]
         # Загрузка разделов и инициализация Treeview с деревом разделов
         if self.current_subject:
-            section_table = Section(cur)
+            section_table = Section(self.cur)
             self.section_list = section_table.select_detail(self.current_subject)
             section_tree = Tree()
             section_tree.import_data(self.section_list, 0, 2, 3)
@@ -78,6 +85,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.section_tv.expandAll()
         else:
             self.error_dialog.showMessage('Не выбран предмет')
+
+        # Загрузка задач и инициализация Task_list_view
 
     def open_action(self):
         options = QFileDialog.Options()
