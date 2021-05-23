@@ -1,5 +1,5 @@
 from PyQt5 import QtGui
-from PyQt5.Qt import QStandardItemModel, QStandardItem
+from PyQt5.Qt import QStandardItemModel
 from collections import deque
 
 
@@ -41,6 +41,44 @@ class Table:
         self.cursor.execute(self.insert_sql(values))
 
 
+class Subject(Table):
+    def __init__(self, cur):
+        super().__init__("subject", ['id', 'name'], cur)
+
+
+class Section(Table):
+    def __init__(self, cur):
+        super().__init__("section", ["id", "subject_id", "parent_section_id", "name"], cur)
+
+    def select_detail(self, id_rec):
+        self.cursor.execute(self.select_detail_sql('subject_id', id_rec))
+        return self.cursor.fetchall()
+
+
+class Task(Table):
+    def __init__(self, cur):
+        super().__init__("subject", ['id', 'name'], cur)
+
+    def select_detail(self, id_rec):
+        self.cursor.execute(self.select_detail_sql('section_id', id_rec))
+        return self.cursor.fetchall()
+
+
+class TreeItem(QtGui.QStandardItem):
+    def __init__(self, txt='', font_size=10, set_bold=False, color=QtGui.QColor(0, 0, 0), dbid=0):
+        super().__init__()
+        self.db_id = dbid
+        fnt = QtGui.QFont('Arial', font_size)
+        fnt.setBold(set_bold)
+        self.setEditable(False)
+        self.setForeground(color)
+        self.setFont(fnt)
+        self.setText(txt)
+
+    def get_id(self):
+        return self.db_id
+
+
 class Tree:
     def __init__(self):
         self.model = QStandardItemModel()
@@ -61,8 +99,5 @@ class Tree:
                     continue
                 parent = seen[pid]
             db_id = node[id_index]
-            parent.appendRow([
-                QtGui.QStandardItem(node[name_index]),
-                QtGui.QStandardItem(str(db_id)),
-            ])
+            parent.appendRow(TreeItem(txt=node[name_index], dbid=db_id))
             seen[db_id] = parent.child(parent.rowCount() - 1)

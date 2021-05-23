@@ -1,41 +1,52 @@
 import sys
 import sqlite3
-from PyQt5 import QtWidgets, QtGui
+from PyQt5 import QtWidgets
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog
 from mainwindow import Ui_MainWindow
 from about import Ui_aboutdialog
-from dataclasses import Table, Tree
+from dataclasses import Subject, Tree, Section
 
 
-class aboutwindow(QtWidgets.QDialog, Ui_aboutdialog):
+class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
     def __init__(self):
-        super(aboutwindow, self).__init__()
+        super(AboutWindow, self).__init__()
         self.ui = Ui_aboutdialog()
         self.ui.setupUi(self)
 
 
-class mainwindow(QtWidgets.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         # Вспомогательные окна
         self.error_dialog = QtWidgets.QErrorMessage()
-        self.about = aboutwindow()
+        self.about = AboutWindow()
 
         # Локальные переменные
         self.db_file = None
         self.subject_list = None
         self.section_list = None
+        self.task_list = None
         self.current_subject = None
+        self.current_section = None
 
         # Инициализация интерфейса
-        super(mainwindow, self).__init__()
+        super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.exit_act.triggered.connect(self.exit_action)
         self.ui.about_act.triggered.connect(self.about_action)
         self.ui.open_act.triggered.connect(self.open_action)
+        self.ui.section_tv.clicked.connect(self.section_clicked)
 
+    def section_clicked(self):
+        index = self.ui.section_tv.selectedIndexes()[0]
+        if index:
+            # self.statusBar().showMessage(str(index.model().itemFromIndex(index).get_id()))
+            self.current_section = index.model().itemFromIndex(index).get_id()
+            self.task_list = None
+            section_table = Section(self.cursor())
+            self.task_list = section_table.select_detail(self.current_section)
 
 
     def exit_action(self):
@@ -48,7 +59,7 @@ class mainwindow(QtWidgets.QMainWindow):
         con = sqlite3.connect(self.db_file)
         cur = con.cursor()
         # Загрузка предметов и инициализация комбобокса с выбором предметов
-        subject_table = Table("subject", ['id', 'name'], cur)
+        subject_table = Subject(cur)
         self.subject_list = subject_table.select_all()
         self.ui.subject_cb.clear()
         if self.subject_list:
@@ -57,15 +68,13 @@ class mainwindow(QtWidgets.QMainWindow):
                 self.current_subject = self.subject_list[0][0]
         # Загрузка разделов и инициализация Treeview с деревом разделов
         if self.current_subject:
-            section_table = Table("section", ["id", "subject_id", "parent_section_id", "name"], cur)
-            self.section_list = section_table.select_detail("subject_id", self.current_subject)
+            section_table = Section(cur)
+            self.section_list = section_table.select_detail(self.current_subject)
             section_tree = Tree()
             section_tree.import_data(self.section_list, 0, 2, 3)
             self.ui.section_tv.model = QStandardItemModel()
             self.ui.section_tv.setModel(section_tree.model)
             self.ui.section_tv.header().resizeSection(0, 250)
-            self.ui.section_tv.header().setText('0', 'Название раздела')
-            self.ui.section_tv.header().resizeSection(1, 1)
             self.ui.section_tv.expandAll()
         else:
             self.error_dialog.showMessage('Не выбран предмет')
@@ -81,6 +90,6 @@ class mainwindow(QtWidgets.QMainWindow):
 
 
 app = QtWidgets.QApplication([])
-application = mainwindow()
+application = MainWindow()
 application.show()
 sys.exit(app.exec())

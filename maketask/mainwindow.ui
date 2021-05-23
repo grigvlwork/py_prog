@@ -63,10 +63,20 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QTreeView" name="section_tv"/>
+       <widget class="QTreeView" name="section_tv">
+        <property name="headerHidden">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerDefaultSectionSize">
+         <number>0</number>
+        </attribute>
+        <attribute name="headerStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+       </widget>
       </item>
       <item>
-       <widget class="QTableView" name="task_tbl"/>
+       <widget class="QListView" name="task_list_view"/>
       </item>
      </layout>
     </item>
@@ -83,16 +93,23 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
+       <widget class="QPushButton" name="addRootSection">
+        <property name="text">
+         <string>+Корневой раздел</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="section_add">
         <property name="text">
-         <string>Добавить раздел</string>
+         <string>+ раздел</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="section_del">
         <property name="text">
-         <string>Удалить раздел</string>
+         <string>- раздел</string>
         </property>
        </widget>
       </item>
