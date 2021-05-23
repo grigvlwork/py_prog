@@ -5,6 +5,7 @@ from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog
 from mainwindow import Ui_MainWindow
 from about import Ui_aboutdialog
+from task import Ui_task_edit_form
 from dataclasses import Subject, Tree, Section, List, Task
 
 
@@ -15,12 +16,20 @@ class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
         self.ui.setupUi(self)
 
 
+class TaskWindow(QtWidgets.QWidget, Ui_task_edit_form):
+    def __init__(self):
+        super(TaskWindow, self).__init__()
+        self.ui = Ui_task_edit_form()
+        self.ui.setupUi(self)
+
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         # Вспомогательные окна
         self.error_dialog = QtWidgets.QErrorMessage()
         self.about = AboutWindow()
+        self.task_wnd = TaskWindow()
 
         # Локальные переменные
         self.db_file = None
@@ -40,6 +49,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.about_act.triggered.connect(self.about_action)
         self.ui.open_act.triggered.connect(self.open_action)
         self.ui.section_tv.clicked.connect(self.section_clicked)
+        self.ui.task_add.clicked.connect(self.task_insert_action)
+
+    def task_insert_action(self):
+        self.task_wnd.show()
 
     def section_clicked(self):
         index = self.ui.section_tv.selectedIndexes()[0]
