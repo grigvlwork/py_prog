@@ -1,13 +1,15 @@
-import sys
 import sqlite3
+import sys
+
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog
-from mainwindow import Ui_MainWindow
+
 from about import Ui_aboutdialog
-from task import Ui_task_edit_form
-from section import Ui_section_edit_form
 from dataclasses import Subject, Tree, Section, List, Task, SectionRecord
+from mainwindow import Ui_MainWindow
+from section import Ui_section_edit_form
+from task import Ui_task_edit_form
 
 
 class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
@@ -25,24 +27,13 @@ class TaskWindow(QtWidgets.QWidget, Ui_task_edit_form):
 
 
 class SectionEditForm(QtWidgets.QDialog, Ui_section_edit_form):
-    def __init__(self, curr_subj, curr_sect):
-        super(SectionEditForm, self).__init__()
+    def __init__(self):
+        super().__init__()
         self.ui = Ui_section_edit_form()
         self.ui.setupUi(self)
         self.rec = SectionRecord()
-        self.button_box.accepted.connect(self.accept)
-        self.button_box.rejected.connect(self.reject)
-        self.curr_subj = curr_subj
-        self.curr_sect = curr_sect
-
-    def accept(self):
-        if self.is_root.isChecked():
-            self.rec.table.insert_sql([self.curr_subj, 0, self.section_edit.text()])
-        else:
-            self.rec.table.insert_sql([self.curr_subj, self.curr_sect, self.section_edit.text()])
-
-
-
+        self.ui.buttonBox.accepted.connect(self.accept)
+        self.ui.buttonBox.rejected.connect(self.reject)
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -140,8 +131,19 @@ class MainWindow(QtWidgets.QMainWindow):
             self.load_data()
 
     def section_add_action(self):
-        section_edit = SectionEditForm(self.current_subject, self.current_section)
+        section_edit = SectionEditForm()
         section_edit.exec()
+        if section_edit.accept:
+            section_table = Section(self.cur)
+            if section_edit.ui.is_root.isChecked():
+                section_table.insert([self.current_subject, -1,
+                                      '"' + section_edit.ui.section_edit.text() + '"'])
+                self.con.commit()
+            else:
+                section_table.insert([self.current_subject,
+                                      self.current_section,
+                                      '"' + section_edit.ui.section_edit.text() + '"'])
+                self.con.commit()
         self.load_data()
 
 
