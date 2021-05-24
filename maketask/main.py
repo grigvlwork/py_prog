@@ -6,7 +6,8 @@ from PyQt5.QtWidgets import QFileDialog
 from mainwindow import Ui_MainWindow
 from about import Ui_aboutdialog
 from task import Ui_task_edit_form
-from dataclasses import Subject, Tree, Section, List, Task
+from section import Ui_section_edit_form
+from dataclasses import Subject, Tree, Section, List, Task, SectionRecord
 
 
 class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
@@ -21,6 +22,27 @@ class TaskWindow(QtWidgets.QWidget, Ui_task_edit_form):
         super(TaskWindow, self).__init__()
         self.ui = Ui_task_edit_form()
         self.ui.setupUi(self)
+
+
+class SectionEditForm(QtWidgets.QDialog, Ui_section_edit_form):
+    def __init__(self, curr_subj, curr_sect):
+        super(SectionEditForm, self).__init__()
+        self.ui = Ui_section_edit_form()
+        self.ui.setupUi(self)
+        self.rec = SectionRecord()
+        self.button_box.accepted.connect(self.accept)
+        self.button_box.rejected.connect(self.reject)
+        self.curr_subj = curr_subj
+        self.curr_sect = curr_sect
+
+    def accept(self):
+        if self.is_root.isChecked():
+            self.rec.table.insert_sql([self.curr_subj, 0, self.section_edit.text()])
+        else:
+            self.rec.table.insert_sql([self.curr_subj, self.curr_sect, self.section_edit.text()])
+
+
+
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -50,6 +72,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.open_act.triggered.connect(self.open_action)
         self.ui.section_tv.clicked.connect(self.section_clicked)
         self.ui.task_add.clicked.connect(self.task_insert_action)
+        self.ui.section_add.clicked.connect(self.section_add_action)
 
     def task_insert_action(self):
         self.task_wnd.show()
@@ -75,9 +98,15 @@ class MainWindow(QtWidgets.QMainWindow):
     def about_action(self):
         self.about.show()
 
+    def connect(self):
+        if self.con:
+            return
+        else:
+            self.con = sqlite3.connect(self.db_file)
+            self.cur = self.con.cursor()
+
     def load_data(self):
-        self.con = sqlite3.connect(self.db_file)
-        self.cur = self.con.cursor()
+        self.connect()
         # Загрузка предметов и инициализация комбобокса с выбором предметов
         subject_table = Subject(self.cur)
         self.subject_list = subject_table.select_all()
@@ -109,6 +138,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.statusBar().showMessage('Открыт файл ' + file_name)
             self.db_file = file_name
             self.load_data()
+
+    def section_add_action(self):
+        section_edit = SectionEditForm(self.current_subject, self.current_section)
+        section_edit.exec()
+        self.load_data()
 
 
 app = QtWidgets.QApplication([])

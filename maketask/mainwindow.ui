@@ -93,13 +93,6 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="addRootSection">
-        <property name="text">
-         <string>+Корневой раздел</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="section_add">
         <property name="text">
          <string>+ раздел</string>

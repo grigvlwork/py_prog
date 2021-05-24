@@ -1,3 +1,4 @@
+import string
 from PyQt5 import QtGui, Qt
 from PyQt5.Qt import QStandardItemModel
 from collections import deque
@@ -10,7 +11,7 @@ class Table:
         self.cursor = cursor
 
     def insert_sql(self, values):
-        return "INSERT INTO " + self.table + " (" + ",".join(self.fields) + \
+        return "INSERT INTO " + self.table + " (" + ",".join(self.fields[1:]) + \
                ") VALUES (" + ",".join(values) + ")"
 
     def update_sql(self, field, value, id_rec):
@@ -39,6 +40,33 @@ class Table:
 
     def insert(self, values):
         self.cursor.execute(self.insert_sql(values))
+
+
+class Record:
+    def __init__(self, table):
+        self.table = table
+        self.values = []
+
+    def set_values(self, values):
+        self.values = values
+
+    def get_values(self):
+        return self.values
+
+
+class SectionRecord(Record):
+    def __init__(self):
+        super().__init__()
+
+    def insert(self):
+        self.table.insert_sql(self.values)
+
+    def update(self):
+        sql = 'UPDATE SECTION SET SUBJECT_ID = ' + self.values[1] + ', ' \
+                                                                    'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
+                                                                                                              'NAME = "' + \
+              self.values[3] + '" WHERE ID = ' + self.values[0]
+        self.table.cursor.execute(sql)
 
 
 class Subject(Table):

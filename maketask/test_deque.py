@@ -6,3 +6,4 @@ a = [[1, 2, 2],
      ]
 b = deque(a)
 print(b.pop())
+
