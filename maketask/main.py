@@ -9,6 +9,7 @@ from about import Ui_aboutdialog
 from dataclasses import Subject, Tree, Section, List, Task, SectionRecord
 from mainwindow import Ui_MainWindow
 from section import Ui_section_edit_form
+from subject import Ui_subject_edit_form
 from task import Ui_task_edit_form
 
 
@@ -32,6 +33,15 @@ class SectionEditForm(QtWidgets.QDialog, Ui_section_edit_form):
         self.ui = Ui_section_edit_form()
         self.ui.setupUi(self)
         self.rec = SectionRecord()
+        self.ui.buttonBox.accepted.connect(self.accept)
+        self.ui.buttonBox.rejected.connect(self.reject)
+
+
+class SubjectEditForm(QtWidgets.QDialog, Ui_subject_edit_form):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_subject_edit_form()
+        self.ui.setupUi(self)
         self.ui.buttonBox.accepted.connect(self.accept)
         self.ui.buttonBox.rejected.connect(self.reject)
 
@@ -64,6 +74,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.section_tv.clicked.connect(self.section_clicked)
         self.ui.task_add.clicked.connect(self.task_insert_action)
         self.ui.section_add.clicked.connect(self.section_add_action)
+        self.ui.subject_cb.currentIndexChanged.connect(self.subject_changed)
+        self.ui.subject_add.clicked.connect(self.subject_add_action)
 
     def task_insert_action(self):
         self.task_wnd.show()
@@ -83,6 +95,12 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.task_list_view.setModel(task_list.model)
             self.ui.task_list_view.show()
 
+    def subject_changed(self):
+        for row in self.subject_list:
+            if self.ui.subject_cb.currentText() == row[1]:
+                self.current_subject = row[0]
+                self.load_data()
+
     def exit_action(self):
         exit(0)
 
@@ -99,13 +117,14 @@ class MainWindow(QtWidgets.QMainWindow):
     def load_data(self):
         self.connect()
         # Загрузка предметов и инициализация комбобокса с выбором предметов
-        subject_table = Subject(self.cur)
-        self.subject_list = subject_table.select_all()
-        self.ui.subject_cb.clear()
-        if self.subject_list:
-            for row in self.subject_list:
-                self.ui.subject_cb.addItem(row[1])
-                self.current_subject = self.subject_list[0][0]
+        if not self.current_subject:
+            subject_table = Subject(self.cur)
+            self.subject_list = subject_table.select_all()
+            self.ui.subject_cb.clear()
+            if self.subject_list:
+                for row in self.subject_list:
+                    self.ui.subject_cb.addItem(row[1])
+                    self.current_subject = self.subject_list[0][0]
         # Загрузка разделов и инициализация Treeview с деревом разделов
         if self.current_subject:
             section_table = Section(self.cur)
@@ -144,6 +163,16 @@ class MainWindow(QtWidgets.QMainWindow):
                                       self.current_section,
                                       '"' + section_edit.ui.section_edit.text() + '"'])
                 self.con.commit()
+        self.load_data()
+
+    def subject_add_action(self):
+        subject_edit = SubjectEditForm()
+        subject_edit.exec()
+        if subject_edit.accept:
+            subject_table = Subject(self.cur)
+            subject_table.insert(['"' + subject_edit.ui.name_edit.text() + '"'])
+            self.con.commit()
+        self.current_subject = None
         self.load_data()
 
 

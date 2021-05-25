@@ -1,4 +1,5 @@
 from collections import deque
+from random import choice
 
 a = [[1, 2, 2],
      [2, 3, 4],
@@ -6,4 +7,6 @@ a = [[1, 2, 2],
      ]
 b = deque(a)
 print(b.pop())
+print(eval("choice(list(range(500)))"))
+
 

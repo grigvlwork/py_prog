@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_task_edit_form(object):
     def setupUi(self, task_edit_form):
         task_edit_form.setObjectName("task_edit_form")
-        task_edit_form.resize(548, 472)
+        task_edit_form.resize(544, 444)
         self.verticalLayout = QtWidgets.QVBoxLayout(task_edit_form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -82,6 +82,9 @@ class Ui_task_edit_form(object):
         self.plainTextEdit_3.setObjectName("plainTextEdit_3")
         self.verticalLayout_2.addWidget(self.plainTextEdit_3)
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
+        self.textBrowser = QtWidgets.QTextBrowser(self.variables_tab)
+        self.textBrowser.setObjectName("textBrowser")
+        self.verticalLayout_3.addWidget(self.textBrowser)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_3.addItem(spacerItem)
         self.horizontalLayout_8.addLayout(self.verticalLayout_3)
@@ -118,5 +121,17 @@ class Ui_task_edit_form(object):
         self.label_3.setText(_translate("task_edit_form", "Пример"))
         self.label_4.setText(_translate("task_edit_form", "Падеж"))
         self.label_5.setText(_translate("task_edit_form", "Диапазон значений"))
+        self.textBrowser.setHtml(_translate("task_edit_form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Примеры диапазона для чисел:</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">range(1, 100) - числа от 1 до 99</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">range(0, 1001, 100) - числа от 0 до 1000 с шагом 100: 0, 100, 200, 300, ...</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[1, 8, 13] - конкретные числа</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Пример диапазона для текста:</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[&quot;Ваня&quot;, &quot;Петя&quot;, &quot;Рома&quot;]</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.variables_tab), _translate("task_edit_form", "Переменные"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.formula_tab), _translate("task_edit_form", "Формулы"))

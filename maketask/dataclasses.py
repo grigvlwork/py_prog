@@ -66,8 +66,8 @@ class SectionRecord(Record):
 
     def update(self):
         sql = 'UPDATE SECTION SET SUBJECT_ID = ' + self.values[1] + ', ' \
-                                                                    'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
-                                                                                                              'NAME = "' + \
+              'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
+              'NAME = "' + \
               self.values[3] + '" WHERE ID = ' + self.values[0]
         self.table.cursor.execute(sql)
 
