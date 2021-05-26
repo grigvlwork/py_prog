@@ -1,6 +1,7 @@
-from PyQt5 import QtGui, Qt
-from PyQt5.Qt import QStandardItemModel
 from collections import deque
+
+from PyQt5 import QtGui
+from PyQt5.Qt import QStandardItemModel
 
 
 class Table:
@@ -12,7 +13,7 @@ class Table:
     def insert_sql(self, values):
         vals = list(map(str, values))
         sql = 'INSERT INTO ' + self.table + ' (' + ','.join(self.fields[1:]) + \
-               ') VALUES (' + ','.join(vals) + ')'
+              ') VALUES (' + ','.join(vals) + ')'
         print(sql)
         return sql
 
@@ -32,6 +33,13 @@ class Table:
     def select_all_sql(self):
         return "SELECT * FROM " + self.table
 
+    def id_by_name_sql(self, name):
+        return "SELECT ID FROM " + self.table + " WHERE NAME = " + name
+
+    def id_by_name(self, name):
+        self.cursor.execute(self.id_by_name_sql(name))
+        return self.cursor.fetchall()
+
     def select_all(self):
         self.cursor.execute(self.select_all_sql())
         return self.cursor.fetchall()
@@ -44,6 +52,25 @@ class Table:
         sql = self.insert_sql(values)
         self.cursor.execute(sql)
 
+
+class Variable:
+    def __init__(self, name, task_id):
+        self.task_id = task_id
+        self.name = name
+        self.type = "text"
+        self.example = ""
+        self.case_noun = ""
+        self.range = ""
+
+    def load_data(self, values):
+        self.type = values[0]
+        self.example = values[1]
+        self.case_noun = values[2]
+        self.range = values[3]
+
+    def get_values(self):
+        return [self.task_id, self.name, self.type, self.example, self.case_noun,
+                self.range]
 
 class Record:
     def __init__(self, table):
@@ -66,8 +93,8 @@ class SectionRecord(Record):
 
     def update(self):
         sql = 'UPDATE SECTION SET SUBJECT_ID = ' + self.values[1] + ', ' \
-              'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
-              'NAME = "' + \
+                                                                    'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
+                                                                                                              'NAME = "' + \
               self.values[3] + '" WHERE ID = ' + self.values[0]
         self.table.cursor.execute(sql)
 

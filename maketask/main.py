@@ -1,16 +1,18 @@
+import re
 import sqlite3
 import sys
+import uuid
 
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog
 
 from about import Ui_aboutdialog
-from dataclasses import Subject, Tree, Section, List, Task, SectionRecord
+from dataclasses import Subject, Tree, Section, List, Task, SectionRecord, Variable
 from mainwindow import Ui_MainWindow
 from section import Ui_section_edit_form
 from subject import Ui_subject_edit_form
-from task import Ui_task_edit_form
+from task_dailog import Ui_task_edit_form
 
 
 class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
@@ -20,11 +22,33 @@ class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
         self.ui.setupUi(self)
 
 
-class TaskWindow(QtWidgets.QWidget, Ui_task_edit_form):
+class TaskWindow(QtWidgets.QDialog, Ui_task_edit_form):
     def __init__(self):
         super(TaskWindow, self).__init__()
+        self.task_id = None
+        self.variables = []
         self.ui = Ui_task_edit_form()
         self.ui.setupUi(self)
+        self.ui.buttonBox.accepted.connect(self.accept)
+        self.ui.buttonBox.rejected.connect(self.reject)
+        self.ui.tabWidget.setTabEnabled(1, False)
+        self.ui.tabWidget.setTabEnabled(2, False)
+        self.ui.condition_edit.textChanged.connect(self.find_variables)
+
+    def find_variables(self):
+        vars = re.findall(r"\{(.*?)\}", self.ui.condition_edit.toPlainText())
+        if len(vars) > 0:
+            self.ui.tabWidget.setTabEnabled(1, True)
+            self.ui.tabWidget.setTabEnabled(2, True)
+            self.variables = []
+            for var in vars:
+                self.variables.append(Variable())
+        else:
+            self.ui.tabWidget.setTabEnabled(1, False)
+            self.ui.tabWidget.setTabEnabled(2, False)
+
+    def set_id(self, task_id):
+        self.task_id = task_id
 
 
 class SectionEditForm(QtWidgets.QDialog, Ui_section_edit_form):
@@ -52,7 +76,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Вспомогательные окна
         self.error_dialog = QtWidgets.QErrorMessage()
         self.about = AboutWindow()
-        self.task_wnd = TaskWindow()
+        self.task_wnd = TaskWindow(uuid.uuid4())
 
         # Локальные переменные
         self.db_file = None
@@ -78,7 +102,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.subject_add.clicked.connect(self.subject_add_action)
 
     def task_insert_action(self):
-        self.task_wnd.show()
+        uid = '"' + str(uuid.uuid4()) + '"'
+        task_table = Task()
+        task_table.insert([self.current_section, uid, '""'])
+        self.con.commit()
+        id = task_table.select_
+        self.task_wnd.exec()
 
     def section_clicked(self):
         index = self.ui.section_tv.selectedIndexes()[0]
