@@ -25,7 +25,12 @@ class TaskWindow(QtWidgets.QWidget, Ui_task_edit_form):
         super(TaskWindow, self).__init__()
         self.ui = Ui_task_edit_form()
         self.ui.setupUi(self)
+        self.ui.tabWidget.setTabEnabled(1, False)
+        self.ui.tabWidget.setTabEnabled(2, False)
+        self.ui.tabWidget.currentChanged.connect(self.tab_changed_action)
 
+    def tab_changed_action(self):
+        pass
 
 class SectionEditForm(QtWidgets.QDialog, Ui_section_edit_form):
     def __init__(self):

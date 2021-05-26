@@ -30,6 +30,9 @@
    </item>
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="tabPosition">
       <enum>QTabWidget::North</enum>
      </property>
