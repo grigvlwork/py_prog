@@ -24,6 +24,12 @@ class Table:
     def delete_sql(self, id_rec):
         return "DELETE FROM " + self.table + " WHERE ID = " + id_rec
 
+    def find_tmp_sql(self):
+        return "SELECT * FROM " + self.table + " WHERE NAME LIKE 'tmp%'"
+
+    def delete_tmp_sql(self):
+        return "DELETE FROM " + self.table + " WHERE NAME LIKE 'tmp%'"
+
     def select1_sql(self, id_rec):
         return "SELECT * FROM " + self.table + " WHERE ID = " + id_rec
 
@@ -52,14 +58,24 @@ class Table:
         sql = self.insert_sql(values)
         self.cursor.execute(sql)
 
+    def find_tmp(self):
+        sql = self.find_tmp_sql()
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
+    def delete_tmp(self):
+        if self.find_tmp():
+            sql = self.delete_tmp_sql()
+            self.cursor.execute(sql)
+
 
 class Variable:
     def __init__(self, name, task_id):
         self.task_id = task_id
         self.name = name
-        self.type = "text"
+        self.type = 0
         self.example = ""
-        self.case_noun = ""
+        self.case_noun = 0
         self.range = ""
 
     def load_data(self, values):
@@ -93,9 +109,8 @@ class SectionRecord(Record):
 
     def update(self):
         sql = 'UPDATE SECTION SET SUBJECT_ID = ' + self.values[1] + ', ' \
-                                                                    'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
-                                                                                                              'NAME = "' + \
-              self.values[3] + '" WHERE ID = ' + self.values[0]
+              'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
+              'NAME = "' + self.values[3] + '" WHERE ID = ' + self.values[0]
         self.table.cursor.execute(sql)
 
 

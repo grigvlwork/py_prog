@@ -3,7 +3,8 @@ import sqlite3
 import sys
 import uuid
 
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
+from PyQt5.QtCore import QStringListModel
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog
 
@@ -26,7 +27,9 @@ class TaskWindow(QtWidgets.QDialog, Ui_task_edit_form):
     def __init__(self):
         super(TaskWindow, self).__init__()
         self.task_id = None
+        self.current_var = None
         self.variables = []
+        self.var_list_model = QStringListModel([])
         self.ui = Ui_task_edit_form()
         self.ui.setupUi(self)
         self.ui.buttonBox.accepted.connect(self.accept)
@@ -34,15 +37,68 @@ class TaskWindow(QtWidgets.QDialog, Ui_task_edit_form):
         self.ui.tabWidget.setTabEnabled(1, False)
         self.ui.tabWidget.setTabEnabled(2, False)
         self.ui.condition_edit.textChanged.connect(self.find_variables)
+        self.ui.var_type.addItem("Текст")
+        self.ui.var_type.addItem("Целое число")
+        self.ui.var_type.addItem("Дробное число")
+        self.ui.case_noun.addItem("Именительный")
+        self.ui.case_noun.addItem("Родительный")
+        self.ui.case_noun.addItem("Дательный")
+        self.ui.case_noun.addItem("Винительный")
+        self.ui.case_noun.addItem("Творительный")
+        self.ui.case_noun.addItem("Предложный")
+        self.ui.variables_lv.clicked.connect(self.change_current_var)
+        self.ui.var_type.currentIndexChanged.connect(self.change_var_type)
+        self.ui.var_example.textChanged.connect(self.change_var_example)
+        self.ui.case_noun.currentIndexChanged.connect(self.change_var_case)
+        self.ui.range_edit.textChanged.connect(self.change_var_range)
+        self.ui.tabWidget.currentChanged.connect(self.change_tab)
+
+    @QtCore.pyqtSlot("QModelIndex")
+    def change_current_var(self, modelIndex):
+        print(modelIndex.row())
+        self.current_var = self.variables[modelIndex.row()]
+        self.load_variables_data()
+
+    def change_var_type(self):
+        data = self.current_var.get_values()
+        data[2] = self.ui.var_type.currentIndex()
+        self.current_var.load_data(data)
+
+    def change_var_example(self):
+        data = self.current_var.get_values()
+        data[3] = self.ui.var_example.text()
+        self.current_var.load_data(data)
+
+    def change_var_case(self):
+        data = self.current_var.get_values()
+        data[4] = self.ui.case_noun.currentIndex()
+        self.current_var.load_data(data)
+
+    def change_var_range(self):
+        data = self.current_var.get_values()
+        data[5] = self.ui.range_edit.toPlainText()
+        self.current_var.load_data(data)
+
+    def load_variables_data(self):
+        data = self.current_var.get_values()
+        self.ui.var_type.setCurrentIndex(data[2])
+        self.ui.var_example.setText(data[3])
+        self.ui.case_noun.setCurrentIndex(data[4])
+        self.ui.range_edit.setPlainText(data[5])
+
+    def change_tab(self):
+        print(self.ui.tabWidget.currentIndex())
 
     def find_variables(self):
-        vars = re.findall(r"\{(.*?)\}", self.ui.condition_edit.toPlainText())
+        vars = sorted(list(set(re.findall(r"\{(.*?)\}", self.ui.condition_edit.toPlainText()))))
         if len(vars) > 0:
+            self.var_list_model = QStringListModel(vars)
+            self.ui.variables_lv.setModel(self.var_list_model)
             self.ui.tabWidget.setTabEnabled(1, True)
             self.ui.tabWidget.setTabEnabled(2, True)
             self.variables = []
             for var in vars:
-                self.variables.append(Variable())
+                self.variables.append(Variable(var, self.task_id))
         else:
             self.ui.tabWidget.setTabEnabled(1, False)
             self.ui.tabWidget.setTabEnabled(2, False)
@@ -76,7 +132,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Вспомогательные окна
         self.error_dialog = QtWidgets.QErrorMessage()
         self.about = AboutWindow()
-        self.task_wnd = TaskWindow(uuid.uuid4())
+        self.task_wnd = TaskWindow()
 
         # Локальные переменные
         self.db_file = None
@@ -102,11 +158,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.subject_add.clicked.connect(self.subject_add_action)
 
     def task_insert_action(self):
-        uid = '"' + str(uuid.uuid4()) + '"'
-        task_table = Task()
+        uid = '"tmp' + str(uuid.uuid4()) + '"'
+        task_table = Task(self.cur)
+        task_table.delete_tmp()
+        self.con.commit()
         task_table.insert([self.current_section, uid, '""'])
         self.con.commit()
-        id = task_table.select_
+        task_id = task_table.id_by_name(uid)
+        self.task_wnd.set_id(task_id)
         self.task_wnd.exec()
 
     def section_clicked(self):
@@ -116,6 +175,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.current_section = index.model().itemFromIndex(index).get_id()
             self.task_list = None
             task_table = Task(self.cur)
+            task_table.delete_tmp()
             self.task_list = task_table.select_detail(self.current_section)
             self.ui.task_list_view.model = QStandardItemModel()
             task_list = List()
