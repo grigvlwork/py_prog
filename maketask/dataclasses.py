@@ -14,7 +14,6 @@ class Table:
         vals = list(map(str, values))
         sql = 'INSERT INTO ' + self.table + ' (' + ','.join(self.fields[1:]) + \
               ') VALUES (' + ','.join(vals) + ')'
-        print(sql)
         return sql
 
     def update_sql(self, field, value, id_rec):
@@ -79,14 +78,15 @@ class Variable:
         self.range = ""
 
     def load_data(self, values):
-        self.type = values[0]
-        self.example = values[1]
-        self.case_noun = values[2]
-        self.range = values[3]
+        self.type = values[2]
+        self.example = values[3]
+        self.case_noun = values[4]
+        self.range = values[5]
 
     def get_values(self):
         return [self.task_id, self.name, self.type, self.example, self.case_noun,
                 self.range]
+
 
 class Record:
     def __init__(self, table):
@@ -109,8 +109,9 @@ class SectionRecord(Record):
 
     def update(self):
         sql = 'UPDATE SECTION SET SUBJECT_ID = ' + self.values[1] + ', ' \
-              'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
-              'NAME = "' + self.values[3] + '" WHERE ID = ' + self.values[0]
+                                                                    'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
+                                                                                                              'NAME = "' + \
+              self.values[3] + '" WHERE ID = ' + self.values[0]
         self.table.cursor.execute(sql)
 
 

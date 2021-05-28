@@ -28,6 +28,7 @@ class TaskWindow(QtWidgets.QDialog, Ui_task_edit_form):
         super(TaskWindow, self).__init__()
         self.task_id = None
         self.current_var = None
+        self.is_loading = False
         self.variables = []
         self.var_list_model = QStringListModel([])
         self.ui = Ui_task_edit_form()
@@ -55,50 +56,70 @@ class TaskWindow(QtWidgets.QDialog, Ui_task_edit_form):
 
     @QtCore.pyqtSlot("QModelIndex")
     def change_current_var(self, modelIndex):
-        print(modelIndex.row())
         self.current_var = self.variables[modelIndex.row()]
         self.load_variables_data()
 
     def change_var_type(self):
+        if self.is_loading:
+            return
         data = self.current_var.get_values()
         data[2] = self.ui.var_type.currentIndex()
         self.current_var.load_data(data)
 
     def change_var_example(self):
+        if self.is_loading:
+            return
         data = self.current_var.get_values()
         data[3] = self.ui.var_example.text()
         self.current_var.load_data(data)
 
     def change_var_case(self):
+        if self.is_loading:
+            return
         data = self.current_var.get_values()
         data[4] = self.ui.case_noun.currentIndex()
         self.current_var.load_data(data)
 
     def change_var_range(self):
+        if self.is_loading:
+            return
         data = self.current_var.get_values()
         data[5] = self.ui.range_edit.toPlainText()
         self.current_var.load_data(data)
 
     def load_variables_data(self):
         data = self.current_var.get_values()
+        self.is_loading = True
         self.ui.var_type.setCurrentIndex(data[2])
         self.ui.var_example.setText(data[3])
         self.ui.case_noun.setCurrentIndex(data[4])
         self.ui.range_edit.setPlainText(data[5])
+        self.is_loading = False
 
     def change_tab(self):
         print(self.ui.tabWidget.currentIndex())
 
     def find_variables(self):
         vars = sorted(list(set(re.findall(r"\{(.*?)\}", self.ui.condition_edit.toPlainText()))))
+        i = 0
+        while i < len(self.variables):
+            if self.variables[i].name not in vars:
+                print(self.variables[i].name)
+                self.variables.remove(self.variables[i])
+            else:
+                vars.remove(self.variables[i].name)
+                i += 1
+        for var in vars:
+            self.variables.append(Variable(var, self.task_id))
+        self.variables.sort(key=lambda x: x.name)
+        vars = []
+        for var in self.variables:
+            vars.append(var.name)
         if len(vars) > 0:
             self.var_list_model = QStringListModel(vars)
             self.ui.variables_lv.setModel(self.var_list_model)
             self.ui.tabWidget.setTabEnabled(1, True)
             self.ui.tabWidget.setTabEnabled(2, True)
-            self.variables = []
-            for var in vars:
-                self.variables.append(Variable(var, self.task_id))
         else:
             self.ui.tabWidget.setTabEnabled(1, False)
             self.ui.tabWidget.setTabEnabled(2, False)
