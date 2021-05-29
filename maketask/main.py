@@ -97,7 +97,8 @@ class TaskWindow(QtWidgets.QDialog, Ui_task_edit_form):
         self.is_loading = False
 
     def change_tab(self):
-        print(self.ui.tabWidget.currentIndex())
+        # print(self.ui.tabWidget.currentIndex())
+        pass
 
     def find_variables(self):
         vars = sorted(list(set(re.findall(r"\{(.*?)\}", self.ui.condition_edit.toPlainText()))))
@@ -188,6 +189,13 @@ class MainWindow(QtWidgets.QMainWindow):
         task_id = task_table.id_by_name(uid)
         self.task_wnd.set_id(task_id)
         self.task_wnd.exec()
+        if self.task_wnd.accept:
+            task_table.update("name", self.task_wnd.ui.task_edit.text(),task_id)
+            task_table.update("condition", self.task_wnd.ui.condition_edit.toPlainText(),task_id)
+            self.con.commit()
+            for var in self.task_wnd.variables:
+                
+
 
     def section_clicked(self):
         index = self.ui.section_tv.selectedIndexes()[0]

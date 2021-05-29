@@ -66,6 +66,10 @@ class Table:
         if self.find_tmp():
             sql = self.delete_tmp_sql()
             self.cursor.execute(sql)
+    
+    def update(self, field, value, id_rec):
+        sql = self.update_sql(field, value, id_rec):
+        self.cursor.execute(sql)
 
 
 class Variable:
@@ -137,6 +141,12 @@ class Task(Table):
         self.cursor.execute(self.select_detail_sql('section_id', id_rec))
         return self.cursor.fetchall()
 
+class VarTable(Table):
+    def __init__(self, cur):
+        super().__init__("variables", ['id', 'task_id', 'name', 'type', 'example', 'case_noun', 'range'], cur)
+    def select_detail(self, id_rec):
+        self.cursor.execute(self.select_detail_sql('task_id', id_rec))
+        return self.cursor.fetchall()
 
 class TreeItem(QtGui.QStandardItem):
     def __init__(self, txt='', font_size=10, set_bold=False, color=QtGui.QColor(0, 0, 0), dbid=0):
