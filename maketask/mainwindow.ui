@@ -71,28 +71,66 @@
       <item>
        <widget class="QPushButton" name="section_add">
         <property name="text">
-         <string>+ раздел</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>pictures/add.png</normaloff>pictures/add.png</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="section_del">
         <property name="text">
-         <string>- раздел</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>pictures/del.png</normaloff>pictures/del.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="section_edit">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>pictures/edit.png</normaloff>pictures/edit.png</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="task_add">
         <property name="text">
-         <string>Добавить задачу</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>pictures/add.png</normaloff>pictures/add.png</iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="task_del">
         <property name="text">
-         <string>Удалить задачу</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>pictures/del.png</normaloff>pictures/del.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="task_edit">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>pictures/edit.png</normaloff>pictures/edit.png</iconset>
         </property>
        </widget>
       </item>

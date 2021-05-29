@@ -9,7 +9,7 @@ from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog
 
 from about import Ui_aboutdialog
-from dataclasses import Subject, Tree, Section, List, Task, SectionRecord, Variable
+from dataclasses import Subject, Tree, Section, List, Task, SectionRecord, Variable, VarTable
 from mainwindow import Ui_MainWindow
 from section import Ui_section_edit_form
 from subject import Ui_subject_edit_form
@@ -105,7 +105,7 @@ class TaskWindow(QtWidgets.QDialog, Ui_task_edit_form):
         i = 0
         while i < len(self.variables):
             if self.variables[i].name not in vars:
-                print(self.variables[i].name)
+                # print(self.variables[i].name)
                 self.variables.remove(self.variables[i])
             else:
                 vars.remove(self.variables[i].name)
@@ -186,16 +186,23 @@ class MainWindow(QtWidgets.QMainWindow):
         self.con.commit()
         task_table.insert([self.current_section, uid, '""'])
         self.con.commit()
-        task_id = task_table.id_by_name(uid)
+        task_id = task_table.id_by_name(uid)[0][0]
         self.task_wnd.set_id(task_id)
         self.task_wnd.exec()
         if self.task_wnd.accept:
-            task_table.update("name", self.task_wnd.ui.task_edit.text(),task_id)
-            task_table.update("condition", self.task_wnd.ui.condition_edit.toPlainText(),task_id)
+            task_table.update("name", self.task_wnd.ui.task_edit.text(), task_id)
+            task_table.update("condition", self.task_wnd.ui.condition_edit.toPlainText(), task_id)
+            task_table.update("formula", self.task_wnd.ui.formula_edit.toPlainText(), task_id)
             self.con.commit()
-            for var in self.task_wnd.variables:
-                
-
+            if self.task_wnd.variables:
+                var_table = VarTable(self.cur)
+                for var in self.task_wnd.variables:
+                    values = [0] + var.get_values()
+                    var_table.insert(values)
+                self.cur.commit()
+        else:
+            task_table.delete_tmp()
+            self.cur.commit()
 
     def section_clicked(self):
         index = self.ui.section_tv.selectedIndexes()[0]

@@ -18,7 +18,7 @@ class Table:
 
     def update_sql(self, field, value, id_rec):
         return "UPDATE " + self.table + " SET " + field + ' = "' + value + \
-               '" WHERE ID = ' + id_rec
+               '" WHERE ID = ' + str(id_rec)
 
     def delete_sql(self, id_rec):
         return "DELETE FROM " + self.table + " WHERE ID = " + id_rec
@@ -66,9 +66,10 @@ class Table:
         if self.find_tmp():
             sql = self.delete_tmp_sql()
             self.cursor.execute(sql)
-    
+
     def update(self, field, value, id_rec):
-        sql = self.update_sql(field, value, id_rec):
+        sql = self.update_sql(field, value, id_rec)
+        print(sql)
         self.cursor.execute(sql)
 
 
@@ -108,13 +109,14 @@ class SectionRecord(Record):
     def __init__(self):
         super().__init__('section')
 
-    def insert(self):
-        self.table.insert_sql(self.values)
-
     def update(self):
-        sql = 'UPDATE SECTION SET SUBJECT_ID = ' + self.values[1] + ', ' \
-                                                                    'PARENT_SECTION_ID = ' + self.values[2] + ', ' \
-                                                                                                              'NAME = "' + \
+        sql = 'UPDATE SECTION SET SUBJECT_ID = ' + \
+              self.values[1] + \
+              ', ' \
+              'PARENT_SECTION_ID = ' + \
+              self.values[2] + \
+              ', ' \
+              'NAME = "' + \
               self.values[3] + '" WHERE ID = ' + self.values[0]
         self.table.cursor.execute(sql)
 
@@ -135,18 +137,21 @@ class Section(Table):
 
 class Task(Table):
     def __init__(self, cur):
-        super().__init__("task", ['id', 'section_id', 'name', 'condition'], cur)
+        super().__init__("task", ['id', 'section_id', 'name', 'condition', 'formula'], cur)
 
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('section_id', id_rec))
         return self.cursor.fetchall()
 
+
 class VarTable(Table):
     def __init__(self, cur):
         super().__init__("variables", ['id', 'task_id', 'name', 'type', 'example', 'case_noun', 'range'], cur)
+
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('task_id', id_rec))
         return self.cursor.fetchall()
+
 
 class TreeItem(QtGui.QStandardItem):
     def __init__(self, txt='', font_size=10, set_bold=False, color=QtGui.QColor(0, 0, 0), dbid=0):
