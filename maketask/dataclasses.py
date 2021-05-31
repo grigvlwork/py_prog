@@ -13,7 +13,7 @@ class Table:
     def insert_sql(self, values):
         vals = list(map(str, values))
         sql = 'INSERT INTO ' + self.table + ' (' + ','.join(self.fields[1:]) + \
-              ') VALUES (' + ','.join(vals) + ')'
+              ') VALUES ("' + '","'.join(vals) + '")'
         return sql
 
     def update_sql(self, field, value, id_rec):
@@ -39,7 +39,7 @@ class Table:
         return "SELECT * FROM " + self.table
 
     def id_by_name_sql(self, name):
-        return "SELECT ID FROM " + self.table + " WHERE NAME = " + name
+        return "SELECT ID FROM " + self.table + ' WHERE NAME = "' + name + '"'
 
     def id_by_name(self, name):
         self.cursor.execute(self.id_by_name_sql(name))
@@ -55,6 +55,7 @@ class Table:
 
     def insert(self, values):
         sql = self.insert_sql(values)
+        print(sql)
         self.cursor.execute(sql)
 
     def find_tmp(self):

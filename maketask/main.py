@@ -180,11 +180,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.subject_add.clicked.connect(self.subject_add_action)
 
     def task_insert_action(self):
-        uid = '"tmp' + str(uuid.uuid4()) + '"'
+        uid = 'tmp' + str(uuid.uuid4())
         task_table = Task(self.cur)
         task_table.delete_tmp()
         self.con.commit()
-        task_table.insert([self.current_section, uid, '""'])
+        task_table.insert([self.current_section, uid, '', ''])
         self.con.commit()
         task_id = task_table.id_by_name(uid)[0][0]
         self.task_wnd.set_id(task_id)
@@ -197,12 +197,14 @@ class MainWindow(QtWidgets.QMainWindow):
             if self.task_wnd.variables:
                 var_table = VarTable(self.cur)
                 for var in self.task_wnd.variables:
-                    values = [0] + var.get_values()
+                    values = var.get_values()
                     var_table.insert(values)
-                self.cur.commit()
+                self.con.commit()
+                self.section_clicked()
         else:
             task_table.delete_tmp()
-            self.cur.commit()
+            self.con.commit()
+        self.load_data()
 
     def section_clicked(self):
         index = self.ui.section_tv.selectedIndexes()[0]
@@ -300,6 +302,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.current_subject = None
         self.load_data()
 
+def quoted(text):
+    return '"' + text + '"'
 
 app = QtWidgets.QApplication([])
 application = MainWindow()
