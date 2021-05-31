@@ -211,7 +211,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def task_delete_action(self):
         if self.current_task:
-            answer = QMessageBox.question(self, 'Удаление задачи', "Вы действительно хотите удалить задачу", 
+            answer = QMessageBox.question(self, 'Удаление задачи', "Вы действительно хотите удалить задачу",
                                           QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
             if answer == QMessageBox.Yes:
                 var_table = VarTable(self.cur)
@@ -222,7 +222,6 @@ class MainWindow(QtWidgets.QMainWindow):
                 task_table.delete(self.current_task)
                 self.con.commit()
                 self.section_clicked()
-           
 
     def section_clicked(self):
         index = self.ui.section_tv.selectedIndexes()[0]
@@ -239,13 +238,11 @@ class MainWindow(QtWidgets.QMainWindow):
                 task_list.import_data(self.task_list, 0, 2)
             self.ui.task_list_view.setModel(task_list.model)
             self.ui.task_list_view.show()
-    
+
     def task_clicked(self):
         index = self.ui.task_list_view.selectedIndexes()[0]
-        if index:
-            self.current_task = index.model().itemFromIndex(index)[0]
-        else:
-            self.current_task = None
+        self.current_task = index.model().itemFromIndex(index).db_id
+        print(self.current_task)
 
     def subject_changed(self):
         for row in self.subject_list:
@@ -327,8 +324,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.current_subject = None
         self.load_data()
 
+
 def quoted(text):
     return '"' + text + '"'
+
 
 app = QtWidgets.QApplication([])
 application = MainWindow()

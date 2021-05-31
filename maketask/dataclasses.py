@@ -21,7 +21,7 @@ class Table:
                '" WHERE ID = ' + str(id_rec)
 
     def delete_sql(self, id_rec):
-        return "DELETE FROM " + self.table + " WHERE ID = " + id_rec
+        return "DELETE FROM " + self.table + " WHERE ID = " + str(id_rec)
 
     def find_tmp_sql(self):
         return "SELECT * FROM " + self.table + " WHERE NAME LIKE 'tmp%'"
@@ -30,7 +30,7 @@ class Table:
         return "DELETE FROM " + self.table + " WHERE NAME LIKE 'tmp%'"
 
     def select1_sql(self, id_rec):
-        return "SELECT * FROM " + self.table + " WHERE ID = " + id_rec
+        return "SELECT * FROM " + self.table + " WHERE ID = " + str(id_rec)
 
     def select_detail_sql(self, master_field, id_rec):
         return "SELECT * FROM " + self.table + " WHERE " + master_field + " = " + str(id_rec)
@@ -70,6 +70,11 @@ class Table:
 
     def update(self, field, value, id_rec):
         sql = self.update_sql(field, value, id_rec)
+        print(sql)
+        self.cursor.execute(sql)
+
+    def delete(self, id_rec):
+        sql = self.delete_sql(id_rec)
         print(sql)
         self.cursor.execute(sql)
 
@@ -152,13 +157,13 @@ class VarTable(Table):
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('task_id', id_rec))
         return self.cursor.fetchall()
-    
+
     def delete_detail_sql(self, id_task):
         sql = "DELETE FROM VARIABLES WHERE TASK_ID = " + str(id_task)
+        return sql
 
     def delete_detail(self, id_task):
         self.cursor.execute(self.delete_detail_sql(id_task))
-        
 
 
 class TreeItem(QtGui.QStandardItem):
