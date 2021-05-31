@@ -6,7 +6,7 @@ import uuid
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtCore import QStringListModel
 from PyQt5.QtGui import QStandardItemModel
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QMessageBox
 
 from about import Ui_aboutdialog
 from dataclasses import Subject, Tree, Section, List, Task, SectionRecord, Variable, VarTable
@@ -163,6 +163,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.task_list = None
         self.current_subject = None
         self.current_section = None
+        self.current_task = None
         self.con = None
         self.cur = None
 
@@ -175,6 +176,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.open_act.triggered.connect(self.open_action)
         self.ui.section_tv.clicked.connect(self.section_clicked)
         self.ui.task_add.clicked.connect(self.task_insert_action)
+        self.ui.task_del.clicked.connect(self.task_delete_action)
+        self.ui.task_list_view.clicked.connect(self.task_clicked)
         self.ui.section_add.clicked.connect(self.section_add_action)
         self.ui.subject_cb.currentIndexChanged.connect(self.subject_changed)
         self.ui.subject_add.clicked.connect(self.subject_add_action)
@@ -206,6 +209,21 @@ class MainWindow(QtWidgets.QMainWindow):
             self.con.commit()
         self.load_data()
 
+    def task_delete_action(self):
+        if self.current_task:
+            answer = QMessageBox.question(self, 'Удаление задачи', "Вы действительно хотите удалить задачу", 
+                                          QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if answer == QMessageBox.Yes:
+                var_table = VarTable(self.cur)
+                vars = var_table.select_detail(self.current_task)
+                if vars:
+                    var_table.delete_detail(self.current_task)
+                task_table = Task(self.cur)
+                task_table.delete(self.current_task)
+                self.con.commit()
+                self.section_clicked()
+           
+
     def section_clicked(self):
         index = self.ui.section_tv.selectedIndexes()[0]
         if index:
@@ -221,6 +239,13 @@ class MainWindow(QtWidgets.QMainWindow):
                 task_list.import_data(self.task_list, 0, 2)
             self.ui.task_list_view.setModel(task_list.model)
             self.ui.task_list_view.show()
+    
+    def task_clicked(self):
+        index = self.ui.task_list_view.selectedIndexes()[0]
+        if index:
+            self.current_task = index.model().itemFromIndex(index)[0]
+        else:
+            self.current_task = None
 
     def subject_changed(self):
         for row in self.subject_list:

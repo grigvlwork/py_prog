@@ -152,6 +152,13 @@ class VarTable(Table):
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('task_id', id_rec))
         return self.cursor.fetchall()
+    
+    def delete_detail_sql(self, id_task):
+        sql = "DELETE FROM VARIABLES WHERE TASK_ID = " + str(id_task)
+
+    def delete_detail(self, id_task):
+        self.cursor.execute(self.delete_detail_sql(id_task))
+        
 
 
 class TreeItem(QtGui.QStandardItem):
