@@ -2,6 +2,7 @@ import re
 import sqlite3
 import sys
 import uuid
+import datetime
 
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtCore import QStringListModel
@@ -9,11 +10,15 @@ from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 
 from about import Ui_aboutdialog
-from dataclasses import Subject, Tree, Section, List, Task, SectionRecord, Variable, VarTable
+from dataclasses import Subject, Tree, Section, List, Task, SectionRecord, Variable, VarTable, WorkList
+from dataclasses import TaskSet, TaskSetLine
 from mainwindow import Ui_MainWindow
 from section import Ui_section_edit_form
 from subject import Ui_subject_edit_form
-from task_dailog import Ui_task_edit_form
+from task2work import Ui_add_task_to_work
+from task_dialog import Ui_task_edit_form
+from taskset import Ui_taskset_form
+from save_work import Ui_save_work_form
 
 
 class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
@@ -135,8 +140,6 @@ class SectionEditForm(QtWidgets.QDialog, Ui_section_edit_form):
         self.ui = Ui_section_edit_form()
         self.ui.setupUi(self)
         self.rec = SectionRecord()
-        self.ui.buttonBox.accepted.connect(self.accept)
-        self.ui.buttonBox.rejected.connect(self.reject)
 
 
 class SubjectEditForm(QtWidgets.QDialog, Ui_subject_edit_form):
@@ -144,8 +147,28 @@ class SubjectEditForm(QtWidgets.QDialog, Ui_subject_edit_form):
         super().__init__()
         self.ui = Ui_subject_edit_form()
         self.ui.setupUi(self)
-        self.ui.buttonBox.accepted.connect(self.accept)
-        self.ui.buttonBox.rejected.connect(self.reject)
+
+
+class AddTaskToWorkForm(QtWidgets.QDialog, Ui_add_task_to_work):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_add_task_to_work()
+        self.ui.setupUi(self)
+
+
+class SaveWorkForm(QtWidgets.QDialog, Ui_save_work_form):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_save_work_form()
+        self.ui.setupUi(self)
+
+
+class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
+    def __init__(self):
+        super(TaskSetForm, self).__init__()
+        self.taskset_id = None
+        self.ui = Ui_taskset_form
+        self.ui.setupUi(self)
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -155,12 +178,16 @@ class MainWindow(QtWidgets.QMainWindow):
         self.error_dialog = QtWidgets.QErrorMessage()
         self.about = AboutWindow()
         self.task_wnd = TaskWindow()
+        self.task_to_work_wnd = AddTaskToWorkForm()
+        self.save_work_wnd = SaveWorkForm()
 
         # Локальные переменные
         self.db_file = None
         self.subject_list = None
         self.section_list = None
+        self.work_task_list = None
         self.task_list = None
+        self.taskset_list = None
         self.current_subject = None
         self.current_section = None
         self.current_task = None
@@ -181,6 +208,22 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.section_add.clicked.connect(self.section_add_action)
         self.ui.subject_cb.currentIndexChanged.connect(self.subject_changed)
         self.ui.subject_add.clicked.connect(self.subject_add_action)
+        self.ui.add_task_to_work.clicked.connect(self.add_task_to_work_action)
+        self.ui.create_work.clicked.connect(self.create_work_action)
+
+    def add_task_to_work_action(self):
+        if self.current_task:
+            index = self.ui.task_list_view.selectedIndexes()[0]
+            self.task_to_work_wnd.ui.task_name.setText(index.model().itemData(index)[0])
+            self.task_to_work_wnd.exec()
+            if self.task_to_work_wnd.accept:
+                if not self.work_task_list:
+                    self.work_task_list = WorkList()
+                self.work_task_list.insert(index.model().itemData(index)[0],
+                                           self.current_task,
+                                           self.task_to_work_wnd.ui.task_amount.value())
+            self.ui.task_in_work_list.model = QStandardItemModel()
+            self.ui.task_in_work_list.setModel(self.work_task_list.model)
 
     def task_insert_action(self):
         uid = 'tmp' + str(uuid.uuid4())
@@ -208,6 +251,14 @@ class MainWindow(QtWidgets.QMainWindow):
             task_table.delete_tmp()
             self.con.commit()
         self.load_data()
+
+    def create_work_action(self):
+        self.save_work_wnd.exec()
+        if self.save_work_wnd.accept:
+            taskset_table = TaskSet(self.cur)
+            taskset_table.insert(self.save_work_wnd.ui.work_name.text(), str(datetime.datetime.now()))
+            self.con.commit()
+
 
     def task_delete_action(self):
         if self.current_task:

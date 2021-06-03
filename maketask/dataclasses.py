@@ -150,6 +150,29 @@ class Task(Table):
         return self.cursor.fetchall()
 
 
+class TaskSet(Table):
+    def __init__(self, cur):
+        super().__init__("taskset", ['id', 'name', 'dateofcreation'], cur)
+
+
+class TaskSetLine(Table):
+    def __init__(self, cur):
+        super().__init__("tasksetline", ['id', 'taskset_id', 'task_id', 'amount'], cur)
+
+    def select_detail(self, id_rec):
+        self.cursor.execute(self.select_detail_sql('taskset_id', id_rec))
+        return self.cursor.fetchall()
+
+
+class Variants(Table):
+    def __init__(self, cur):
+        super().__init__("tasksetline", ['id', 'taskset_id', 'content', 'answer'], cur)
+
+    def select_detail(self, id_rec):
+        self.cursor.execute(self.select_detail_sql('taskset_id', id_rec))
+        return self.cursor.fetchall()
+
+
 class VarTable(Table):
     def __init__(self, cur):
         super().__init__("variables", ['id', 'task_id', 'name', 'type', 'example', 'case_noun', 'range'], cur)
@@ -196,6 +219,20 @@ class TaskListItem(QtGui.QStandardItem):
         return self.db_id
 
 
+class WorkListItem(QtGui.QStandardItem):
+    def __init__(self, txt='', font_size=10, set_bold=False, color=QtGui.QColor(0, 0, 0),
+                 task_id=0, amount=0):
+        super().__init__()
+        self.task_id = task_id
+        self.amount = amount
+        fnt = QtGui.QFont('Arial', font_size)
+        fnt.setBold(set_bold)
+        self.setEditable(False)
+        self.setForeground(color)
+        self.setFont(fnt)
+        self.setText(txt + '(' + str(amount) + ')')
+
+
 class Tree:
     def __init__(self):
         self.model = QStandardItemModel()
@@ -228,3 +265,15 @@ class List:
         self.model.setRowCount(0)
         for item in data:
             self.model.appendRow(TaskListItem(txt=item[name_index], dbid=item[id_index]))
+
+    def insert(self, name, db_id):
+        self.model.appendRow(TaskListItem(txt=name, dbid=db_id))
+
+
+class WorkList:
+    def __init__(self):
+        self.model = QStandardItemModel()
+
+    def insert(self, name, t_id, amnt):
+        print(name, t_id, amnt)
+        self.model.appendRow(WorkListItem(txt=name, task_id=t_id, amount=amnt))
