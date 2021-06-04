@@ -154,6 +154,15 @@ class TaskSet(Table):
     def __init__(self, cur):
         super().__init__("taskset", ['id', 'name', 'dateofcreation'], cur)
 
+    def get_id_by_date_sql(self, str_date):
+        sql = 'SELECT ID FROM TASKSET WHERE DATEOFCREATION = "' + str_date + '"'
+        return sql
+
+    def get_id_by_date(self, str_date):
+        sql = self.get_id_by_date_sql(str_date)
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()[0][0]
+
 
 class TaskSetLine(Table):
     def __init__(self, cur):
@@ -161,6 +170,17 @@ class TaskSetLine(Table):
 
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('taskset_id', id_rec))
+        return self.cursor.fetchall()
+
+    def select_with_task_name_sql(self, id_rec):
+        sql = """SELECT TASKSETLINE.ID, TASK.NAME, TASKSETLINE.AMOUNT 
+                 FROM TASK, TASKSETLINE 
+                 WHERE TASK.ID = TASKSETLINE.TASK_ID AND TASKSETLINE.TASKSET_ID =""" + str(id_rec)
+        return sql
+
+    def select_with_task_name(self, id_rec):
+        sql = self.select_with_task_name_sql(id_rec)
+        self.cursor.execute(sql)
         return self.cursor.fetchall()
 
 

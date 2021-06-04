@@ -165,10 +165,49 @@ class SaveWorkForm(QtWidgets.QDialog, Ui_save_work_form):
 
 class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
     def __init__(self):
-        super(TaskSetForm, self).__init__()
-        self.taskset_id = None
-        self.ui = Ui_taskset_form
+        super().__init__()
+        self.cur = None
+        self.con = None
+        self.taskset_table = None
+        self.taskset_line_table = None
+        self.taskset_list = List()
+        self.taskset_line_list = List()
+        self.current_taskset_id = None
+        # self.ui.taskset_lv.model = None
+        self.ui = Ui_taskset_form()
         self.ui.setupUi(self)
+        self.ui.taskset_lv.clicked.connect(self.taskset_clicked_action)
+
+    def taskset_clicked_action(self):
+        index = self.ui.taskset_lv.selectedIndexes()[0]
+        if index:
+            item = index.model().itemFromIndex(index)
+            self.current_taskset_id = item.db_id
+            self.connect(self.con, self.cur)
+
+    def connect(self, connection, cursor):
+        if not self.con:
+            self.con = connection
+        if not self.cur:
+            self.cur = cursor
+        if not self.taskset_table:
+            self.taskset_table = TaskSet(self.cur)
+        temp_list = self.taskset_table.select_all()
+        if temp_list:
+            self.taskset_list.import_data(temp_list, 0, 1)
+            if not self.current_taskset_id:
+                self.current_taskset_id = temp_list[0][0]
+            if not self.taskset_line_table:
+                self.taskset_line_table = TaskSetLine(self.cur)
+            self.ui.taskset_lv.model = QStandardItemModel()
+            self.ui.taskset_lv.setModel(self.taskset_list.model)
+            self.ui.taskset_lv.model.item(self.current_taskset_id)
+            temp_line_list = self.taskset_line_table.select_with_task_name(
+                    self.current_taskset_id)
+            if temp_line_list:
+                self.taskset_line_list.import_data(temp_line_list, 0, 1)
+                self.ui.tasksetline_lv.model = QStandardItemModel()
+                self.ui.tasksetline_lv.setModel(self.taskset_line_list.model)
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -180,6 +219,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.task_wnd = TaskWindow()
         self.task_to_work_wnd = AddTaskToWorkForm()
         self.save_work_wnd = SaveWorkForm()
+        self.task_set_wnd = TaskSetForm()
 
         # Локальные переменные
         self.db_file = None
@@ -188,6 +228,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.work_task_list = None
         self.task_list = None
         self.taskset_list = None
+        self.taskset_table = None
+        self.taskset_line_table = None
         self.current_subject = None
         self.current_section = None
         self.current_task = None
@@ -210,6 +252,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.subject_add.clicked.connect(self.subject_add_action)
         self.ui.add_task_to_work.clicked.connect(self.add_task_to_work_action)
         self.ui.create_work.clicked.connect(self.create_work_action)
+        self.ui.works_list.clicked.connect(self.open_work_list_action)
 
     def add_task_to_work_action(self):
         if self.current_task:
@@ -255,10 +298,25 @@ class MainWindow(QtWidgets.QMainWindow):
     def create_work_action(self):
         self.save_work_wnd.exec()
         if self.save_work_wnd.accept:
-            taskset_table = TaskSet(self.cur)
-            taskset_table.insert(self.save_work_wnd.ui.work_name.text(), str(datetime.datetime.now()))
+            if not self.taskset_table:
+                self.taskset_table = TaskSet(self.cur)
+            date_creation = str(datetime.datetime.now())
+            self.taskset_table.insert([self.save_work_wnd.ui.work_name.text(), date_creation])
             self.con.commit()
+            taskset_id = self.taskset_table.get_id_by_date(date_creation)
+            if not self.taskset_line_table:
+                self.taskset_line_table = TaskSetLine(self.cur)
 
+            for i in range(self.work_task_list.model.rowCount()):
+                item = self.work_task_list.model.item(i)
+                self.taskset_line_table.insert([taskset_id, item.task_id, item.amount])
+            self.con.commit()
+            self.work_task_list.model.clear()
+            self.open_work_list_action()
+
+    def open_work_list_action(self):
+        self.task_set_wnd.connect(self.con, self.cur)
+        self.task_set_wnd.show()
 
     def task_delete_action(self):
         if self.current_task:
@@ -293,7 +351,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def task_clicked(self):
         index = self.ui.task_list_view.selectedIndexes()[0]
         self.current_task = index.model().itemFromIndex(index).db_id
-        print(self.current_task)
 
     def subject_changed(self):
         for row in self.subject_list:
