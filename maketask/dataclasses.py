@@ -190,11 +190,21 @@ class TaskSetLine(Table):
 
 class Variants(Table):
     def __init__(self, cur):
-        super().__init__("variants", ['id', 'taskset_id', 'number', 'content', 'answer'], cur)
+        super().__init__("variants", ['id', 'taskset_id', 'number', 'content', 'answers'], cur)
 
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('taskset_id', id_rec))
         return self.cursor.fetchall()
+
+    def get_data_by_id_sql(self, id_rec):
+        sql = "SELECT * FROM VARIANTS WHERE ID = " + str(id_rec)
+        return sql
+
+    def get_data_by_id(self, id_rec):
+        sql = self.get_data_by_id_sql(id_rec)
+        self.cursor.execute(sql)
+        temp_list = self.cursor.fetchall()[0]
+        return temp_list[3], temp_list[4]
 
 
 class VarTable(Table):

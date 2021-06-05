@@ -186,12 +186,14 @@ class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
         self.taskset_line_list = List()
         self.variants_list = List()
         self.current_taskset_id = None
+        self.current_variant_id = None
         self.variants_wnd = VariantsAddForm()
         self.ui = Ui_taskset_form()
         self.ui.setupUi(self)
         self.ui.taskset_lv.clicked.connect(self.taskset_clicked_action)
         self.ui.add_variant.clicked.connect(self.add_variants_action)
         self.ui.tabWidget.currentChanged.connect(self.tab_change_action)
+        self.ui.variants_lv.clicked.connect(self.variant_clicked_action)
 
     def tab_change_action(self):
         if self.ui.tabWidget.currentIndex() == 1:
@@ -210,10 +212,10 @@ class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
         if self.current_taskset_id:
             self.variants_wnd.exec()
             if self.variants_wnd.accept:
-                amount = self.variants_wnd.amount_sb.value()
+                amount = self.variants_wnd.ui.amount_sb.value()
                 if not self.variants_table:
                     self.variants_table = Variants(self.cur)
-                for number_variant in range(amount):
+                for number_variant in range(1, amount + 1):
                     text_variant, text_key = self.generate_variant_and_key(self.current_taskset_id,
                                                                            number_variant)
                     self.variants_table.insert([self.current_taskset_id,
@@ -244,21 +246,22 @@ class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
             self.task_table = Task(self.cur)
         if not self.var_table:
             self.var_table = VarTable(self.cur)
-        task = self.task_table.select1(task_id)
+        task = self.task_table.select1(task_id)[0]
         condition = task[3]
         formula = task[4]
         var_list = self.var_table.select_detail(task_id)
         for var in var_list:
-            var_name = '{' + var[1] + '}'
-            if "range" in var[6]:
-                var_value = str(choice(list(eval(var[6]))))
-            elif var[6][0] == '[' and var[6][-1] == ']':
-                var_value = str(choice(eval(var[6])))
+            var_name = '{' + var[2] + '}'
+            if "range" in var[8]:
+                var_value = str(choice(list(eval(var[8]))))
+            elif var[8][0] == '[' and var[8][-1] == ']':
+                var_value = str(choice(eval(var[8])))
             else:
                 var_value = var[4]
-            condition.replace(var_name, var_value)
-            formula.replace(var_name, var_value)
+            condition = condition.replace(var_name, var_value)
+            formula = formula.replace(var_name, var_value)
         text_condition += "\n" + condition
+        text_answer = str(number) + ")" + str(eval(formula))
         return text_condition, text_answer
 
     def taskset_clicked_action(self):
@@ -266,7 +269,24 @@ class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
         if index:
             item = index.model().itemFromIndex(index)
             self.current_taskset_id = item.db_id
-            self.connect(self.con, self.cur)
+            # self.connect(self.con, self.cur)
+            temp_line_list = self.taskset_line_table.select_with_task_name(
+                self.current_taskset_id)
+            if temp_line_list:
+                self.taskset_line_list.import_data(temp_line_list, 0, 1)
+                self.ui.tasksetline_lv.model = QStandardItemModel()
+                self.ui.tasksetline_lv.setModel(self.taskset_line_list.model)
+
+    def variant_clicked_action(self):
+        index = self.ui.variants_lv.selectedIndexes()[0]
+        if not self.variants_table:
+            self.variants_table = Variants(self.cur)
+        if index:
+            item = index.model().itemFromIndex(index)
+            self.current_variant_id = item.db_id
+            condition, answer = self.variants_table.get_data_by_id(self.current_variant_id)
+            self.ui.content_brow.setText(condition)
+            self.ui.key_brow.setText(answer)
 
     def connect(self, connection, cursor):
         if not self.con:
