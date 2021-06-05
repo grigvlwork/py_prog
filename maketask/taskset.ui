@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1139</width>
-    <height>845</height>
+    <width>667</width>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,6 +16,9 @@
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="toolTip">
+      <string>Обновить список работ</string>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -40,6 +43,31 @@
           <widget class="QPushButton" name="add_variant">
            <property name="text">
             <string>Добавить вариант(ы)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="refresh_taskset">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>pictures/refresh2.png</normaloff>pictures/refresh2.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="taskset_delete">
+           <property name="toolTip">
+            <string>Удалить работу</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>pictures/del.png</normaloff>pictures/del.png</iconset>
            </property>
           </widget>
          </item>

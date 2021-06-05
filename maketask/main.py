@@ -8,10 +8,11 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtCore import QStringListModel
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
+from random import choice
 
 from about import Ui_aboutdialog
 from dataclasses import Subject, Tree, Section, List, Task, SectionRecord, Variable, VarTable, WorkList
-from dataclasses import TaskSet, TaskSetLine
+from dataclasses import TaskSet, TaskSetLine, Variants
 from mainwindow import Ui_MainWindow
 from section import Ui_section_edit_form
 from subject import Ui_subject_edit_form
@@ -19,6 +20,7 @@ from task2work import Ui_add_task_to_work
 from task_dialog import Ui_task_edit_form
 from taskset import Ui_taskset_form
 from save_work import Ui_save_work_form
+from variants import Ui_variants_add_form
 
 
 class AboutWindow(QtWidgets.QDialog, Ui_aboutdialog):
@@ -149,6 +151,13 @@ class SubjectEditForm(QtWidgets.QDialog, Ui_subject_edit_form):
         self.ui.setupUi(self)
 
 
+class VariantsAddForm(QtWidgets.QDialog, Ui_variants_add_form):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_variants_add_form()
+        self.ui.setupUi(self)
+
+
 class AddTaskToWorkForm(QtWidgets.QDialog, Ui_add_task_to_work):
     def __init__(self):
         super().__init__()
@@ -168,15 +177,89 @@ class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
         super().__init__()
         self.cur = None
         self.con = None
+        self.task_table = None
+        self.var_table = None
         self.taskset_table = None
         self.taskset_line_table = None
+        self.variants_table = None
         self.taskset_list = List()
         self.taskset_line_list = List()
+        self.variants_list = List()
         self.current_taskset_id = None
-        # self.ui.taskset_lv.model = None
+        self.variants_wnd = VariantsAddForm()
         self.ui = Ui_taskset_form()
         self.ui.setupUi(self)
         self.ui.taskset_lv.clicked.connect(self.taskset_clicked_action)
+        self.ui.add_variant.clicked.connect(self.add_variants_action)
+        self.ui.tabWidget.currentChanged.connect(self.tab_change_action)
+
+    def tab_change_action(self):
+        if self.ui.tabWidget.currentIndex() == 1:
+            if self.current_taskset_id:
+                if not self.variants_table:
+                    self.variants_table = Variants(self.cur)
+                var_list = self.variants_table.select_detail(self.current_taskset_id)
+                if var_list:
+                    self.ui.variants_lv.model = QStandardItemModel()
+                    self.variants_list.rowCount = 0
+                    for var in var_list:
+                        self.variants_list.insert("Вариант №" + str(var[2]), var[0])
+                    self.ui.variants_lv.setModel(self.variants_list.model)
+
+    def add_variants_action(self):
+        if self.current_taskset_id:
+            self.variants_wnd.exec()
+            if self.variants_wnd.accept:
+                amount = self.variants_wnd.amount_sb.value()
+                if not self.variants_table:
+                    self.variants_table = Variants(self.cur)
+                for number_variant in range(amount):
+                    text_variant, text_key = self.generate_variant_and_key(self.current_taskset_id,
+                                                                           number_variant)
+                    self.variants_table.insert([self.current_taskset_id,
+                                                number_variant, text_variant, text_key])
+                self.con.commit()
+
+    def generate_variant_and_key(self, taskset, number):
+        if not self.taskset_line_table:
+            self.taskset_line_table = TaskSetLine(self.cur)
+        taskset_line_list = self.taskset_line_table.select_detail(taskset)
+        num_task = 1
+        text_variant = "Вариант №" + str(number)
+        text_key = "Ключ к варианту №" + str(number)
+        for row in taskset_line_list:
+            task_id = row[2]
+            amount = row[3]
+            for _ in range(amount):
+                condition, answer = self.generate_condition_and_answer(num_task, task_id)
+                num_task += 1
+                text_variant += "\n" + condition
+                text_key += "\n" + answer
+        return text_variant, text_key
+
+    def generate_condition_and_answer(self, number, task_id):
+        text_condition = "Задание № " + str(number)
+        text_answer = ""
+        if not self.task_table:
+            self.task_table = Task(self.cur)
+        if not self.var_table:
+            self.var_table = VarTable(self.cur)
+        task = self.task_table.select1(task_id)
+        condition = task[3]
+        formula = task[4]
+        var_list = self.var_table.select_detail(task_id)
+        for var in var_list:
+            var_name = '{' + var[1] + '}'
+            if "range" in var[6]:
+                var_value = str(choice(list(eval(var[6]))))
+            elif var[6][0] == '[' and var[6][-1] == ']':
+                var_value = str(choice(eval(var[6])))
+            else:
+                var_value = var[4]
+            condition.replace(var_name, var_value)
+            formula.replace(var_name, var_value)
+        text_condition += "\n" + condition
+        return text_condition, text_answer
 
     def taskset_clicked_action(self):
         index = self.ui.taskset_lv.selectedIndexes()[0]
@@ -306,7 +389,6 @@ class MainWindow(QtWidgets.QMainWindow):
             taskset_id = self.taskset_table.get_id_by_date(date_creation)
             if not self.taskset_line_table:
                 self.taskset_line_table = TaskSetLine(self.cur)
-
             for i in range(self.work_task_list.model.rowCount()):
                 item = self.work_task_list.model.item(i)
                 self.taskset_line_table.insert([taskset_id, item.task_id, item.amount])
@@ -431,10 +513,6 @@ class MainWindow(QtWidgets.QMainWindow):
             self.con.commit()
         self.current_subject = None
         self.load_data()
-
-
-def quoted(text):
-    return '"' + text + '"'
 
 
 app = QtWidgets.QApplication([])

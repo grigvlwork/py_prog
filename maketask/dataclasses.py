@@ -45,6 +45,10 @@ class Table:
         self.cursor.execute(self.id_by_name_sql(name))
         return self.cursor.fetchall()
 
+    def select1(self, id_rec):
+        self.cursor.execute(self.select1_sql(id_rec))
+        return self.cursor.fetchall()
+
     def select_all(self):
         self.cursor.execute(self.select_all_sql())
         return self.cursor.fetchall()
@@ -186,7 +190,7 @@ class TaskSetLine(Table):
 
 class Variants(Table):
     def __init__(self, cur):
-        super().__init__("tasksetline", ['id', 'taskset_id', 'content', 'answer'], cur)
+        super().__init__("variants", ['id', 'taskset_id', 'number', 'content', 'answer'], cur)
 
     def select_detail(self, id_rec):
         self.cursor.execute(self.select_detail_sql('taskset_id', id_rec))

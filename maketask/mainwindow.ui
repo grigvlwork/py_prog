@@ -70,6 +70,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QPushButton" name="section_add">
+        <property name="toolTip">
+         <string>Добавить раздел</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -81,6 +84,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="section_del">
+        <property name="toolTip">
+         <string>Удалить раздел</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -92,6 +98,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="section_edit">
+        <property name="toolTip">
+         <string>Редактировать раздел</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -103,6 +112,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="task_add">
+        <property name="toolTip">
+         <string>Добавить задачу</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -114,6 +126,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="task_del">
+        <property name="toolTip">
+         <string>Удалить задачу</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -125,6 +140,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="task_edit">
+        <property name="toolTip">
+         <string>Редактировать задачу</string>
+        </property>
         <property name="text">
          <string/>
         </property>
