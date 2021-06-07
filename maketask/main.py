@@ -3,6 +3,7 @@ import sqlite3
 import sys
 import uuid
 import datetime
+from docx import Document
 
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtCore import QStringListModel
