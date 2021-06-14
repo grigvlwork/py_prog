@@ -1,21 +1,9 @@
-import random
+from math import pi, sin, cos
 
-class Number:
-    def __init__(self, num):
-        self.num = num
-
-    def __str__(self):
-        return str(self.num)
-
-random.seed()
-a = []
-for i in range(10):
-    a.append(Number(random.randint(0, 100)))
-print(*a)
-i = 0
-while i < len(a):
-    if a[i].num > 50:
-        a.remove(a[i])
-    else:
-        i += 1
-print(*a)
+f = open('mathtables.py', 'w')
+a = dict()
+for i in range(361):
+    a[i * pi / 180] = [sin(i * pi / 180), cos(i * pi / 180)]
+text = "sc_table = " + str(a)
+f.write(text)
+f.close()
