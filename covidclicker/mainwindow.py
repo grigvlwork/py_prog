@@ -25,6 +25,13 @@ pygame.time.set_timer(UPDATESYRINGE, 1000)
 fps = 60
 
 
+def rotate_center(image, angle):
+    center = image.get_rect().center
+    rotated_image = pygame.transform.rotate(image, angle)
+    new_rect = rotated_image.get_rect(center=center)
+    return rotated_image, new_rect
+
+
 def load_image(name, colorkey=None):
     fullname = os.path.join('pictures', name)
     try:
@@ -45,8 +52,9 @@ class Syringe(pygame.sprite.DirtySprite):
     def __init__(self, group, x, y, angle, center, radius, row):
         pygame.sprite.DirtySprite.__init__(self, group)
         degrees = angle * 180 / pi - 90
-        self.image = pygame.transform.rotate(Syringe.image, degrees)
-        self.rect = Syringe.image.get_rect()
+        # self.image = pygame.transform.rotate(Syringe.image, degrees)
+        # self.rect = Syringe.image.get_rect()
+        self.image, self.rect = rotate_center(Syringe.image, degrees)
         self.rect.x = x
         self.rect.y = y
         self.visible = 1
@@ -60,7 +68,7 @@ class Syringe(pygame.sprite.DirtySprite):
     def rotate(self):
         self.angle += pi / 180
         degrees = self.angle * 180 / pi - 90
-        self.image = pygame.transform.rotate(Syringe.image, degrees)
+        self.image, self.rect = rotate_center(Syringe.image, degrees)
         self.rect.x = self.center[0] + (self.radius + self.phase) * cos(self.angle)
         self.rect.y = self.center[1] - (self.radius + self.phase) * sin(self.angle)
 
@@ -316,7 +324,7 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:
             main_field.get_click(event.pos)
             add_syringe = main_field.add_syringe_sprite.click(event)
-            if add_syringe:
+            if add_syringe and main_field.cured_to_pay > main_field.syringe_cost:
                 main_field.syringe_amount += 1
                 main_field.cured_to_pay -= main_field.syringe_cost
                 main_field.syringe_cost = int(main_field.syringe_cost * 1.1)
