@@ -32,6 +32,46 @@ def rotate_center(image, angle):
     return rotated_image, new_rect
 
 
+def left_corner(angle, center, radius, delta):
+    n = int(angle / (2 * pi))
+    angle -= 2 * pi * n
+    if angle == 0:
+        return center[0] - 5, center[1] - radius - delta
+    elif angle == pi:
+        return center[0] - 5, center[1] + radius
+    elif angle == pi / 2:
+        return center[0] - radius - delta, center[1] - 5
+    elif angle == 3 * pi / 2:
+        return center[0] + radius, center[1] - 5
+    elif 0 < angle < pi / 2:
+        x = center[0] - (radius + delta) * sin(angle)
+        y = center[1] - (radius + delta) * cos(angle)
+        dx = 5 * cos(angle)
+        dy = 5 * sin(angle)
+        return x - dx, y - dy
+    elif pi / 2 < angle < pi:
+        angle = pi - angle
+        x = center[0] - (radius + delta) * sin(angle)
+        y1 = center[1] - radius * cos(angle)
+        dx = 5 * cos(angle)
+        dy = 5 * sin(angle)
+        return x - dx, y1 - dy
+    elif pi < angle < 3 * pi / 2:
+        angle = 3 * pi / 2 - angle
+        x1 = center[0] + radius * cos(angle)
+        y1 = center[1] + radius * sin(angle)
+        dx = 5 * sin(angle)
+        dy = 5 * cos(angle)
+        return x1 - dx, y1 - dy
+    else:
+        angle = 2 * pi - angle
+        y = center[1] - (radius + delta) * cos(angle)
+        x1 = center[0] + radius * sin(angle)
+        dx = 5 * cos(angle)
+        dy = 5 * sin(angle)
+        return x1 - dx, y - dy
+
+
 def load_image(name, colorkey=None):
     fullname = os.path.join('pictures', name)
     try:
@@ -49,14 +89,13 @@ def load_image(name, colorkey=None):
 class Syringe(pygame.sprite.DirtySprite):
     image = load_image('syringe3.png')
 
-    def __init__(self, group, x, y, angle, center, radius, row):
+    def __init__(self, group, angle, center, radius, row):
         pygame.sprite.DirtySprite.__init__(self, group)
         degrees = angle * 180 / pi - 90
         # self.image = pygame.transform.rotate(Syringe.image, degrees)
         # self.rect = Syringe.image.get_rect()
         self.image, self.rect = rotate_center(Syringe.image, degrees)
-        self.rect.x = x
-        self.rect.y = y
+        self.rect.x, self.rect.y = left_corner(angle, center, radius + delta_row)
         self.visible = 1
         self.dirty = 1
         self.angle = angle
@@ -152,6 +191,7 @@ class MainField:
         self.add_syringe_sprite = AddButton(self.button_sprites,
                                             self.width - 35,
                                             self.slot_height + 10)
+        self.sprite_id = [0, 0, 0, 0, 0]
         random.seed()
 
     def make_infected(self):
@@ -255,42 +295,28 @@ class MainField:
     def fill_syringes(self):
         i = len(self.syringe_sprites)
         while len(self.syringe_sprites) < self.syringe_amount:
-            if len(self.syringe_sprites) == 0:
-                angle = pi / 2
-                delta_row = 50
-                x = self.game_width // 2
-                y = self.height // 2 - self.virus_size - 50
-            # first row 60
-            elif i < 60:
-                angle = delta_angle[0] * (i + 1)
-                delta_row = 50
+            # first row 45
+            if i < 45:
+                row = 0
             # 2 row 90
-            elif i < 150:
-                angle = delta_angle[1] * (i - 58)
-                delta_row = 100
-            # 3 row 120
-            elif i < 270:
-                angle = delta_angle[2] * (i - 147)
-                delta_row = 150
-            # 4 row 180
-            elif i < 450:
-                angle = delta_angle[3] * (i - 266)
-                delta_row = 200
-            # 5 row 240
-            elif i < 690:
-                angle = delta_angle[4] * (i - 445)
-                delta_row = 250
-            # 6 row 360
-            elif i < 1050:
-                angle = delta_angle[5] * (i - 684)
-                delta_row = 300
-            # x = self.game_width // 2 + (self.virus_size + delta_row) * cos(angle)
-            # y = self.height // 2 - (self.virus_size + delta_row) * sin(angle)
-            x = self.game_width // 2 + (self.virus_size) * cos(angle)
-            y = self.height // 2 - (self.virus_size) * sin(angle)
-            Syringe(self.syringe_sprites, x, y, angle,
+            elif i < 135:
+                row = 1
+            # 3 row 180
+            elif i < 315:
+                row = 2
+            # 4 row 360
+            elif i < 775:
+                row = 3
+            # 5 row 720
+            elif i < 1495:
+                row = 4
+            # 6 row 1440
+            elif i < 2935:
+                row = 5
+
+            Syringe(self.syringe_sprites, angle,
                     (self.game_width // 2, self.height // 2),
-                    self.virus_size, 0)
+                    self.virus_size, row)
 
     def cure(self):
         for i in range(self.cure_in_sec):
