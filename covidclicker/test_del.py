@@ -2,8 +2,8 @@ from math import sin, cos, pi, sqrt
 
 
 def left_corner(angle, center, radius, delta):
-    while angle > 2 * pi:
-        angle -= 2 * pi
+    n = int(angle / (2 * pi))
+    angle -= 2 * pi * n
     if angle == 0:
         return center[0] - 5, center[1] - radius - delta
     elif angle == pi:
@@ -13,28 +13,24 @@ def left_corner(angle, center, radius, delta):
     elif angle == 3 * pi / 2:
         return center[0] + radius, center[1] - 5
     elif 0 < angle < pi / 2:
-        x1 = center[0] - radius * sin(angle)
-        y1 = center[1] - radius * cos(angle)
-        x2 = center[0] - (radius + delta) * sin(angle)
-        y2 = center[1] - (radius + delta) * cos(angle)
-        k = - (y1 - y2) / (x1 - x2)
-        k2 = - 1 / k
-        b2 = y2 - k2 * x2
-        A = 1 + k2 * k2
-        B = -2 * (1 + y2 - b2)
-        C = x2 * x2 + (b2 - y2) ** 2 - 25
-        D = B * B - 4 * A * C
-        if D >= 0:
-            x_min = min((-B + sqrt(D)) / (2 * A), (-B + sqrt(D)) / (2 * A))
-            x_max = max((-B + sqrt(D)) / (2 * A), (-B + sqrt(D)) / (2 * A))
-            y = k2 * x_max + b2
-            return x_min, y
+        x = center[0] - (radius + delta) * sin(angle)
+        y = center[1] - (radius + delta) * cos(angle)
+        dx = 5 * cos(angle)
+        dy = 5 * sin(angle)
+        return x - dx, y - dy
+    elif pi / 2 < angle < pi:
+        # Доработать
+        angle = pi - angle
+        x = center[0] - (radius + delta) * sin(angle)
+        y = center[1] - (radius + delta) * cos(angle)
+        dx = 5 * cos(angle)
+        dy = 5 * sin(angle)
+        return x - dx, y + dy
+
     return 0, 0
 
+
 print(left_corner(pi / 4, (120, 120), 80, 40))
-
-
-
 
 # f = open('mathtables.py', 'w')
 # a = dict()
