@@ -10,6 +10,7 @@ INFECTEVENT = 100
 INCREASEINFECT = 101
 CUREEVENT = 102
 UPDATESYRINGE = 103
+PHASEEVENT = 104
 pygame.init()
 size = width, height = (640, 480)
 screen = pygame.display.set_mode(size)
@@ -18,14 +19,17 @@ icon = pygame.image.load('pictures/coronacolor.png')
 pygame.display.set_icon(icon)
 clock = pygame.time.Clock()
 rotate_syringe = False
-delta_row = 50
+delta_row = 44
 pygame.time.set_timer(INFECTEVENT, 500)
 pygame.time.set_timer(CUREEVENT, 1000)
 pygame.time.set_timer(INCREASEINFECT, 5000)
-pygame.time.set_timer(UPDATESYRINGE, 1000)
+pygame.time.set_timer(UPDATESYRINGE, 100)
+pygame.time.set_timer(PHASEEVENT, 100)
 fps = 60
+phase = 0
 syringe_angles = dict()
 left_corners = dict()
+
 
 def rotate_center(image, angle):
     center = image.get_rect().center
@@ -38,35 +42,35 @@ def left_corner(angle, center, radius):
     if angle > 2 * pi:
         n = int(angle / (2 * pi))
         angle -= 2 * pi * n
+    elif angle < - 2 * pi:
+        n = int(angle / (2 * pi))
+        angle = 2 * pi * n
     dx = 5 * cos(angle)
     dy = 5 * sin(angle)
-    if angle == pi:
+    if angle == 0:
+        return center[0] - radius - delta_row, center[1] - 5
+    elif angle == pi:
         return center[0] - 5, center[1] - radius - delta_row
     elif angle == 3 * pi / 2:
         return center[0] - 5, center[1] + radius - delta_row
-    elif angle == 0:
-        return center[0] - radius - delta_row, center[1] - 5
     elif angle == pi / 2:
-        return center[0] + radius, center[1] - 5
+        return center[0] - radius - delta_row, center[1] - 5
     elif 0 < angle < pi / 2:
         x = center[0] - (radius + delta_row) * sin(angle)
         y = center[1] - (radius + delta_row) * cos(angle)
         return x - dx, y - dy
     elif pi / 2 < angle < pi:
-        angle = pi - angle
-        x = center[0] + radius * sin(angle)
-        y1 = center[1] + (radius + delta_row) * cos(angle)
-        return x - dx, y1 - dy
+        x = center[0] - (radius + delta_row) * sin(angle)
+        y1 = center[1] - radius * cos(angle)
+        return x + dx, y1 - dy
     elif pi < angle < 3 * pi / 2:
-        angle = 3 * pi / 2 - angle
-        x1 = center[0] + radius * cos(angle)
-        y1 = center[1] - radius * sin(angle)
-        return x1 - dx, y1 - dy
+        x1 = center[0] - radius * sin(angle)
+        y1 = center[1] - radius * cos(angle)
+        return x1 + dx, y1 + dy
     else:
-        angle = 2 * pi - angle
-        y = center[1] - (radius + delta_row) * cos(angle)
-        x1 = center[0] + (radius + delta_row) * sin(angle)
-        return x1 - dx, y + dy
+        x = center[0] - radius * sin(angle)
+        y1 = center[1] - (radius + delta_row) * cos(angle)
+        return x - dx, y1 + dy
 
 
 def load_image(name, colorkey=None):
@@ -89,41 +93,41 @@ class Syringe(pygame.sprite.DirtySprite):
     def __init__(self, group, angle, center, radius, row, id):
         pygame.sprite.DirtySprite.__init__(self, group)
         degrees = angle * 180 / pi
-        self.image = pygame.transform.rotate(Syringe.image, degrees)
-        self.rect = Syringe.image.get_rect()
-        # self.image, self.rect = rotate_center(Syringe.image, degrees)
-        self.rect.x, self.rect.y = left_corner(angle, center, radius + (row + 1) * delta_row)
-        self.visible = 1
-        self.dirty = 1
         self.angle = angle
         self.center = center
         self.radius = radius
         self.row = row
-        self.phase = 0
+        self.image = pygame.transform.rotate(Syringe.image, degrees)
+        self.rect = Syringe.image.get_rect()
+        # self.image, self.rect = rotate_center(Syringe.image, degrees)
+        self.rect.x, self.rect.y = \
+            left_corner(self.angle, self.center, self.radius + self.row * delta_row + phase)
+        left_corners[(self.angle, self.center, self.radius + self.row * delta_row + phase)] = \
+            self.rect.x, self.rect.y
+        self.visible = 1
+        self.dirty = 1
         self.id = id
 
     def rotate(self):
         self.angle -= delta_angle[self.row] / 3
+        if self.angle < 0:
+            self.angle += 2 * pi
         degrees = self.angle * 180 / pi
-        # self.image, self.rect = rotate_center(Syringe.image, degrees)
         self.image = pygame.transform.rotate(Syringe.image, degrees)
         self.rect = Syringe.image.get_rect()
-        if (self.angle, self.center, self.radius + self.row * delta_row + self.phase) in left_corners:
+        if (self.angle, self.center, self.radius + self.row * delta_row + phase) in left_corners:
             self.rect.x, self.rect.y = \
-                left_corners[(self.angle, self.center, self.radius + self.row * delta_row + self.phase)]
+                left_corners[(self.angle, self.center, self.radius + self.row * delta_row + phase)]
         else:
             self.rect.x, self.rect.y = \
-                left_corner(self.angle, self.center, self.radius + self.row * delta_row + self.phase)
-            left_corners[(self.angle, self.center, self.radius + self.row * delta_row + self.phase)] = \
+                left_corner(self.angle, self.center, self.radius + self.row * delta_row + phase)
+            left_corners[(self.angle, self.center, self.radius + self.row * delta_row + phase)] = \
                 self.rect.x, self.rect.y
-        syringe_angles[(self.id, self.row)] = self.angle 
+        syringe_angles[(self.id, self.row)] = self.angle
 
     def update(self):
-        self.phase += 1
         if rotate_syringe:
             self.rotate()
-        if self.phase == 10:
-            self.phase = 0
         self.dirty = 1
 
 
@@ -171,12 +175,12 @@ class AddButton(pygame.sprite.DirtySprite):
         if args and args[0].type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(args[0].pos):
             return self.item
         return 0
-    
+
 
 class Virus(pygame.sprite.DirtySprite):
     image1 = load_image("coronacolor.png")
     image2 = load_image("coronacolor1.png")
-    
+
     def __init__(self, group, center):
         pygame.sprite.DirtySprite.__init__(self, group)
         self.center = center
@@ -204,7 +208,6 @@ class Virus(pygame.sprite.DirtySprite):
         self.rect.x, self.rect.y = self.corner(self.angle, self.center)
         self.clicked = 1
 
-
     def update(self):
         self.angle += pi / 180
         degrees = self.angle * 180 / pi - 90
@@ -229,7 +232,7 @@ class MainField:
         self.game_width = int(width * 0.7)
         self.slot_width = self.width - self.game_width
         self.slot_height = self.height // 10
-        self.virus_size = 50
+        self.virus_size = 60
         self.infected_size = 2
         self.virus_size_delta = 0
         self.amount_infected = 0
@@ -238,14 +241,24 @@ class MainField:
         self.cured = 0
         self.cured_to_pay = 0
         self.cure_in_sec = 0
+        self.uncured_amount = 0
         self.virus_clicked = True
         self.counter_size = self.slot_height
         self.syringe_counter_size = self.slot_height
         self.medic_counter_size = self.slot_height
+        self.hospital_counter_size = self.slot_height
+        self.science_counter_size = self.slot_height
+        self.vaccine_counter_size = self.slot_height
         self.syringe_cost = 100
         self.syringe_amount = 0
         self.medic_cost = 1000
         self.medic_amount = 0
+        self.hospital_amount = 0
+        self.hospital_cost = 10000
+        self.science_amount = 0
+        self.science_cost = 100000
+        self.vaccine_cost = 1000000
+        self.vaccine_amount = 0
         self.infect_timeout = 500
         self.button_sprites = pygame.sprite.LayeredDirty()
         self.syringe_sprites = pygame.sprite.LayeredDirty()
@@ -254,14 +267,31 @@ class MainField:
                                             self.width - 35,
                                             self.slot_height + 10, 1)
         self.add_medic_sprite = AddButton(self.button_sprites,
+                                          self.width - 35,
+                                          self.slot_height * 2 + 12, 2)
+        self.add_hospital_sprite = AddButton(self.button_sprites,
+                                             self.width - 35,
+                                             self.slot_height * 3 + 14, 3)
+        self.add_science_sprite = AddButton(self.button_sprites,
                                             self.width - 35,
-                                            self.slot_height * 2 + 10, 2)
+                                            self.slot_height * 4 + 16, 4)
+        self.add_vaccine_sprite = AddButton(self.button_sprites,
+                                            self.width - 35,
+                                            self.slot_height * 5 + 18, 5)
         self.virus_sprite = Virus(self.virus_sprites, (self.game_width // 2, self.height // 2))
         self.sprite_id = [0, 0, 0, 0, 0]
         random.seed()
 
     def make_infected(self, amount):
         tmp_infected = amount
+        while tmp_infected > 100000:
+            angle = random.random() * 2 * pi
+            x = self.game_width // 2 + (self.virus_size + self.virus_size_delta) * cos(angle)
+            y = self.height // 2 - (self.virus_size + self.virus_size_delta) * sin(angle)
+            infected = Human(x, y, angle, "болен", 6)
+            self.infected.append(infected)
+            self.amount_infected += 100000
+            tmp_infected -= 100000
         while tmp_infected > 10000:
             angle = random.random() * 2 * pi
             x = self.game_width // 2 + (self.virus_size + self.virus_size_delta) * cos(angle)
@@ -303,58 +333,8 @@ class MainField:
             self.amount_infected += 1
             tmp_infected -= 1
 
-    def make_healthy(self, level):
-        if level == 1:
-            i = -1
-            while i >= -len(self.infected):
-                if self.infected[i].status == "болен" and self.infected[i].level == 1:
-                    self.infected[i].status = "здоров"
-                    self.cured += 1
-                    self.cured_to_pay += 1
-                    break
-                i -= 1
-            else:
-                i = -1
-                while i >= -len(self.infected):
-                    if self.infected[i].status == "болен" and self.infected[i].level > level:
-                        self.infected[i].status = "здоров"
-                        self.make_infected(10 ** (self.infected[i].level - 1) - 1)
-                        self.infected[i].level = 1
-                        self.cured += 1
-                        self.cured_to_pay += 1
-                        break
-                    i -= 1
-        else:
-            i = -1
-            while i >= -len(self.infected):
-                if self.infected[i].status == "болен" and self.infected[i].level == level:
-                    self.infected[i].status = "здоров"
-                    self.cured += 10 ** (self.infected[i].level - 1)
-                    self.cured_to_pay += 10 ** (self.infected[i].level - 1)
-                    break
-                i -= 1
-            else:
-                i = -1
-                while i >= -len(self.infected):
-                    if self.infected[i].status == "болен" and self.infected[i].level > level:
-                        self.infected[i].status = "здоров"
-                        self.make_infected(10 ** (self.infected[i].level - 1) - 1)
-                        self.infected[i].level = 1
-                        self.cured += 10 ** (self.infected[i].level - 1)
-                        self.cured_to_pay += 10 ** (self.infected[i].level - 1)
-                        break
-                    i -= 1
-                else:
-                    i = -1
-                    while i >= -len(self.infected):
-                        if self.infected[i].status == "болен":
-                            self.infected[i].status = "здоров"
-                            self.cured += 10 ** (self.infected[i].level - 1)
-                            self.cured_to_pay += 10 ** (self.infected[i].level - 1)
-                    i -= 1
-
     def on_virus_click(self):
-        self.make_healthy(1)
+        self.uncured_amount += 1
         self.virus_sprite.click()
 
     def get_click(self, mouse_pos):
@@ -368,19 +348,6 @@ class MainField:
                          (0, 0, self.game_width, self.height), 1)
         pygame.draw.rect(screen, pygame.Color(255, 0, 0),
                          (self.game_width + 2, 0, self.slot_width - 2, self.height), 1)
-
-    def draw_virus(self):
-        if self.virus_clicked:
-            color = pygame.Color(255, 255, 255)
-            self.virus_clicked = False
-        else:
-            color = pygame.Color(0, 255, 0)
-        pygame.draw.circle(screen, color,
-                           (self.game_width // 2, self.height // 2),
-                           self.virus_size + self.virus_size_delta)
-        self.virus_size_delta += 1
-        if self.virus_size_delta > self.virus_size // 10:
-            self.virus_size_delta = 0
 
     def draw_syringe_slot(self):
         font = pygame.font.Font(None, self.syringe_counter_size)
@@ -424,17 +391,101 @@ class MainField:
             text_h = text2.get_height()
         text = font.render("Врачей:" + str(self.medic_amount), 1, (100, 255, 100))
         text_x = self.game_width + 5
-        text_y = self.slot_height * 2 + 6
+        text_y = self.slot_height * 2 + 7
         screen.blit(text, (text_x, text_y))
         text_x = self.game_width + 5
-        text_y = self.slot_height * 3 - text_h - 1
+        text_y = self.slot_height * 3 - text_h + 2
         screen.blit(text2, (text_x, text_y))
         pygame.draw.rect(screen, pygame.Color(100, 255, 100),
-                         (self.game_width + 3, self.slot_height * 2 + 3, self.slot_width - 4, self.slot_height), 1)
+                         (self.game_width + 3, self.slot_height * 2 + 5, self.slot_width - 4, self.slot_height), 1)
         if self.cured_to_pay > self.medic_cost:
             self.add_medic_sprite.visible = 1
         else:
             self.add_medic_sprite.visible = 0
+        buttons = self.button_sprites.draw(screen)
+        pygame.display.update(buttons)
+
+    def draw_hospital_slot(self):
+        font = pygame.font.Font(None, self.medic_counter_size)
+        text = font.render("Больниц:" + str(self.hospital_amount), 1, (100, 255, 100))
+        text2 = font.render("Цена:" + str(self.hospital_cost), 1, (100, 255, 100))
+        text_w = text2.get_width()
+        text_h = text2.get_height()
+        while text_w > self.slot_width - 50 or text_h > self.slot_height // 3:
+            self.hospital_counter_size -= 1
+            font = pygame.font.Font(None, self.hospital_counter_size)
+            text2 = font.render("Цена:" + str(self.hospital_cost), 1, (100, 255, 100))
+            text_w = text2.get_width()
+            text_h = text2.get_height()
+        text = font.render("Больниц:" + str(self.hospital_amount), 1, (100, 255, 100))
+        text_x = self.game_width + 5
+        text_y = self.slot_height * 3 + 9
+        screen.blit(text, (text_x, text_y))
+        text_x = self.game_width + 5
+        text_y = self.slot_height * 4 - text_h + 3
+        screen.blit(text2, (text_x, text_y))
+        pygame.draw.rect(screen, pygame.Color(100, 255, 100),
+                         (self.game_width + 3, self.slot_height * 3 + 7, self.slot_width - 4, self.slot_height), 1)
+        if self.cured_to_pay > self.hospital_cost:
+            self.add_hospital_sprite.visible = 1
+        else:
+            self.add_hospital_sprite.visible = 0
+        buttons = self.button_sprites.draw(screen)
+        pygame.display.update(buttons)
+
+    def draw_science_slot(self):
+        font = pygame.font.Font(None, self.science_counter_size)
+        text = font.render("Институтов:" + str(self.science_amount), 1, (100, 255, 100))
+        text2 = font.render("Цена:" + str(self.science_cost), 1, (100, 255, 100))
+        text_w = text2.get_width()
+        text_h = text2.get_height()
+        while text_w > self.slot_width - 50 or text_h > self.slot_height // 3:
+            self.science_counter_size -= 1
+            font = pygame.font.Font(None, self.science_counter_size)
+            text2 = font.render("Цена:" + str(self.science_cost), 1, (100, 255, 100))
+            text_w = text2.get_width()
+            text_h = text2.get_height()
+        text = font.render("Институтов:" + str(self.science_amount), 1, (100, 255, 100))
+        text_x = self.game_width + 5
+        text_y = self.slot_height * 4 + 11
+        screen.blit(text, (text_x, text_y))
+        text_x = self.game_width + 5
+        text_y = self.slot_height * 5 - text_h + 5
+        screen.blit(text2, (text_x, text_y))
+        pygame.draw.rect(screen, pygame.Color(100, 255, 100),
+                         (self.game_width + 3, self.slot_height * 4 + 9, self.slot_width - 4, self.slot_height), 1)
+        if self.cured_to_pay > self.science_cost:
+            self.add_science_sprite.visible = 1
+        else:
+            self.add_science_sprite.visible = 0
+        buttons = self.button_sprites.draw(screen)
+        pygame.display.update(buttons)
+
+    def draw_vaccine_slot(self):
+        font = pygame.font.Font(None, self.vaccine_counter_size)
+        text = font.render("Вакцин:" + str(self.vaccine_amount), 1, (100, 255, 100))
+        text2 = font.render("Цена:" + str(self.vaccine_cost), 1, (100, 255, 100))
+        text_w = text2.get_width()
+        text_h = text2.get_height()
+        while text_w > self.slot_width - 50 or text_h > self.slot_height // 3:
+            self.vaccine_counter_size -= 1
+            font = pygame.font.Font(None, self.vaccine_counter_size)
+            text2 = font.render("Цена:" + str(self.vaccine_cost), 1, (100, 255, 100))
+            text_w = text2.get_width()
+            text_h = text2.get_height()
+        text = font.render("Вакцин:" + str(self.vaccine_amount), 1, (100, 255, 100))
+        text_x = self.game_width + 5
+        text_y = self.slot_height * 5 + 13
+        screen.blit(text, (text_x, text_y))
+        text_x = self.game_width + 5
+        text_y = self.slot_height * 6 - text_h + 7
+        screen.blit(text2, (text_x, text_y))
+        pygame.draw.rect(screen, pygame.Color(100, 255, 100),
+                         (self.game_width + 3, self.slot_height * 5 + 11, self.slot_width - 4, self.slot_height), 1)
+        if self.cured_to_pay > self.vaccine_cost:
+            self.add_vaccine_sprite.visible = 1
+        else:
+            self.add_vaccine_sprite.visible = 0
         buttons = self.button_sprites.draw(screen)
         pygame.display.update(buttons)
 
@@ -492,22 +543,22 @@ class MainField:
                     self.virus_size, row, self.sprite_id[row])
 
     def cure(self):
-        temp_cure = self.cure_in_sec
-        while temp_cure > 10000:
-            self.make_healthy(5)
-            temp_cure -= 10000
-        while temp_cure > 1000:
-            self.make_healthy(4)
-            temp_cure -= 1000
-        while temp_cure > 100:
-            self.make_healthy(3)
-            temp_cure -= 100
-        while temp_cure > 10:
-            self.make_healthy(2)
-            temp_cure -= 10
-        while temp_cure > 0:
-            self.make_healthy(1)
-            temp_cure -= 1
+        self.cure_in_sec = self.syringe_amount + self.medic_amount * 10 + self.hospital_amount * 100 + \
+            self.science_amount * 1000 + self.vaccine_amount * 10000
+        amount_cure = self.cure_in_sec + self.uncured_amount
+        if amount_cure == 0:
+            return
+        i = -1
+        while i >= -len(self.infected) and amount_cure > 0:
+            if self.infected[i].status == "болен":
+                to_cure = 10 ** (self.infected[i].level - 1)
+                if amount_cure >= to_cure:
+                    self.infected[i].status = "здоров"
+                    self.cured += to_cure
+                    self.cured_to_pay += to_cure
+                    amount_cure -= to_cure
+            i -= 1
+        self.uncured_amount = amount_cure
 
     def render(self):
         self.draw_frame()
@@ -515,6 +566,9 @@ class MainField:
         self.draw_counter()
         self.draw_syringe_slot()
         self.draw_medic_slot()
+        self.draw_hospital_slot()
+        self.draw_science_slot()
+        self.draw_vaccine_slot()
         self.fill_syringes()
         self.button_sprites.draw(screen)
         self.syringe_sprites.draw(screen)
@@ -539,29 +593,47 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:
             main_field.get_click(event.pos)
             add_syringe = main_field.add_syringe_sprite.click(event)
+            add_medic = main_field.add_medic_sprite.click(event)
+            add_hospital = main_field.add_hospital_sprite.click(event)
+            add_science = main_field.add_science_sprite.click(event)
+            add_vaccine = main_field.add_vaccine_sprite.click(event)
             if add_syringe == 1 and main_field.cured_to_pay > main_field.syringe_cost:
                 main_field.syringe_amount += 1
                 main_field.cured_to_pay -= main_field.syringe_cost
                 main_field.syringe_cost = int(main_field.syringe_cost * 1.1)
-                main_field.cure_in_sec = main_field.syringe_amount
-            elif add_syringe == 2 and main_field.cured_to_pay > main_field.medic_cost:
+            if add_medic == 2 and main_field.cured_to_pay > main_field.medic_cost:
                 main_field.medic_amount += 1
                 main_field.cured_to_pay -= main_field.medic_cost
-                main_field.medic_cost = int(main_field.medic_cost * 1.1)
-                main_field.cure_in_sec = main_field.syringe_amount * 10
+                main_field.medic_cost = int(main_field.medic_cost * 1.15)
+            if add_hospital == 3 and main_field.cured_to_pay > main_field.hospital_cost:
+                main_field.hospital_amount += 1
+                main_field.cured_to_pay -= main_field.hospital_cost
+                main_field.hospital_cost = int(main_field.hospital_cost * 1.2)
+            if add_science == 4 and main_field.cured_to_pay > main_field.science_cost:
+                main_field.science_amount += 1
+                main_field.cured_to_pay -= main_field.science_cost
+                main_field.science_cost = int(main_field.science_cost * 1.25)
+            if add_science == 5 and main_field.cured_to_pay > main_field.vaccine_cost:
+                main_field.science_amount += 1
+                main_field.cured_to_pay -= main_field.vaccine_cost
+                main_field.vaccine_cost = int(main_field.vaccine_cost * 1.3)
         if event.type == INFECTEVENT:
             main_field.make_infected(main_field.infect_in_tick)
         if event.type == INCREASEINFECT:
-            if main_field.cured > main_field.amount_infected * 0.9:
+            if main_field.cure_in_sec > main_field.infect_in_tick:
+                main_field.infect_in_tick = main_field.cure_in_sec + main_field.cure_in_sec // 50 + 1
+            elif main_field.cured > main_field.amount_infected * 0.9:
                 main_field.infect_in_tick += 1
-                if main_field.infect_in_tick > 50:
-                    main_field.infect_in_tick = 10
-                    main_field.infected_size += 1
         if event.type == CUREEVENT:
-            if main_field.cure_in_sec > 0:
-                main_field.cure()
+            main_field.cure()
         if event.type == UPDATESYRINGE:
             rotate_syringe = True
+            main_field.syringe_sprites.update()
+        if event.type == PHASEEVENT:
+            phase += 1
+            if phase == 10:
+                phase = 0
+            main_field.syringe_sprites.update()
     main_field.syringe_sprites.update()
     main_field.virus_sprites.update()
     screen.fill("black")
