@@ -32,53 +32,53 @@
 
 1. Открываем базу
 
-   ![screen0](.\pictures\screen0.png)
+   ![screen0](pictures\screen0.png)
 
 2. Выбираем файл
 
-   ![screen01](.\pictures\screen01.png)
+   ![screen01](pictures\screen01.png)
 
 3. Выбираем предмет
 
-   ![screen02](.\pictures\screen02.png)
+   ![screen02](pictures\screen02.png)
 
 4. Выбираем раздел
 
-   ![screen1](.\pictures\screen1.png)
+   ![screen1](pictures\screen1.png)
 
 5. Нажимаем кнопку добавить задачу - открывается окно редактирования задачи. Вводим название задачи и условие:
 
-   ![screen2](.\pictures\screen2.png)
+   ![screen2](pictures\screen2.png)
 
 6. Открываем Вкладку "Переменные" и описываем их
 
-   ![screen3](.\pictures\screen3.png)
+   ![screen3](pictures\screen3.png)
 
-   ![screen4](.\pictures\screen4.png)
+   ![screen4](pictures\screen4.png)
 
 7. Теперь нужно описать формулу для вычисления ответа
 
-   ![screen5](.\pictures\screen5.png)
+   ![screen5](pictures\screen5.png)
 
 8. Сохраняем задачу нажимая на ОК и добавляем ее в работу в основном окне
 
-   ![screen6](.\pictures\screen6.png)
+   ![screen6](pictures\screen6.png)
 
 9. Формируем работу и переходим к списку работ
 
    ![screen7](D:\py_prog\maketask\pictures\screen7.png)
 
-   ![screen8](.\pictures\screen8.png)
+   ![screen8](pictures\screen8.png)
 
 10. Нажимаем добавить варианты
 
-    ![screen9](.\pictures\screen9.png)
+    ![screen9](pictures\screen9.png)
 
 11. Открываем вкладку варианты и печатаем их
 
-    ![screen10](.\pictures\screen10.png)
+    ![screen10](pictures\screen10.png)
 
-    ![screen11](.\pictures\screen11.png)
+    ![screen11](pictures\screen11.png)
 
     
 
