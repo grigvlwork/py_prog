@@ -284,6 +284,14 @@ class MainField:
 
     def make_infected(self, amount):
         tmp_infected = amount
+        while tmp_infected > 1000000:
+            angle = random.random() * 2 * pi
+            x = self.game_width // 2 + (self.virus_size + self.virus_size_delta) * cos(angle)
+            y = self.height // 2 - (self.virus_size + self.virus_size_delta) * sin(angle)
+            infected = Human(x, y, angle, "болен", 7)
+            self.infected.append(infected)
+            self.amount_infected += 1000000
+            tmp_infected -= 1000000
         while tmp_infected > 100000:
             angle = random.random() * 2 * pi
             x = self.game_width // 2 + (self.virus_size + self.virus_size_delta) * cos(angle)
@@ -613,8 +621,8 @@ while running:
                 main_field.science_amount += 1
                 main_field.cured_to_pay -= main_field.science_cost
                 main_field.science_cost = int(main_field.science_cost * 1.25)
-            if add_science == 5 and main_field.cured_to_pay > main_field.vaccine_cost:
-                main_field.science_amount += 1
+            if add_vaccine == 5 and main_field.cured_to_pay > main_field.vaccine_cost:
+                main_field.vaccine_amount += 1
                 main_field.cured_to_pay -= main_field.vaccine_cost
                 main_field.vaccine_cost = int(main_field.vaccine_cost * 1.3)
         if event.type == INFECTEVENT:
