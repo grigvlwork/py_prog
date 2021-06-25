@@ -134,6 +134,20 @@
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="out_all_variants">
+           <property name="text">
+            <string>Вывести все варианты</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="key_out_cb">
+           <property name="text">
+            <string>Вывести ключ</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="horizontalSpacer_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>

@@ -112,7 +112,7 @@ class Ui_task_edit_form(object):
 
     def retranslateUi(self, task_edit_form):
         _translate = QtCore.QCoreApplication.translate
-        task_edit_form.setWindowTitle(_translate("task_edit_form", "Dialog"))
+        task_edit_form.setWindowTitle(_translate("task_edit_form", "Редактирование задачи"))
         self.label_2.setText(_translate("task_edit_form", "Название задачи"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.condition_tab), _translate("task_edit_form", "Условие"))
         self.label_3.setText(_translate("task_edit_form", "Тип переменной"))
@@ -128,7 +128,7 @@ class Ui_task_edit_form(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">range(0, 1001, 100) - числа от 0 до 1000 с шагом 100: 0, 100, 200, 300, ...</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[1, 8, 13] - конкретные числа</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Пример диапазона для текста:</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[&quot;Ваня&quot;, &quot;Петя&quot;, &quot;Рома&quot;]</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[\'Ваня\', \'Петя\', \'Рома\']</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.variables_tab), _translate("task_edit_form", "Переменные"))

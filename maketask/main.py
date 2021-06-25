@@ -195,6 +195,8 @@ class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
         self.ui.add_variant.clicked.connect(self.add_variants_action)
         self.ui.tabWidget.currentChanged.connect(self.tab_change_action)
         self.ui.variants_lv.clicked.connect(self.variant_clicked_action)
+        self.ui.out_to_word.clicked.connect(self.out_variant_clicked_action)
+        self.ui.out_all_variants.clicked.connect(self.out_all_variants_clicked_action)
 
     def tab_change_action(self):
         if self.ui.tabWidget.currentIndex() == 1:
@@ -312,6 +314,40 @@ class TaskSetForm(QtWidgets.QWidget, Ui_taskset_form):
                 self.taskset_line_list.import_data(temp_line_list, 0, 1)
                 self.ui.tasksetline_lv.model = QStandardItemModel()
                 self.ui.tasksetline_lv.setModel(self.taskset_line_list.model)
+
+    def out_variant_clicked_action(self):
+        if not self.current_variant_id:
+            return
+        options = QFileDialog.Options()
+        file_name, _ = QFileDialog.getSaveFileName(self, "Сохранить вариант в Word", "",
+                                                   "Документы Word (*.docx);;All Files (*)", options=options)
+        condition, answer = self.variants_table.get_data_by_id(self.current_variant_id)
+        document = Document()
+        document.add_paragraph(condition)
+        if self.ui.key_out_cb.isChecked():
+            document.add_paragraph(answer)
+        document.save(file_name)
+
+    def out_all_variants_clicked_action(self):
+        if not self.current_taskset_id:
+            return
+        options = QFileDialog.Options()
+        file_name, _ = QFileDialog.getSaveFileName(self, "Сохранить варианты в Word", "",
+                                                   "Документы Word (*.docx);;All Files (*)", options=options)
+        document = Document()
+        if not self.variants_table:
+            self.variants_table = Variants(self.cur)
+        temp_list = self.variants_table.select_detail(self.current_taskset_id)
+        for row in temp_list:
+            condition = row[3]
+            document.add_paragraph(condition)
+            document.add_paragraph("\n")
+        if self.ui.key_out_cb.isChecked():
+            for row in temp_list:
+                answer = row[4]
+                document.add_paragraph(answer)
+                document.add_paragraph("\n")
+        document.save(file_name)
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -502,7 +538,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def open_action(self):
         options = QFileDialog.Options()
-        file_name, _ = QFileDialog.getOpenFileName(self, "QFileDialog.getOpenFileName()", "",
+        file_name, _ = QFileDialog.getOpenFileName(self, "Открыть базу данных", "",
                                                    "Файлы БД (*.mtdb);;All Files (*)", options=options)
         if file_name:
             self.statusBar().showMessage('Открыт файл ' + file_name)
