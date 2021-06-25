@@ -32,15 +32,15 @@
 
 1. Открываем базу
 
-   ![screen0](.\pictures\screen0.png)
+   ![screen0](pictures/screen0.png)
 
 2. Выбираем файл
 
-   ![screen01](.\pictures\screen01.png)
+   ![screen01](pictures/screen01.png)
 
 3. Выбираем предмет
 
-   ![screen02](.\pictures\screen02.png)
+   ![screen02](pictures/screen02.png)
 
 4. Выбираем раздел
 
