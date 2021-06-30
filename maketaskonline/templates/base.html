@@ -13,6 +13,10 @@
 <header>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Конструктор заданий</a>
+        <!-- Begin header extension -->
+        <main role="header" class="header-container">
+            {% block header %}{% endblock %}
+        </main>
     </nav>
 </header>
 <!-- Begin page content -->

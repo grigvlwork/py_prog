@@ -2,12 +2,15 @@ import datetime
 
 import sqlalchemy
 # from sqlalchemy.orm import relationship
+from sqlalchemy import orm
 from werkzeug.security import generate_password_hash, check_password_hash
-
 from .db_session import SqlAlchemyBase
+from . import subjects
+
 
 
 class User(SqlAlchemyBase):
+    subjects = orm.relation("Subjects", back_populates='user')
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)
 

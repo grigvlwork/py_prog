@@ -1,5 +1,4 @@
 from flask_wtf import FlaskForm
-from werkzeug.security import generate_password_hash, check_password_hash
 from wtforms import PasswordField, StringField, TextAreaField, SubmitField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
@@ -12,3 +11,14 @@ class RegisterForm(FlaskForm):
     name = StringField('Имя пользователя', validators=[DataRequired()])
     about = TextAreaField("Немного о себе")
     submit = SubmitField('Войти')
+
+
+class LoginForm(FlaskForm):
+    email = EmailField('Почта', validators=[DataRequired()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    submit_login = SubmitField('Вход')
+    submit_register = SubmitField('Регистрация')
+
+
+class LogoutForm(FlaskForm):
+    submit = SubmitField('Выйти')
