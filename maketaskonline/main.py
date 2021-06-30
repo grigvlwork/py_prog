@@ -1,18 +1,36 @@
-from flask import Flask, render_template, request, make_response, session
+from flask import Flask, render_template, make_response, session
 from werkzeug.utils import redirect
 
 from data import db_session
 from data.users import User
-from forms.user import RegisterForm, LoginForm
-
+from forms.user import RegisterForm, HeaderLoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'HSa6jK1Rb0zMDEPoTlvf5SYg4I6FtkaK'
+current_email = None
+
+
+@app.route("/index", methods=['GET', 'POST'])
+def index():
+    # visits_count = session.get('visits_count', 0)
+    # session['visits_count'] = visits_count + 1
+    # return make_response(
+    #     f"Вы пришли на эту страницу {visits_count + 1} раз")
+    form = HeaderLoginForm()
+    if form.validate_on_submit():
+        if form.submit_login.data:
+            return redirect('/login')
+        if form.submit_register.data:
+            current_email = form.email.data
+            return redirect('/register')
+    return render_template('unlogged.html', title='Вход', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
     form = RegisterForm()
+    if current_email:
+        form.email_default = current_email
     if form.validate_on_submit():
         if form.password.data != form.password_again.data:
             return render_template('register.html', title='Регистрация',
@@ -35,38 +53,12 @@ def reqister():
     return render_template('register.html', title='Регистрация', form=form)
 
 
-@app.route("/cookie_test")
-def cookie_test():
-    visits_count = int(request.cookies.get("visits_count", 0))
-    if visits_count:
-        res = make_response(
-            f"Вы пришли на эту страницу {visits_count + 1} раз")
-        res.set_cookie("visits_count", str(visits_count + 1),
-                       max_age=60 * 60 * 24 * 365 * 2)
-    else:
-        res = make_response(
-            "Вы пришли на эту страницу в первый раз за последние 2 года")
-        res.set_cookie("visits_count", '1',
-                       max_age=60 * 60 * 24 * 365 * 2)
-    return res
-
 @app.route("/session_test")
 def session_test():
     visits_count = session.get('visits_count', 0)
     session['visits_count'] = visits_count + 1
     return make_response(
         f"Вы пришли на эту страницу {visits_count + 1} раз")
-
-
-@app.route("/index")
-def index():
-    # visits_count = session.get('visits_count', 0)
-    # session['visits_count'] = visits_count + 1
-    # return make_response(
-    #     f"Вы пришли на эту страницу {visits_count + 1} раз")
-    form = LoginForm()
-    return render_template('unlogged.html', title='Вход', form=form)
-
 
 
 def main():
@@ -76,4 +68,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
