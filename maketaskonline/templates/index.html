@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+        <a href="subject_add" class="btn btn-secondary">Добавить предмет</a>
+        {% for subject in subjects %}
+            <div class="h3 mb-3 fw-normal">{{ subject['name'] }}</div>
+        {% endfor %}
+    {% else %}
+        <h1 class="h3 mb-3 fw-normal" align="center">Для работы на сайте необходимо войти или зарегистрироваться</h1>
+    {% endif %}
+
+{% endblock %}
