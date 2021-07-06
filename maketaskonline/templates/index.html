@@ -4,10 +4,15 @@
 
 {% block content %}
 {% if current_user.is_authenticated %}
+    <h1 class="h3 mb-3 fw-normal" align="center">Выберите или добавьте предмет</h1>
         <a href="subject_add" class="btn btn-secondary">Добавить предмет</a>
-        {% for subject in subjects %}
-            <div class="h3 mb-3 fw-normal">{{ subject['name'] }}</div>
-        {% endfor %}
+        <div class="flex-column">
+            {% for subject in subjects %}
+            <div>
+                <a class="hyperlink-primary" href="\section\{{ subject['id']}}">{{ subject['name'] }}</a>
+            </div>
+            {% endfor %}
+        </div>
     {% else %}
         <h1 class="h3 mb-3 fw-normal" align="center">Для работы на сайте необходимо войти или зарегистрироваться</h1>
     {% endif %}

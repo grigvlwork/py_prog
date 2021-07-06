@@ -29,3 +29,8 @@ class SubjectForm(FlaskForm):
     name = StringField('Название предмета', validators=[DataRequired()])
     is_private = BooleanField('Доступен только мне')
     submit = SubmitField('Сохранить')
+
+
+class SectionForm(FlaskForm):
+    name = StringField('Название раздела', validators=[DataRequired()])
+    submit = SubmitField('Сохранить')

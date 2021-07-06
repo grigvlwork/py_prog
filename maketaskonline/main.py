@@ -4,9 +4,10 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from werkzeug.utils import redirect
 
 from data import db_session
+from data.section import Section
 from data.subjects import Subjects
 from data.users import User
-from forms.user import RegisterForm, LoginForm, SubjectForm
+from forms.user import RegisterForm, LoginForm, SubjectForm, SectionForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'HSa6jK1Rb0zMDEPoTlvf5SYg4I6FtkaK'
@@ -31,6 +32,19 @@ def index():
         subjects = db_sess.query(Subjects).filter(
             (Subjects.user_id == current_user.get_id()) | (not Subjects.is_private))
     return render_template('index.html', subjects=subjects)
+
+
+@app.route("/section/<subject_id>")
+def section(subject_id):
+    db_sess = db_session.create_session()
+    subjects = []
+    if current_user.is_authenticated:
+        subjects = db_sess.query(Subjects).filter(
+            ((Subjects.user_id == current_user.get_id()) | (not Subjects.is_private)) & (Subjects.id == subject_id))
+    if subjects:
+        sections = []
+        sections = db_sess.query(Section).filter(Section.subject_id == subject_id)
+    return render_template('section.html', sections=sections, subjects=subjects)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -71,6 +85,21 @@ def subject_add():
         db_sess.commit()
         return redirect('/')
     return render_template('subject.html', title='Добавление предмета', form=form)
+
+
+@app.route('/section_add/<subject_id>', methods=['GET', 'POST'])
+def section_add(subject_id):
+    form = SectionForm()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        section = Section(
+            name=form.name.data,
+            subject_id=subject_id
+        )
+        db_sess.add(section)
+        db_sess.commit()
+        return redirect(f"/section/{subject_id}")
+    return render_template('section_add.html', title='Добавление раздела', form=form)
 
 
 @app.route("/login", methods=["POST", "GET"])
