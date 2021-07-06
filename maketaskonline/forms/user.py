@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, SubmitField, BooleanField
+from wtforms import PasswordField, StringField, SubmitField, BooleanField, TextAreaField, RadioField
 from wtforms.fields.html5 import EmailField
-from wtforms.validators import DataRequired, EqualTo
+from wtforms.validators import DataRequired
 
 
 class RegisterForm(FlaskForm):
@@ -33,4 +33,18 @@ class SubjectForm(FlaskForm):
 
 class SectionForm(FlaskForm):
     name = StringField('Название раздела', validators=[DataRequired()])
+    submit = SubmitField('Сохранить')
+
+
+class TaskForm(FlaskForm):
+    name = StringField('Название задачи', validators=[DataRequired()])
+    condition = TextAreaField('Условие задачи', validators=[DataRequired()])
+    formula = TextAreaField('Формула для вычисления ответа', validators=[DataRequired()])
+    submit = SubmitField('Сохранить')
+
+
+class VariablesForm(FlaskForm):
+    # name = StringField('Название переменной', validators=[DataRequired()])
+    type = RadioField('Тип переменной', choices=['Число', 'Текст'], validators=[DataRequired()])
+    range = TextAreaField('Диапазон изменения значений', validators=[DataRequired()])
     submit = SubmitField('Сохранить')

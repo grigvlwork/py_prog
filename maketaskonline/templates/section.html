@@ -7,9 +7,11 @@
     <h1 class="h3 mb-3 fw-normal" align="center">Предмет {{subjects[0]['name']}}</h1>
     <h1 class="h3 mb-3 fw-normal" align="center">Выберите или добавьте раздел</h1>
     <a href="\section_add\{{subjects[0]['id']}}" class="btn btn-secondary">Добавить раздел</a>
+    <div class="flex-column">
     {% for section in sections %}
-        <div class="h3 mb-3 fw-normal">{{ section['name'] }}</div>
+        <a class="hyperlink-primary" href="\task\{{subjects[0]['id']}}\{{ section['id']}}">{{ section['name'] }}</a>
     {% endfor %}
+    </div>
 {% else %}
     <h1 class="h3 mb-3 fw-normal" align="center">Для работы на сайте необходимо войти или зарегистрироваться</h1>
 {% endif %}

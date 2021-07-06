@@ -7,7 +7,9 @@ from data import db_session
 from data.section import Section
 from data.subjects import Subjects
 from data.users import User
-from forms.user import RegisterForm, LoginForm, SubjectForm, SectionForm
+from data.task import Task
+from data.variables import Variables
+from forms.user import RegisterForm, LoginForm, SubjectForm, SectionForm, TaskForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'HSa6jK1Rb0zMDEPoTlvf5SYg4I6FtkaK'
@@ -47,6 +49,30 @@ def section(subject_id):
     return render_template('section.html', sections=sections, subjects=subjects)
 
 
+@app.route("/task/<subject_id>/<section_id>")
+def task(subject_id, section_id):
+    db_sess = db_session.create_session()
+    subjects = []
+    if current_user.is_authenticated:
+        subjects = db_sess.query(Subjects).filter(
+            ((Subjects.user_id == current_user.get_id()) | (not Subjects.is_private)) &
+            (Subjects.id == subject_id))
+    else:
+        return redirect('index')
+    if subjects:
+        sections = []
+        sections = db_sess.query(Section).filter((Section.subject_id == subject_id) &
+                                                 (Section.id == section_id))
+    else:
+        return redirect('index')
+    if sections:
+        tasks = []
+        tasks = db_sess.query(Task).filter(Task.section_id == section_id)
+    else:
+        return redirect('index')
+    return render_template('task.html', sections=sections, subjects=subjects, tasks=tasks)
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
@@ -84,7 +110,7 @@ def subject_add():
         db_sess.add(subject)
         db_sess.commit()
         return redirect('/')
-    return render_template('subject.html', title='Добавление предмета', form=form)
+    return render_template('form_add.html', title='Добавление предмета', form=form)
 
 
 @app.route('/section_add/<subject_id>', methods=['GET', 'POST'])
@@ -99,7 +125,24 @@ def section_add(subject_id):
         db_sess.add(section)
         db_sess.commit()
         return redirect(f"/section/{subject_id}")
-    return render_template('section_add.html', title='Добавление раздела', form=form)
+    return render_template('form_add.html', title='Добавление раздела', form=form)
+
+
+@app.route('/task_add/<subject_id>/<section_id>', methods=['GET', 'POST'])
+def task_add(subject_id, section_id):
+    form = TaskForm()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        task = Task(
+            name=form.name.data,
+            section_id=section_id,
+            condition=form.condition.data,
+            formula=form.formula.data
+        )
+        db_sess.add(task)
+        db_sess.commit()
+        return redirect(f"/task/{subject_id}/{section_id}")
+    return render_template('form_add.html', title='Добавление задачи', form=form)
 
 
 @app.route("/login", methods=["POST", "GET"])
@@ -134,7 +177,7 @@ def session_test():
 
 
 def main():
-    db_session.global_init("db/blogs.sqlite")
+    db_session.global_init("db/maketask.sqlite")
     app.run('127.0.0.1', 8080, debug=True)
 
 
