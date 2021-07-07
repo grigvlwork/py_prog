@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, SubmitField, BooleanField, TextAreaField, RadioField
-from wtforms.fields.html5 import EmailField
+from wtforms.fields.html5 import EmailField, IntegerField
 from wtforms.validators import DataRequired
 
 
@@ -48,3 +48,14 @@ class VariablesForm(FlaskForm):
     type = RadioField('Тип переменной', choices=['Число', 'Текст'], validators=[DataRequired()])
     range = TextAreaField('Диапазон изменения значений', validators=[DataRequired()])
     submit = SubmitField('Сохранить')
+
+
+class ToWorkForm(FlaskForm):
+    # name = StringField('Название переменной', validators=[DataRequired()])
+    amount = IntegerField('Количество задач', validators=[DataRequired()])
+    submit = SubmitField('Добавить задачи в работу')
+
+
+class TaskListForm(FlaskForm):
+    name = StringField('Название работы', validators=[DataRequired()])
+    submit = SubmitField('Сформировать работу')

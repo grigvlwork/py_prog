@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+    <h1 class="h3 mb-3 fw-normal" align="center">Список задач в работе</h1>
+    <div class="flex-column">
+        <div class="container">
+            <ul class="list-group">
+                {% for wt in worktask %}
+                <li class="list-group-item">{{ wt.task.name }}
+                    <span class="badge badge-primary badge-pill">{{wt.amount}}
+                        <a class="btn btn-danger btn-sm" href="\delworktask\{{wt.id}}">Удалить задачу</a>
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="flex-row" align="center">
+                <div class="col">
+                    {{ wtf.quick_form(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <h1 class="h3 mb-3 fw-normal" align="center">Для работы на сайте необходимо войти или зарегистрироваться</h1>
+{% endif %}
+
+{% endblock %}

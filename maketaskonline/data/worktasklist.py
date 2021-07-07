@@ -4,14 +4,15 @@ from sqlalchemy import orm
 from .db_session import SqlAlchemyBase
 
 
-class Variables(SqlAlchemyBase):
-    __tablename__ = 'variables'
+class Worktasklist(SqlAlchemyBase):
+    __tablename__ = 'worktasklist'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
-    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    user_id = sqlalchemy.Column(sqlalchemy.Integer,
+                                sqlalchemy.ForeignKey("users.id", ondelete="CASCADE"))
     task_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("task.id", ondelete="CASCADE"))
-    type = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    range = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    amount = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     task = orm.relation('Task')
+    users = orm.relation('User')

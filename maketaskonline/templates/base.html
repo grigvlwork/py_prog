@@ -7,6 +7,7 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="/">Конструктор заданий</a>
+    <a class="navbar-brand" href="worktasklist">Задачи в работе</a>
     {% if current_user.is_authenticated %}
         <a class="navbar-brand">Пользователь {{ current_user.name }}</a>
         <a class="btn btn-primary" href="/logout">Выход</a>

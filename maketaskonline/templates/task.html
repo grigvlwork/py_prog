@@ -4,13 +4,15 @@
 
 {% block content %}
 {% if current_user.is_authenticated %}
-    <h1 class="h3 mb-3 fw-normal" align="center">Предмет: {{subjects[0]['name']}}</h1>
-    <h1 class="h3 mb-3 fw-normal" align="center">Раздел: {{sections[0]['name']}}</h1>
+    <h1 class="h3 mb-3 fw-normal" align="center">Предмет: {{subject.name}}</h1>
+    <h1 class="h3 mb-3 fw-normal" align="center">Раздел: {{section.name}}</h1>
     <h1 class="h3 mb-3 fw-normal" align="center">Выберите или добавьте задачу</h1>
-    <a href="\task_add\{{subjects[0]['id']}}\{{sections[0]['id']}}" class="btn btn-secondary">Добавить задачу</a>
+    <a href="\task_add\{{subject.id}}\{{section.id}}" class="btn btn-secondary">Добавить задачу</a>
     <div class="flex-column">
     {% for task in tasks %}
-        <a class="hyperlink-primary" href="\variables\{{subjects[0]['id']}}\{{sections[0]['id']}}\{{ task['id']}}">{{ task['name'] }}</a>
+        <div>
+            <a class="hyperlink-primary" href="\variables\{{subject.id}}\{{section.id}}\{{ task['id']}}">{{ task['name'] }}</a>
+        </div>
     {% endfor %}
     </div>
 {% else %}

@@ -4,12 +4,14 @@
 
 {% block content %}
 {% if current_user.is_authenticated %}
-    <h1 class="h3 mb-3 fw-normal" align="center">Предмет {{subjects[0]['name']}}</h1>
+    <h1 class="h3 mb-3 fw-normal" align="center">Предмет {{subject.name}}</h1>
     <h1 class="h3 mb-3 fw-normal" align="center">Выберите или добавьте раздел</h1>
-    <a href="\section_add\{{subjects[0]['id']}}" class="btn btn-secondary">Добавить раздел</a>
+    <a href="\section_add\{{subject.id}}" class="btn btn-secondary">Добавить раздел</a>
     <div class="flex-column">
     {% for section in sections %}
-        <a class="hyperlink-primary" href="\task\{{subjects[0]['id']}}\{{ section['id']}}">{{ section['name'] }}</a>
+        <div>
+            <a class="hyperlink-primary" href="\task\{{subject.id}}\{{ section['id']}}">{{ section['name'] }}</a>
+        </div>
     {% endfor %}
     </div>
 {% else %}

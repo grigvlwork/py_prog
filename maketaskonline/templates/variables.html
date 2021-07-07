@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+    <h1 class="h3 mb-3 fw-normal" align="center">Предмет: {{subject.name}}</h1>
+    <h1 class="h3 mb-3 fw-normal" align="center">Раздел: {{section.name}}</h1>
+    <h1 class="h3 mb-3 fw-normal" align="center">Задача: {{task.name}}</h1>
+    <h1 class="h3 mb-3 fw-normal" align="center">Условие: {{task.condition}}</h1>
+    <h1 class="h3 mb-3 fw-normal" align="center">Выберите переменные для редактирования, для каждой нужно указать тип и диапазон</h1>
+<!--    <a href="\task_add\{{subject.id}}\{{section.id}}" class="btn btn-secondary">Добавить задачу</a>-->
+    <div class="flex-column">
+    {% for var in variables %}
+        <div align="center">
+            <a class="hyperlink-primary" href="\edit_var\{{subject.id}}\{{section.id}}\{{task.id}}\{{var['id']}}">Переменная {{var['name'] }},
+                Тип {{var.type}}, Диапазон {{var.range}} </a>
+        </div>
+    {% endfor %}
+        <div class="flex-row" align="center">
+            <div class="col-md-3">
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <h1 class="h3 mb-3 fw-normal" align="center">Для работы на сайте необходимо войти или зарегистрироваться</h1>
+{% endif %}
+
+{% endblock %}
