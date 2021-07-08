@@ -7,14 +7,15 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="/">Конструктор заданий</a>
-    <a class="navbar-brand" href="worktasklist">Задачи в работе</a>
+    <a class="navbar-brand" href="{{ url_for('worktasklist')}}">Задачи в работе</a>
+    <a class="navbar-brand" href="{{ url_for('taskset')}}">Список работ</a>
     {% if current_user.is_authenticated %}
         <a class="navbar-brand">Пользователь {{ current_user.name }}</a>
-        <a class="btn btn-primary" href="/logout">Выход</a>
+        <a class="btn btn-primary" href="{{ url_for('logout')}}">Выход</a>
     {% else %}
         <p>
-            <a class="btn btn-primary" href="/register">Зарегистрироваться</a>
-            <a class="btn btn-success" href="/login">Войти</a>
+            <a class="btn btn-primary" href="{{ url_for('register')}}">Зарегистрироваться</a>
+            <a class="btn btn-success" href="{{ url_for('login')}}">Войти</a>
         </p>
 {% endif %}
 

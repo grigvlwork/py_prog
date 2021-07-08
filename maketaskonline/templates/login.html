@@ -9,6 +9,7 @@
 {% block content %}
     <div class="flex-">Вход на сайт</div>
     <div class="row">
+        {{ form.hidden_tag() }}
         <div class="col-md-3">
             {{ wtf.quick_form(form) }}
         </div>

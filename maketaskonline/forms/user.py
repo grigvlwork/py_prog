@@ -59,3 +59,8 @@ class ToWorkForm(FlaskForm):
 class TaskListForm(FlaskForm):
     name = StringField('Название работы', validators=[DataRequired()])
     submit = SubmitField('Сформировать работу')
+
+
+class VariantsForm(FlaskForm):
+    amount = IntegerField('Количество вариантов в работе', validators=[DataRequired()])
+    submit = SubmitField('Сформировать файл')

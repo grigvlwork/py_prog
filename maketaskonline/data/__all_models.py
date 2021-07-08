@@ -6,3 +6,4 @@ from . import variables
 from . import worktasklist
 from . import taskset
 from . import tasksetline
+from . import variants

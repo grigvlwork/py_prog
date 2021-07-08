@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+    <h1 class="h3 mb-3 fw-normal" align="center">Список вариантов</h1>
+    <div class="flex-column">
+        <div class="container">
+            <ul class="list-group">
+                {% for var in variants %}
+                <li class="list-group-item">
+                    <a href="{{ var.file }}">{{ var.file }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="flex-row" align="center">
+                {{ form.hidden_tag() }}
+                <div class="col">
+                    {{ wtf.quick_form(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <h1 class="h3 mb-3 fw-normal" align="center">Для работы на сайте необходимо войти или зарегистрироваться</h1>
+{% endif %}
+
+{% endblock %}

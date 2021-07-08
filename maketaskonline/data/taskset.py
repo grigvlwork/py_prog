@@ -12,5 +12,4 @@ class TaskSet(SqlAlchemyBase):
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("users.id", ondelete="CASCADE"))
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-
     users = orm.relation('User')

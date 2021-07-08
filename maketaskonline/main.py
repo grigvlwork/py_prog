@@ -1,4 +1,7 @@
+import os
 import re
+import uuid
+from random import choice
 
 from flask import Flask, render_template, make_response, session, request, url_for
 from flask_bootstrap import Bootstrap
@@ -15,8 +18,10 @@ from data.variables import Variables
 from data.worktasklist import Worktasklist
 from data.taskset import TaskSet
 from data.tasksetline import TaskSetLine
+from data.variants import Variants
 from forms.user import RegisterForm, LoginForm, SubjectForm, SectionForm, TaskForm, VariablesForm, ToWorkForm, \
-    TaskListForm
+    TaskListForm, VariantsForm
+from docx import Document
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'HSa6jK1Rb0zMDEPoTlvf5SYg4I6FtkaK'
@@ -34,6 +39,16 @@ def available(object, object_id):
             return False
         if subjects.user_id == int(current_user.get_id()):
             return True
+    elif object == "taskset":
+        taskset = db_sess.query(TaskSet).filter(TaskSet.id == object_id).one()
+        if not taskset:
+            return False
+        if taskset.user_id == int(current_user.get_id()):
+            return True
+    elif object == "variants":
+        variants = db_sess.query(Variants).filter(Variants.id == object_id).one()
+        if variants:
+            return available('taskset', variants.taskset_id)
     elif object == "section":
         section = db_sess.query(Section).filter(Section.id == object_id).one()
         if section:
@@ -71,23 +86,116 @@ def index():
 def worktasklist():
     db_sess = db_session.create_session()
     worktask = db_sess.query(Worktasklist).filter(Worktasklist.user_id == current_user.get_id()).all()
-    print(worktask[0].task.name)
     form = TaskListForm()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
         worktasklist = db_sess.query(Worktasklist).filter(Worktasklist.user_id == current_user.get_id())
+        taskset = TaskSet(
+            user_id=current_user.get_id(),
+            name=form.name.data
+        )
+        db_sess.add(taskset)
+        db_sess.commit()
+        db_sess.flush()
         for task in worktasklist:
             tl = TaskSetLine(
+                taskset_id=taskset.id,
                 task_id=task.task_id,
-                user_id=task.user_id,
                 amount=task.amount
             )
             db_sess.add(tl)
-        worktasklist = db_sess.query(Worktasklist).filter(Worktasklist.user_id == current_user.get_id()).all()
-        db_sess.delete(worktasklist)
+        worktasklist = db_sess.query(Worktasklist).filter(Worktasklist.user_id == current_user.get_id()).delete()
         db_sess.commit()
-        return redirect(url_for('tasklist'))
-    return render_template('worktasklist.html', worktask=worktask, form=form)
+        return redirect(url_for('taskset'))
+    return render_template('worktasklist.html', worktask=worktask, form=form, title="Список задач в работе")
+
+@app.route("/taskset")
+@login_required
+def taskset():
+    db_sess = db_session.create_session()
+    taskset = db_sess.query(TaskSet).filter(TaskSet.user_id == current_user.get_id())
+    return render_template('taskset.html', taskset=taskset, title="Список работ")
+
+
+@app.route("/variants/<taskset_id>", methods=['GET', 'POST'])
+@login_required
+def variants(taskset_id):
+    form = VariantsForm()
+    if not available("taskset", taskset_id):
+        return redirect("index")
+    db_sess = db_session.create_session()
+    variants = db_sess.query(Variants).filter(Variants.taskset_id == taskset_id)
+    if form.validate_on_submit():
+        variant_add(taskset_id, form.amount.data)
+        variants = db_sess.query(Variants).filter(Variants.taskset_id == taskset_id)
+        return render_template('variants.html', variants=variants, form=form, title="Список вариантов")
+    return render_template('variants.html', variants=variants, form=form, title="Список вариантов")
+
+
+def generate_variant_and_key(taskset_id, number):
+    db_sess = db_session.create_session()
+    tasksetline = db_sess.query(TaskSetLine).filter(TaskSetLine.taskset_id == taskset_id)
+    num_task = 1
+    text_variant = "\nВариант №" + str(number)
+    text_key = "Ключ к варианту №" + str(number)
+    for row in tasksetline:
+        task_id = row.task_id
+        amount = row.amount
+        for _ in range(amount):
+            condition, answer = generate_condition_and_answer(num_task, task_id)
+            num_task += 1
+            text_variant += "\n" + condition
+            text_key += "\n" + answer
+    return text_variant, text_key
+
+
+def generate_condition_and_answer(number, task_id):
+    text_condition = "Задание № " + str(number)
+    db_sess = db_session.create_session()
+    task = db_sess.query(Task).filter(Task.id == task_id).one()
+    variables = db_sess.query(Variables).filter(Variables.task_id == task_id)
+    condition = task.condition
+    formula = task.formula
+    for var in variables:
+        var_name = '{' + var.name + '}'
+        if "range" in var.range:
+            var_value = str(choice(list(eval(var.range))))
+        elif var.range[0] == '[' and var.range[-1] == ']':
+            var_value = str(choice(eval(var.range)))
+        else:
+            var_value = 'не определен диапазон'
+        condition = condition.replace(var_name, var_value)
+        formula = formula.replace(var_name, var_value)
+    text_condition += "\n" + condition
+    text_answer = str(number) + ")" + str(eval(formula))
+    return text_condition, text_answer
+
+
+def variant_add(taskset_id, amount):
+    db_sess = db_session.create_session()
+    content = ""
+    answers = ""
+    for i in range(1, amount + 1):
+        variant, answer = generate_variant_and_key(taskset_id, i)
+        content += variant + "\n"
+        answers += answer + "\n"
+    file_name = 'file' + str(uuid.uuid1()) + '.docx'
+    full_file_name = os.path.join(str(os.getcwd()), 'static', 'output', file_name)
+    document = Document()
+    document.add_paragraph(content)
+    document.add_paragraph(answers)
+    document.save(full_file_name)
+    variants = Variants(
+        taskset_id=taskset_id,
+        content=content,
+        answers=answers,
+        file=url_for('static', filename='output/' + file_name)
+    )
+    db_sess.add(variants)
+    db_sess.commit()
+    return redirect(url_for('variants', taskset_id=taskset_id))
+
+
 
 @app.route("/delworktask/<worktask_id>")
 @login_required
