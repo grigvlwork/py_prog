@@ -68,19 +68,19 @@
 
    ![screen10](static/images/screenshot10.PNG)
 
-   10. Добавление задачи, описываем условие и формулу для вычисления ответа
+   10.Добавление задачи, описываем условие и формулу для вычисления ответа
 
    ![screen11](static/images/screenshot11.PNG)
 
-   11. Выбираем задачу для редактирования переменных и добавления ее в работу
+   11.Выбираем задачу для редактирования переменных и добавления ее в работу
 
    ![screen12](static/images/screenshot12.PNG)
 
-   12. Страница задачи
+   12.Страница задачи
 
    ![screen13](static/images/screenshot13.PNG)
 
-   13. Страница редактирования переменных
+   13.Страница редактирования переменных
 
    
 
@@ -88,33 +88,33 @@
 
    
 
-   14. Добавление задачи в работу
+   14.Добавление задачи в работу
 
    
 
    ![screen15](static/images/screenshot15.PNG)
 
-   15. Страница задач в работе. Здесь можно удалить задачи из работы или сформировать работу
+   15.Страница задач в работе. Здесь можно удалить задачи из работы или сформировать работу
 
-       ![screen16](static/images/screenshot16.PNG)
+   ![screen16](static/images/screenshot16.PNG)
 
-   16. Страница со списком готовых работ
+   16.Страница со списком готовых работ
 
-       ![screen17](static/images/screenshot17.PNG)
+   ![screen17](static/images/screenshot17.PNG)
 
-       
+   
 
-   17. Страница работы на которой создаются варианты
+   17.Страница работы на которой создаются варианты
 
-       ![screen18](static/images/screenshot18.PNG)
+   ![screen18](static/images/screenshot18.PNG)
 
-   18. Страница работы после создания варианта
+   18.Страница работы после создания варианта
 
-       ![screen19](static/images/screenshot19.PNG)
+   ![screen19](static/images/screenshot19.PNG)
 
-   19. Готовый вариант в файле Word
+   19.Готовый вариант в файле Word
 
-       ![screen20](static/images/screenshot20.PNG)
+   ![screen20](static/images/screenshot20.PNG)
 
 
 
