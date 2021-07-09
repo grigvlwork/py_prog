@@ -32,59 +32,59 @@
 
 1. Начальная страница незарегистрированного пользователя
 
-   ![screen1](static/images/screenshot1.png)
+   ![screen1](static/images/screenshot1.PNG)
 
 2. Регистрация
 
-   ![screen2](static/images/screenshot2.png)
+   ![screen2](static/images/screenshot2.PNG)
 
 3. Вход
 
-   ![screen3](static/images/screenshot3.png)
+   ![screen3](static/images/screenshot3.PNG)
 
 4. Начальная страница зарегистрированного пользователя
 
-   ![screen4](static/images/screenshot4.png)
+   ![screen4](static/images/screenshot4.PNG)
 
 5. Добавляем предмет:
 
-   ![screen2](static/images/screenshot5.png)
+   ![screen2](static/images/screenshot5.PNG)
 
 6. Выбираем предмет и переходим к разделам
 
-   ![screen6](static/images/screenshot6.png)
+   ![screen6](static/images/screenshot6.PNG)
 
-   ![screen7](static/images/screenshot7.png)
+   ![screen7](static/images/screenshot7.PNG)
 
 7. Создание раздела
 
-   ![screen5](static/images/screenshot8.png)
+   ![screen5](static/images/screenshot8.PNG)
 
 8. Выбираем раздел для создания задач
 
-   ![screen9](static/images/screenshot9.png)
+   ![screen9](static/images/screenshot9.PNG)
 
 9. Страница добавления задач в раздел
 
-   ![screen10](static/images/screenshot10.png)
+   ![screen10](static/images/screenshot10.PNG)
 
    10. Добавление задачи, описываем условие и формулу для вычисления ответа
 
-   ![screen11](static/images/screenshot11.png)
+   ![screen11](static/images/screenshot11.PNG)
 
    11. Выбираем задачу для редактирования переменных и добавления ее в работу
 
-   ![screen12](static/images/screenshot12.png)
+   ![screen12](static/images/screenshot12.PNG)
 
    12. Страница задачи
 
-   ![screen13](static/images/screenshot13.png)
+   ![screen13](static/images/screenshot13.PNG)
 
    13. Страница редактирования переменных
 
    
 
-   ![screen14](static/images/screenshot14.png)
+   ![screen14](static/images/screenshot14.PNG)
 
    
 
@@ -92,29 +92,29 @@
 
    
 
-   ![screen15](static/images/screenshot15.png)
+   ![screen15](static/images/screenshot15.PNG)
 
    15. Страница задач в работе. Здесь можно удалить задачи из работы или сформировать работу
 
-       ![screen16](static/images/screenshot16.png)
+       ![screen16](static/images/screenshot16.PNG)
 
    16. Страница со списком готовых работ
 
-       ![screen17](static/images/screenshot17.png)
+       ![screen17](static/images/screenshot17.PNG)
 
        
 
    17. Страница работы на которой создаются варианты
 
-       ![screen18](static/images/screenshot18.png)
+       ![screen18](static/images/screenshot18.PNG)
 
    18. Страница работы после создания варианта
 
-       ![screen19](static/images/screenshot19.png)
+       ![screen19](static/images/screenshot19.PNG)
 
    19. Готовый вариант в файле Word
 
-       ![screen20](static/images/screenshot20.png)
+       ![screen20](static/images/screenshot20.PNG)
 
 
 
