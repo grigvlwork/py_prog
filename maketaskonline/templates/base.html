@@ -7,9 +7,9 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="/">Конструктор заданий</a>
-    <a class="navbar-brand" href="{{ url_for('worktasklist')}}">Задачи в работе</a>
-    <a class="navbar-brand" href="{{ url_for('taskset')}}">Список работ</a>
     {% if current_user.is_authenticated %}
+        <a class="navbar-brand" href="{{ url_for('worktasklist')}}">Задачи в работе</a>
+        <a class="navbar-brand" href="{{ url_for('taskset')}}">Список работ</a>
         <a class="navbar-brand">Пользователь {{ current_user.name }}</a>
         <a class="btn btn-primary" href="{{ url_for('logout')}}">Выход</a>
     {% else %}
