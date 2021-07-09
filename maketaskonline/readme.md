@@ -115,6 +115,12 @@
    19.Готовый вариант в файле Word
 
    ![screen20](static/images/screenshot20.PNG)
+   
+   ## Приложение
+   
+   Схема данных 
+   
+   ![data_schema](static/images/data_schema.PNG)
 
 
 
